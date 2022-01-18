@@ -1,0 +1,929 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coupled Model Intercomparison Project (CMIP) &#8212; Earth System Modelling</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Biogeophysical feedbacks: Daisy World" href="daisy_world.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Earth System Modelling</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Earth System Modelling
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../content1.html">
+   Chapter 1: Climate models
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="climate-system-models.html">
+     The climate system and climate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="advection.html">
+     Focus on advection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../content2.html">
+   Chapter 2: Energy Balance and Forcing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="insolation.html">
+     Insolation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content3.html">
+   Chapter 3: Climate feedbacks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="EBM_0D_ice_feedback.html">
+     Ice albedo feedback in the 0D energy balance model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EBM_water_vapor.html">
+     Adding water vapor feedback to the grey model of the atmosphere
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="daisy_world.html">
+     Biogeophysical feedbacks: Daisy World
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Coupled Model Intercomparison Project (CMIP)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/CMIP_IPCC_fun.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/CMIP_IPCC_fun.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/CMIP_IPCC_fun.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Coupled Model Intercomparison Project (CMIP)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-present-day-design-deck">
+     The present day design, DECK
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representative-concentration-pathways-rcps">
+     Representative Concentration Pathways (RCPs)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shared-socioeconomic-pathway-ssp">
+     shared socioeconomic pathway (SSP)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtaining-cmip6-data">
+   Obtaining CMIP6 data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-series-of-global-mean-temperatures">
+     Time series of global mean temperatures.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#questions">
+       Questions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Questions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#toa-fluxes">
+   TOA fluxes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-assessment">
+   Class assessment
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="coupled-model-intercomparison-project-cmip">
+<h1>Coupled Model Intercomparison Project (CMIP)<a class="headerlink" href="#coupled-model-intercomparison-project-cmip" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook we will introduce the basics of the Coupled Model Intercomparison Project (CMIP), which is coordinated by the world climate research program (WCRP). Note that this notebook contains a short summary, more details are available in the handout.</p>
+<p>To use this notebook you will need the following python packages installed</p>
+<ul class="simple">
+<li><p>cdsapi</p></li>
+<li><p>cdo</p></li>
+<li><p>matplotlib</p></li>
+<li><p>numpy</p></li>
+</ul>
+<p>In the 70s and 80s, it was very difficult to assess the range on uncertainties of future climate projections, and indeed to partition these into contributions from model, forcing and initial conditions, due to the fact that different modelling centres ran different experiments with different boundary conditions ($CO_2 pathways) and so on.</p>
+<p>Thus, CMIP began in 1995 under the auspices of the Working Group on Coupled Modelling (WGCM).  The first set of common experiments involved comparing the model response to an idealized forcing, a constant rate of increase which was accomplished using a CO<span class="math notranslate nohighlight">\(_2\)</span> increase of 1% per year compounded. Since that time a number of CMIP experiments have been developed. The experiments continue to include integrations using idealized forcings to facilitate understanding. They now also include integrations forced with estimates of the changes in the historical radiative forcings as
+well as estimates of the future changes.</p>
+<p>Note that CMIP and IPCC are separate, even if closely linked.  CMIP is a coordination project for climate model intercomparisons in a fairly controlled framework, while the role of IPCC is to summarize the state of climate science (see the lecture notes for more details on IPCC). These days there is close coordination, with a new round of CMIP designed to feed into the IPCC summary (in fact CMIP4 was skipped to bring the round numbers together, so that CMIP5 fed into IPCC assessment report 5), but IPCC can cast the umbrella wider and summarizes a lot of science not directly linked to CMIP (e.g. cloud resolving model experiments, observational studies and so on).</p>
+<div class="section" id="the-present-day-design-deck">
+<h2>The present day design, DECK<a class="headerlink" href="#the-present-day-design-deck" title="Permalink to this headline">¶</a></h2>
+<p>CMIP arranges a common experimental framework consisting of compulsory core experiments and a range of optional experiments that investigate scientific questions deeper,  such as the role of land-atmosphere interactions, or the impact of  accurate initialization of ocean conditions to perform near-term decadal prediction. In the upcoming 6<span class="math notranslate nohighlight">\(^{th}\)</span> assessment report the core experiments are
+now known as CMIP Diagnostic, Evaluation and Characterization of Klima
+(DECK) \index{CMIP!DECK} experiments \cite{eyring:16}</p>
+<p><img alt="esm_ipcc_cmip6_deck.jpg" src="notebooks/attachment:esm_ipcc_cmip6_deck.jpg" /> DECK experiments of CMIP6</p>
+<ul class="simple">
+<li><p>The modelling centres are free to choose their model set up (e.g. horizontal and vertical resolutions), thus model uncertainties consist of both structural uncertainties pertaining to physical parameterization choices and numerical methods, as well as the model resolution choices.</p></li>
+<li><p>Also the method to initialize the model runs is left to the discretion of the modeller, with the exception of the decadal initialized experiments that are part of CMIP5 and CMIP6.</p></li>
+<li><p>Thus the key element of the coordination is in the specification of the boundary conditions in terms of the atmospheric composition of radiatively active gases (or alternatively their anthropogenic sources), and increasingly the land cover conditions.</p></li>
+</ul>
+</div>
+<div class="section" id="representative-concentration-pathways-rcps">
+<h2>Representative Concentration Pathways (RCPs)<a class="headerlink" href="#representative-concentration-pathways-rcps" title="Permalink to this headline">¶</a></h2>
+<p>Part of the CMIP process is the definition of potential boundary conditions for the future. As stated earlier, in early rounds of CMIP, experiments were very simple in design consisting of instantaneous doubling of CO<span class="math notranslate nohighlight">\(_2\)</span> or increasing CO<span class="math notranslate nohighlight">\(_2\)</span> by a fixed percentage each year.</p>
+<p>Although these experiments are retained in DECK, CMIP5 has introduced the concept of Representative Concentration Pathways (RCPs) for future greenhouse gas and aerosol concentrations (or emissions for interactive carbon cycle experiments) (Fig. ref{fig:rcp1}). The RCPs for CMIP5 are generally referred to by the magnitude of the TOA radiative forcing (<span class="math notranslate nohighlight">\(\Delta R\)</span> in W m<span class="math notranslate nohighlight">\(^{-2}\)</span>) expected at the end of the 21<span class="math notranslate nohighlight">\(^{st}\)</span> century, namely RCP2.6, RCP4.5, RCP6.0 and RCP8.5 for CMIP5 (supplemented by intermediate scenarios in CMIP6).</p>
+<p><img alt="esm_part4_rcps.png" src="notebooks/attachment:esm_part4_rcps.png" />
+To produce these, four modelling groups were selected and tasked with producing RCPs that spanned the range of
+over 100 studies existing in the literature, ranging from a low-end emission scenario to a high-end scenario.</p>
+</div>
+<div class="section" id="shared-socioeconomic-pathway-ssp">
+<h2>shared socioeconomic pathway (SSP)<a class="headerlink" href="#shared-socioeconomic-pathway-ssp" title="Permalink to this headline">¶</a></h2>
+<p>These scenarios are built around a storyline for economic development, population growth and government policy, in particular for energy generation (e.g. nuclear, fossil fuels, solar, biofuels).  As each group was tasked separately to come up with a scenario for a given radiative forcing, there can be considerable overlap in the socioeconomic assumptions of the scenarios, referred to as the shared socioeconomic pathway (SSP). For example, Fig. \ref{fig:rcp_gdp_pop} shows similarlity in the population growth projections of the first three RCPs (2.6, 4.5 and 6.0), with population asymptoting to around 9 billion, while RCP8.5 sees the population reaching 12 billion individuals, each with their own carbon footprint.</p>
+<p><img alt="esm_part4_rcp_pop_gdp.png" src="notebooks/attachment:esm_part4_rcp_pop_gdp.png" /></p>
+<p>The population growth leads to changes in land use change due to food requirements, and also for energy, resulting potential pathways for anthropogenic land cover change.  RCP2.6 has a low emissions scenario, but the natural vegetation cover change in Africa actually exceeds that in RCP8.5!</p>
+<p><img alt="esm_part4_rcp_landuse.png" src="notebooks/attachment:esm_part4_rcp_landuse.png" /></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="obtaining-cmip6-data">
+<h1>Obtaining CMIP6 data<a class="headerlink" href="#obtaining-cmip6-data" title="Permalink to this headline">¶</a></h1>
+<p>The official way to retrieve data is through the Earth System Grid (ESM), a system of mirror site nodes which host <strong>all</strong> the CMIP6 output. However, a subset of the main data is now available on the CDS which we know how to access using the webapi.  Details of the data available here <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#%21/dataset/projections-cmip6?tab=overview">https://cds.climate.copernicus.eu/cdsapp#!/dataset/projections-cmip6?tab=overview</a></p>
+<p>Hang on though, we are going too fast, before we get going let’s import all the other packages we need in one place here before we move on…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all the packages we will need for this lesson</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">cdsapi</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">netCDF4</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">num2date</span>
+<span class="kn">from</span> <span class="nn">cdo</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Right, now let’s get going… You can click on the link above to browse the CMIP6 data.  You will see that you are restricted unfortunately to downloading one model at a time with the web interface.  We will look at the near surface air temperature for the Noresm model, using monthly data.</p>
+<p>Selecting the data and click on the API window, you should see something like this code snippet below, but here we have altered it to a function, to which we can pass the model name  - this will be useful later if we want to compare several models. I have also edited the code to place the data in a different directory, you can run this directly but make sure you are in a scratch directory with at least 120MB of space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># python code for getting code</span>
+
+<span class="n">odir</span><span class="o">=</span><span class="s2">&quot;/Users/tompkins/junk/&quot;</span>
+<span class="c1">#odir=&quot;/scratch/tompkins/cmip&quot;</span>
+<span class="n">Path</span><span class="p">(</span><span class="n">odir</span><span class="p">)</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_var</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">exp</span><span class="p">):</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+    
+    <span class="c1"># This is where you want to put your output directory and file name</span>
+    <span class="n">ofile</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">exp</span><span class="o">+</span><span class="s2">&quot;.zip&quot;</span>
+
+    <span class="n">c</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+    <span class="s1">&#39;projections-cmip6&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;zip&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;temporal_resolution&#39;</span><span class="p">:</span> <span class="s1">&#39;monthly&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;experiment&#39;</span><span class="p">:</span> <span class="n">exp</span><span class="p">,</span>
+        <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;single_levels&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="n">var</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">ofile</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ofile</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s try it out </span>
+<span class="n">model</span><span class="o">=</span><span class="s1">&#39;noresm2_mm&#39;</span>
+<span class="n">var</span><span class="o">=</span><span class="s2">&quot;near_surface_air_temperature&quot;</span>
+<span class="n">exp</span><span class="o">=</span><span class="s1">&#39;ssp5_8_5&#39;</span>
+
+<span class="n">ofile</span><span class="o">=</span><span class="n">get_var</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-01-16 08:38:18,578 INFO Welcome to the CDS
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-01-16 08:38:18,579 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-01-16 08:38:18,677 INFO Request is queued
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">sh</span><span class="o">/</span><span class="n">kt3hqg9x639_js73vspx7ch40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41210</span><span class="o">/</span><span class="mf">2341920103.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">exp</span><span class="o">=</span><span class="s1">&#39;ssp5_8_5&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">ofile</span><span class="o">=</span><span class="n">get_var</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">exp</span><span class="p">)</span>
+
+<span class="nn">/var/folders/sh/kt3hqg9x639_js73vspx7ch40000gn/T/ipykernel_41210/3612222302.py</span> in <span class="ni">get_var</span><span class="nt">(model, var, exp)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">ofile</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">exp</span><span class="o">+</span><span class="s2">&quot;.zip&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+<span class="ne">---&gt; </span><span class="mi">14</span>     <span class="n">c</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="s1">&#39;projections-cmip6&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="p">{</span>
+
+<span class="nn">~/Library/Python/3.9/lib/python/site-packages/cdsapi/api.py</span> in <span class="ni">retrieve</span><span class="nt">(self, name, request, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span> 
+<span class="g g-Whitespace">    </span><span class="mi">347</span>     <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">348</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/resources/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">request</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>             <span class="n">result</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+<span class="nn">~/Library/Python/3.9/lib/python/site-packages/cdsapi/api.py</span> in <span class="ni">_api</span><span class="nt">(self, url, request, method)</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span> 
+<span class="g g-Whitespace">    </span><span class="mi">478</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Request ID is </span><span class="si">%s</span><span class="s2">, sleep </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">rid</span><span class="p">,</span> <span class="n">sleep</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">479</span>                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span>                 <span class="n">sleep</span> <span class="o">*=</span> <span class="mf">1.5</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>                 <span class="k">if</span> <span class="n">sleep</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep_max</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>now we need to unzip the files and then pass results to a variable as a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unzip file call to shell to detar and examine header</span>
+<span class="k">def</span> <span class="nf">unzip_cmip</span><span class="p">(</span><span class="n">ofile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;unzips the zip file and returns the contents list&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">ofile</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+        <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">odir</span><span class="p">)</span>
+        <span class="n">files</span><span class="o">=</span><span class="n">zip_ref</span><span class="o">.</span><span class="n">namelist</span><span class="p">()[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># keep only .nc files</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s try it out</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ofile was &quot;</span><span class="p">,</span><span class="n">ofile</span><span class="p">)</span>
+<span class="n">files</span><span class="o">=</span><span class="n">unzip_cmip</span><span class="p">(</span><span class="n">ofile</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That worked, so now let’s take a look at the header of one of the files (recall you can also do this using ncdump from the command line)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CDO from python to do some stats, fldmeans and means at start, and at end </span>
+<span class="n">ds</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">odir</span><span class="o">+</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">variables</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the key variable is called <strong>tas</strong></p>
+<div class="section" id="time-series-of-global-mean-temperatures">
+<h2>Time series of global mean temperatures.<a class="headerlink" href="#time-series-of-global-mean-temperatures" title="Permalink to this headline">¶</a></h2>
+<p>Now we are going to use cdo to make global means and spatial means of the climate data output</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_ts_yearmean</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;cdo based routine to make annual and fldmean, merging section files&quot;&quot;&quot;</span>
+    
+    <span class="c1"># set cdo to an incidence of Cdo(), you don&#39;t need to do this, but cdo.func is neater than Cdo().func</span>
+    <span class="n">cdo</span> <span class="o">=</span> <span class="n">Cdo</span><span class="p">()</span>
+
+    <span class="c1"># this illustrates one advantage of cdo within python, the ability to auto handle tmp files...</span>
+    <span class="n">mfile</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">mfile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cdo</span><span class="o">.</span><span class="n">fldmean</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="n">file</span><span class="p">))</span> <span class="c1"># look, no output :-) </span>
+    <span class="n">ofile</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="o">-</span><span class="mi">16</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;fldmean_yearmean.nc&quot;</span>
+    <span class="n">cdo</span><span class="o">.</span><span class="n">yearmean</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">cdo</span><span class="o">.</span><span class="n">mergetime</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">mfile</span><span class="p">),</span><span class="n">output</span><span class="o">=</span><span class="n">ofile</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="s2">&quot;-O &quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ofile</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s try it out </span>
+<span class="n">tsfile</span><span class="o">=</span><span class="n">make_ts_yearmean</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+
+<span class="c1"># check if the file is there:</span>
+<span class="n">annmean</span><span class="o">=</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">odir</span><span class="o">+</span><span class="s2">&quot;*fldmean_yearmean.nc&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annmean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>you should see a list with the file as the only string if everything has worked okay.  You   can open that file from the command line using <strong>ncview</strong> if you like (go on, give it a try!)… but let’s also plot it here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s try a plot</span>
+
+<span class="k">def</span> <span class="nf">plot_base</span><span class="p">(</span><span class="n">tsfile</span><span class="p">,</span><span class="n">var</span><span class="p">):</span>
+    <span class="n">ds</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">tsfile</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+    <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">year</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">num2date</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">,</span><span class="n">only_use_python_datetimes</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+    <span class="n">xvar</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">getncattr</span><span class="p">(</span><span class="s2">&quot;experiment_id&quot;</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">xvar</span><span class="o">.</span><span class="n">long_name</span><span class="o">+</span><span class="s2">&quot; (&quot;</span><span class="o">+</span><span class="n">xvar</span><span class="o">.</span><span class="n">units</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span><span class="n">xvar</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">getncattr</span><span class="p">(</span><span class="s2">&quot;source_id&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plot_base</span><span class="p">(</span><span class="n">tsfile</span><span class="p">,</span><span class="s2">&quot;tas&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What is the temperature increase globally over the century period?</p></li>
+<li><p>Does the temperature increase linearly, or are there signs of an accelerating trend?</p></li>
+<li><p>Is the trend constant or do you see decades where temperature is not increasing?</p></li>
+</ul>
+<p>Let’s make an intercomparison between different models now…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you cut and paste the model title note that you need to change &quot;-&quot; to &quot;_&quot; </span>
+<span class="n">models</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CanESM5&quot;</span><span class="p">,</span><span class="s2">&quot;MPI_ESM1_2_LR&quot;</span><span class="p">,</span><span class="s2">&quot;CMCC_CM2_SR5&quot;</span><span class="p">,</span><span class="s2">&quot;MIROC6&quot;</span><span class="p">,</span><span class="s2">&quot;NorESM2_MM&quot;</span><span class="p">,</span><span class="s2">&quot;HadGEM3_GC31_MM&quot;</span><span class="p">]</span>
+<span class="n">models</span><span class="o">=</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span> <span class="c1"># and convert to lower case too...</span>
+<span class="n">exp</span><span class="o">=</span><span class="s1">&#39;ssp5_8_5&#39;</span>
+
+<span class="c1"># process the files and make the timeseries</span>
+<span class="n">zipfiles</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+    <span class="n">zipfiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_var</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">exp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># commented out, zipfiles is defined in the previous cell - this was just a fudge</span>
+<span class="c1"># zipfiles=glob.glob(odir+&quot;*.zip&quot;)</span>
+<span class="n">tsfiles</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">zfile</span> <span class="ow">in</span> <span class="n">zipfiles</span><span class="p">:</span>
+    <span class="n">tsfiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_ts_yearmean</span><span class="p">(</span><span class="n">unzip_cmip</span><span class="p">(</span><span class="n">zfile</span><span class="p">)))</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we want to plot multiple models, we also need a function to add a line to an existing plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now let&#39;s make the plot </span>
+<span class="k">def</span> <span class="nf">plot_add</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">ax</span><span class="p">):</span>
+    <span class="n">ds</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+    <span class="n">dtime</span><span class="o">=</span><span class="n">num2date</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">units</span><span class="p">,</span><span class="n">only_use_python_datetimes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">year</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dtime</span><span class="p">]</span>
+    <span class="n">xvar</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span><span class="n">xvar</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">getncattr</span><span class="p">(</span><span class="s2">&quot;source_id&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now we will plot the randomly selected models</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;tas&quot;</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tsfiles</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plot_base</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">),</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plot_add</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">ax</span><span class="p">)</span>
+<span class="c1"># uncomment if you only want to 2100</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2100</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">287</span><span class="p">,</span><span class="mi">295</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Questions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Do all the models agree on the trend?</p></li>
+<li><p>Why do you think the models disagree on the temperature for 2015 at the start of the experiment?</p></li>
+<li><p>If you had to communicate the uncertainty to a decision maker what would you do?</p></li>
+</ul>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>For a single model and RCP8.5, Compare surface temperature to the near surface temperature - in which parameter are the changes largest, and try to explain why</p></li>
+<li><p>Get the TOA SW and LW net fluxes (start with one model, you can expand later) for the 4 main RCPs.</p></li>
+<li><p>Plot a series of the TOA net flux for all RCP</p></li>
+<li><p>Compare this to the RCP radiative forcing in the figure at the top of this notebook</p></li>
+<li><p>What are the similarities and what are the key differences?  Which is lowest the TOA flux imbalance or the forcing? Do you understand why?  tsfiles=[]
+for zfile in zipfiles:
+tsfiles.append(make_ts_yearmean(unzip_cmip(zfile)))</p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="toa-fluxes">
+<h1>TOA fluxes<a class="headerlink" href="#toa-fluxes" title="Permalink to this headline">¶</a></h1>
+<p>so once you have tried the exercise, let’s have a look at the TOA fluxes…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># so let&#39;s get the TOA fluxes now</span>
+<span class="n">models</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CanESM5&quot;</span><span class="p">,</span><span class="s2">&quot;CMCC-CM2-SR5&quot;</span><span class="p">,</span><span class="s2">&quot;MIROC6&quot;</span><span class="p">,</span><span class="s2">&quot;NorESM2-MM&quot;</span><span class="p">]</span>
+<span class="c1">#models=[s.lower() for s in models] # and convert to lower case too...</span>
+<span class="n">exp</span><span class="o">=</span><span class="s1">&#39;ssp585&#39;</span>
+
+<span class="n">varlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;toa_outgoing_shortwave_radiation&#39;</span><span class="p">,</span><span class="s1">&#39;toa_outgoing_longwave_radiation&#39;</span><span class="p">]</span>
+<span class="c1"># process the files and make the timeseries</span>
+<span class="n">zipfiles</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">varlist</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+        <span class="n">zipfiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_var</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">exp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:23:04,626 INFO Welcome to the CDS
+2021-05-27 12:23:04,627 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_shortwave_radiation CanESM5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:23:04,702 INFO Request is completed
+2021-05-27 12:23:04,703 INFO Downloading https://download-0003.copernicus-climate.eu/cache-compute-0003/cache/data2/adaptor.esgf_wps.retrieve-1622025371.8238087-32079-4-94713805-b40a-421f-a6d5-3cda65038591.zip to /Users/tompkins/junk/CanESM5_toa_outgoing_shortwave_radiation_ssp585.zip (90M)
+2021-05-27 12:23:32,727 INFO Download rate 3.2M/s   
+2021-05-27 12:23:32,838 INFO Welcome to the CDS
+2021-05-27 12:23:32,839 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:23:32,912 INFO Request is completed
+2021-05-27 12:23:32,913 INFO Downloading https://download-0004.copernicus-climate.eu/cache-compute-0004/cache/data8/adaptor.esgf_wps.retrieve-1622025847.8412232-26222-3-08af7eee-d460-425f-a1f2-65f38b50af59.zip to /Users/tompkins/junk/CanESM5_toa_outgoing_longwave_radiation_ssp585.zip (91.8M)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_longwave_radiation CanESM5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:24:03,254 INFO Download rate 3M/s     
+2021-05-27 12:24:03,359 INFO Welcome to the CDS
+2021-05-27 12:24:03,360 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:24:03,435 INFO Request is completed
+2021-05-27 12:24:03,436 INFO Downloading https://download-0004.copernicus-climate.eu/cache-compute-0004/cache/data0/adaptor.esgf_wps.retrieve-1622025831.9204278-26294-3-47302eda-9833-40c1-b394-70e35de12feb.zip to /Users/tompkins/junk/CMCC-CM2-SR5_toa_outgoing_shortwave_radiation_ssp585.zip (150.8M)
+  0%|          | 0.00/151M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_shortwave_radiation CMCC-CM2-SR5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:24:52,638 INFO Download rate 3.1M/s  
+2021-05-27 12:24:52,743 INFO Welcome to the CDS
+2021-05-27 12:24:52,743 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:24:52,825 INFO Request is completed
+2021-05-27 12:24:52,826 INFO Downloading https://download-0004.copernicus-climate.eu/cache-compute-0004/cache/data0/adaptor.esgf_wps.retrieve-1622025900.982731-26156-4-b695f373-8f09-4fdc-8ac3-65f33c0223b3.zip to /Users/tompkins/junk/CMCC-CM2-SR5_toa_outgoing_longwave_radiation_ssp585.zip (137.7M)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_longwave_radiation CMCC-CM2-SR5
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:25:30,609 INFO Download rate 3.6M/s  
+2021-05-27 12:25:30,710 INFO Welcome to the CDS
+2021-05-27 12:25:30,711 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:25:30,790 INFO Request is completed
+2021-05-27 12:25:30,791 INFO Downloading https://download-0004.copernicus-climate.eu/cache-compute-0004/cache/data8/adaptor.esgf_wps.retrieve-1622025932.0695705-26258-3-ffb32c43-d33e-4f10-9348-df9920c21e8b.zip to /Users/tompkins/junk/MIROC6_toa_outgoing_shortwave_radiation_ssp585.zip (88.9M)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_shortwave_radiation MIROC6
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:26:00,012 INFO Download rate 3M/s     
+2021-05-27 12:26:00,116 INFO Welcome to the CDS
+2021-05-27 12:26:00,117 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:26:00,190 INFO Request is completed
+2021-05-27 12:26:00,191 INFO Downloading https://download-0004.copernicus-climate.eu/cache-compute-0004/cache/data2/adaptor.esgf_wps.retrieve-1622025953.355772-26411-4-138bb488-ec3e-4969-b120-cafb74af0481.zip to /Users/tompkins/junk/MIROC6_toa_outgoing_longwave_radiation_ssp585.zip (82.3M)
+  0%|          | 0.00/82.3M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_longwave_radiation MIROC6
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:26:24,325 INFO Download rate 3.4M/s   
+2021-05-27 12:26:24,426 INFO Welcome to the CDS
+2021-05-27 12:26:24,427 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:26:24,503 INFO Request is completed
+2021-05-27 12:26:24,504 INFO Downloading https://download-0012.copernicus-climate.eu/cache-compute-0012/cache/data3/adaptor.esgf_wps.retrieve-1622025973.0386257-11520-4-6c09207c-3674-448f-9634-dd599b4f7e11.zip to /Users/tompkins/junk/NorESM2-MM_toa_outgoing_shortwave_radiation_ssp585.zip (149.1M)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_shortwave_radiation NorESM2-MM
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:27:09,789 INFO Download rate 3.3M/s  
+2021-05-27 12:27:09,903 INFO Welcome to the CDS
+2021-05-27 12:27:09,904 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2021-05-27 12:27:09,979 INFO Request is completed
+2021-05-27 12:27:09,980 INFO Downloading https://download-0003.copernicus-climate.eu/cache-compute-0003/cache/data2/adaptor.esgf_wps.retrieve-1622026000.032005-31926-13-c9df4dd7-e4d2-4b27-9e92-7f4eb6b17b7f.zip to /Users/tompkins/junk/NorESM2-MM_toa_outgoing_longwave_radiation_ssp585.zip (136.9M)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>toa_outgoing_longwave_radiation NorESM2-MM
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-05-27 12:28:00,100 INFO Download rate 2.7M/s  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we unzip and append to timeseries</span>
+<span class="n">zipfiles</span><span class="o">=</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">odir</span><span class="o">+</span><span class="s2">&quot;*radiation*.zip&quot;</span><span class="p">)</span> <span class="c1">### uncomment this if you didn&#39;t run the previous cell before</span>
+<span class="n">tsfiles</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">zfile</span> <span class="ow">in</span> <span class="n">zipfiles</span><span class="p">:</span>
+    <span class="n">tsfiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_ts_yearmean</span><span class="p">(</span><span class="n">unzip_cmip</span><span class="p">(</span><span class="n">zfile</span><span class="p">)))</span>
+ 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tsfiles</span><span class="p">)</span>
+
+<span class="c1"># set cdo to an incidence of Cdo(), you don&#39;t need to do this, but cdo.func is neater than Cdo().func</span>
+<span class="n">cdo</span> <span class="o">=</span> <span class="n">Cdo</span><span class="p">()</span>
+<span class="n">s0d4</span><span class="o">=</span><span class="mf">1361.</span><span class="o">/</span><span class="mf">4.</span>
+<span class="c1"># lets add the two together:</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">):</span>
+    <span class="n">f1</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="s2">&quot;rlut_Amon_&quot;</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s2">&quot;_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&quot;</span>
+    <span class="n">f2</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="s2">&quot;rsut_Amon_&quot;</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s2">&quot;_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&quot;</span>
+    <span class="n">tmpfile</span><span class="o">=</span><span class="n">cdo</span><span class="o">.</span><span class="n">addc</span><span class="p">(</span><span class="n">s0d4</span><span class="p">,</span><span class="nb">input</span><span class="o">=</span><span class="n">cdo</span><span class="o">.</span><span class="n">mulc</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">input</span><span class="o">=</span><span class="n">cdo</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="p">[</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">])))</span>
+    <span class="n">var</span><span class="o">=</span><span class="s2">&quot;rlut&quot;</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plot_base</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpfile</span><span class="p">),</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plot_add</span><span class="p">(</span><span class="n">tmpfile</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">ax</span><span class="p">)</span>
+<span class="c1"># uncomment if you only want to 2100</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">2000</span><span class="p">,</span><span class="mi">2100</span><span class="p">])</span>
+<span class="c1">#ax.set_ylim([287,295])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/tompkins/junk/rsut_Amon_MIROC6_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rsut_Amon_CanESM5_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rsut_Amon_NorESM2-MM_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rlut_Amon_CanESM5_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rlut_Amon_CMCC-CM2-SR5_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rsut_Amon_CMCC-CM2-SR5_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rlut_Amon_NorESM2-MM_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;, &#39;/Users/tompkins/junk/rlut_Amon_MIROC6_ssp585_r1i1p1f1_gn_fldmean_yearmean.nc&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-6-f1279e13b263&gt;:14: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  ax.plot(years,xvar[:,0,0],label=ds.getncattr(&quot;source_id&quot;))
+&lt;ipython-input-7-6ebd35fd2c45&gt;:8: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  ax.plot(years,xvar[:,0,0],label=ds.getncattr(&quot;source_id&quot;))
+&lt;ipython-input-7-6ebd35fd2c45&gt;:8: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  ax.plot(years,xvar[:,0,0],label=ds.getncattr(&quot;source_id&quot;))
+&lt;ipython-input-7-6ebd35fd2c45&gt;:8: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  ax.plot(years,xvar[:,0,0],label=ds.getncattr(&quot;source_id&quot;))
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x139fbdee0&gt;
+</pre></div>
+</div>
+<img alt="../_images/CMIP_IPCC_fun_36_3.png" src="../_images/CMIP_IPCC_fun_36_3.png" />
+</div>
+</div>
+<p>what do we see…</p>
+<ul class="simple">
+<li><p>is the radiative flux imbalance zero in 2015, if not why not?</p></li>
+<li><p>what happens to the flux imbalance over time, is it growing or shrinking and why ?</p></li>
+<li><p>is the rate of change linear or does it begin to slow down with some models, why do you think this is?</p></li>
+<li><p>Compare the flux imbalance in 2100 with the plot of the RCP radiative forcing, is it larger or smaller in magnitude?  Why is this?</p></li>
+</ul>
+<p>what have we learned today?  Well the change in TOA flux imbalance over time does not look like the nice linear plots of <span class="math notranslate nohighlight">\(\Delta F - \Delta T\)</span> that we saw in the hand out - THOSE were for an idealized experiment where CO2 was suddenly turned up in a pulse (doubled or quadrupled typically) - In that case you suddenly hit the model hard and then watch as it adjusts over time… the planet warms and the TOA flux imbalance is reduced until balance is restored at the new warmer equilibrum temperature.   Here, the CO2 is slowly turned up over time (along with other greenhouse gases), so why doesn’t the planet adjust (warm) and keep the fluxes close to balance.  Well that is the slow timescales for ocean heat uptake, the earth system just can’t keep up, especially for RCP8p5 and the imbalance grows in time - it is still less than the radiative forcing, since the temperature is adjusting, but not fast enough to prevent the imbalance from growing. Thus you can see that at any point in time, there is a lot of “latent warming” locked in…  The only way one could prevent that future warming from being realized if it one could remove CO2 from the atmosphere. Simply moving to carbon neutral is not enough, that locked in warming will occur until TOA balance is restored.</p>
+<p>Now tell me, that WAS fun wasn’t it?</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="class-assessment">
+<h1>Class assessment<a class="headerlink" href="#class-assessment" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Choose 8 models at random and 4 RCPs and plot global mean annual surface temperature rises from 2015 to 2100. What is the main cause of uncertainty in the first 30 years and what in the main cause of uncertainty in the last 30 years?  What other causes of uncertainty are there which should also be taken into account?</p></li>
+<li><p>Take 5 models that have contributed to BOTH CMIP5 and CMIP6 - plot global mean surface temperature changes for RCP8p5 for each model and both CMIP rounds…  Are the temperature changes identical, and if not explain why not? Are the differences between CMIP5 and CMIP6 for specific models larger or smaller than changes due to RCP or climate model?</p></li>
+<li><p>Make a map of the temperature changes for a thirty year period at the end of century minus preindustrial times… i.e. the average for 2070-2099 minus the average for 1850-1880 (you can choose the exact period to suit you and the model, as file chunk sizes differ according to the model, or use cdo seldate) - Where are the largest temperature changes found around the globe, explain the differences you find.</p></li>
+<li><p>With CMIP5 (unfortunately the TOA clear sky fields are not available yet for CMIP6) get the TOA all-sky and clear-sky fluxes. Take the difference to calculate the SW and LW cloud forcing (try with one model first, but you can also extend to 3 or 4 others later to see if it impacts the results).  Then make a map of the future minus past changes in cloud radiative forcing.  Try to interpret these in terms of the cloud types and changes - feel free to make reference to the literature when interpreting the changes you see.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="daisy_world.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Biogeophysical feedbacks: Daisy World</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Adrian Tompkins<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

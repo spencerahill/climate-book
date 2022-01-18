@@ -1,0 +1,8 @@
+format: jb-article
+root: intro
+sections:
+- file: content
+  sections:
+  - file: markdown
+  - file: notebooks/daisy_world.ipynb
+  
