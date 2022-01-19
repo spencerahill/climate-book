@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chapter 3: Climate feedbacks" href="../content3.html" />
+    <link rel="next" title="Radiative Equilibrium" href="radeq.html" />
     <link rel="prev" title="Chapter 2: Energy Balance and Forcing" href="../content2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -134,6 +134,21 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Insolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="radeq.html">
+     Radiative Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rce.html">
+     Radiative-Convective Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="orbital.html">
+     Orbital variations, insolation, and the ice ages
     </a>
    </li>
   </ul>
@@ -355,8 +370,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-class-exercises">
-     In-class exercises
+    <a class="reference internal nav-link" href="#exercises">
+     exercises
     </a>
    </li>
   </ul>
@@ -391,13 +406,12 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="insolation">
 <h1>Insolation<a class="headerlink" href="#insolation" title="Permalink to this headline">¶</a></h1>
-<p>This notebook is part of <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a> by <a class="reference external" href="http://www.atmos.albany.edu/facstaff/brose/index.html">Brian E. J. Rose</a>, University at Albany.</p>
+<p>This notebook is adapted from the excellent <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a> by <a class="reference external" href="http://www.atmos.albany.edu/facstaff/brose/index.html">Brian E. J. Rose</a>, University at Albany.  The notebook closely follows section 2.7 of Dennis L. Hartmann, “Global Physical Climatology”, Academic Press 1994.*</p>
 <hr class="docutils" />
 <p><a id='section1'></a></p>
 <div class="section" id="distribution-of-insolation">
 <h2>1. Distribution of insolation<a class="headerlink" href="#distribution-of-insolation" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
-<p><em>These notes closely follow section 2.7 of Dennis L. Hartmann, “Global Physical Climatology”, Academic Press 1994.</em></p>
 <p>The <strong>amount of solar radiation</strong> incident on the top of the atmosphere (what we call the “insolation”) depends on</p>
 <ul class="simple">
 <li><p>latitude</p></li>
@@ -408,7 +422,8 @@
 <div class="section" id="solar-zenith-angle">
 <h3>Solar zenith angle<a class="headerlink" href="#solar-zenith-angle" title="Permalink to this headline">¶</a></h3>
 <p>We define the <strong>solar zenith angle</strong> <span class="math notranslate nohighlight">\(\theta_s\)</span> as the angle between the local normal to Earth’s surface and a line between a point on Earth’s surface and the sun.</p>
-<img src='../images/Hartmann_Fig2.5.png'><p>From the above figure (reproduced from Hartmann’s book), the ratio of the shadow area to the surface area is equal to the cosine of the solar zenith angle.</p>
+<p><img alt="title" src="http://clima-dods.ictp.it/Users/tompkins/diploma/images/Hartmann_Fig2.5.png" /></p>
+<p>From the above figure (reproduced from Hartmann’s book), the ratio of the shadow area to the surface area is equal to the cosine of the solar zenith angle.</p>
 </div>
 <div class="section" id="instantaneous-solar-flux">
 <h3>Instantaneous solar flux<a class="headerlink" href="#instantaneous-solar-flux" title="Permalink to this headline">¶</a></h3>
@@ -428,15 +443,17 @@
 <div class="section" id="declination-angle">
 <h4>Declination angle<a class="headerlink" href="#declination-angle" title="Permalink to this headline">¶</a></h4>
 <p>The seasonal dependence can be expressed in terms of the <strong>declination angle</strong> of the sun: the latitude of the point on the surface of Earth directly under the sun at noon (denoted by <span class="math notranslate nohighlight">\(\delta\)</span>).</p>
-<p><span class="math notranslate nohighlight">\(\delta\)</span> currenly varies between +23.45º at northern summer solstice (June 21) to -23.45º at northern winter solstice (Dec. 21).</p>
+<p><span class="math notranslate nohighlight">\(\delta\)</span> currently varies between +23.45º at northern summer solstice (June 21) to -23.45º at northern winter solstice (Dec. 21), as seen in the following schematic from jones 1995.</p>
+<p><img alt="declination angle" src="http://energyprofessionalsymposium.com/img/1228/image037_2.gif" /></p>
 </div>
 <div class="section" id="hour-angle">
 <h4>Hour angle<a class="headerlink" href="#hour-angle" title="Permalink to this headline">¶</a></h4>
-<p>The <strong>hour angle</strong> <span class="math notranslate nohighlight">\(h\)</span> is defined as the longitude of the subsolar point relative to its position at noon.</p>
+<p>The <strong>hour angle</strong> <span class="math notranslate nohighlight">\(h\)</span> is defined as the longitude of the subsolar point relative to its position at noon, illustrated by the orange arrow in this diagram from Wikipedia</p>
+<p><img alt="hour angle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/HourAngle_Observer_en.png/300px-HourAngle_Observer_en.png" /></p>
 </div>
 <div class="section" id="formula-for-zenith-angle">
 <h4>Formula for zenith angle<a class="headerlink" href="#formula-for-zenith-angle" title="Permalink to this headline">¶</a></h4>
-<p>With these definitions and some spherical geometry (see Appendix A of Hartmann’s book), we can express the solar zenith angle for any latitude <span class="math notranslate nohighlight">\(\phi\)</span>, season, and time of day as</p>
+<p>With these definitions and some spherical geometry (see Appendix A of Hartmann’s book), we can express the solar zenith angle for any latitude <span class="math notranslate nohighlight">\(\phi\)</span>, declination angle <span class="math notranslate nohighlight">\(\delta\)</span> (i.e. season), and hour angle <span class="math notranslate nohighlight">\(h\)</span> (i.e. time of day) as</p>
 <div class="math notranslate nohighlight">
 \[ \cos \theta_s = \sin \phi \sin \delta + \cos\phi \cos\delta \cos h \]</div>
 </div>
@@ -477,7 +494,8 @@
 <p>The appropriate daily average here is weighted with respect to the insolation, rather than weighted by time. The formula is</p>
 <div class="math notranslate nohighlight">
 \[ \overline{\cos\theta_s}^{day} = \frac{\int_{-h_0}^{h_0} Q \cos\theta_s~dh}{\int_{-h_0}^{h_0} Q ~dh} \]</div>
-<img src='../images/Hartmann_Fig2.8.png'><p>The average zenith angle is much higher at the poles than in the tropics. This contributes to the very high surface albedos observed at high latitudes.</p>
+<p><img alt="figure" src="http://clima-dods.ictp.it/Users/tompkins/diploma/images/Hartmann_Fig2.8.png" /></p>
+<p>The average zenith angle is much higher at the poles than in the tropics. This contributes to the very high surface albedos observed at high latitudes.</p>
 <hr class="docutils" />
 <p><a id='section2'></a></p>
 </div>
@@ -646,16 +664,16 @@ daily_insolation(lat, day, orb={&#39;ecc&#39;: 0.017236, &#39;long_peri&#39;: 28
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Daily average insolation on March 21&#39;)
 </pre></div>
 </div>
-<img alt="../_images/insolation_32_1.png" src="../_images/insolation_32_1.png" />
+<img alt="../_images/insolation_31_1.png" src="../_images/insolation_31_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="in-class-exercises">
-<h3>In-class exercises<a class="headerlink" href="#in-class-exercises" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercises">
+<h3>exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
 <p>Try to answer the following questions <strong>before reading the rest of these notes</strong>.</p>
 <ul class="simple">
-<li><p>What is the daily insolation today here at Albany (latitude 42.65ºN)?</p></li>
-<li><p>What is the <strong>annual mean</strong> insolation at the latitude of Albany?</p></li>
+<li><p>What is the daily insolation today here at Trieste (latitude 45.65ºN)?</p></li>
+<li><p>What is the <strong>annual mean</strong> insolation at the latitude of Trieste?</p></li>
 <li><p>At what latitude and at what time of year does the <strong>maximum daily insolation</strong> occur?</p></li>
 <li><p>What latitude is experiencing either <strong>polar sunrise</strong> or <strong>polar sunset</strong> today?</p></li>
 </ul>
@@ -690,10 +708,10 @@ daily_insolation(lat, day, orb={&#39;ecc&#39;: 0.017236, &#39;long_peri&#39;: 28
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x14f0626a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x14ad2c820&gt;
 </pre></div>
 </div>
-<img alt="../_images/insolation_38_1.png" src="../_images/insolation_38_1.png" />
+<img alt="../_images/insolation_37_1.png" src="../_images/insolation_37_1.png" />
 </div>
 </div>
 <div class="section" id="time-and-space-averages">
@@ -729,7 +747,7 @@ daily_insolation(lat, day, orb={&#39;ecc&#39;: 0.017236, &#39;long_peri&#39;: 28
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/insolation_43_0.png" src="../_images/insolation_43_0.png" />
+<img alt="../_images/insolation_42_0.png" src="../_images/insolation_42_0.png" />
 </div>
 </div>
 </div>
@@ -777,10 +795,10 @@ daily_insolation(lat, day, orb={&#39;ecc&#39;: 0.017236, &#39;long_peri&#39;: 28
             <p class="prev-next-title">Chapter 2: Energy Balance and Forcing</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../content3.html" title="next page">
+    <a class='right-next' id="next-link" href="radeq.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 3: Climate feedbacks</p>
+        <p class="prev-next-title">Radiative Equilibrium</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

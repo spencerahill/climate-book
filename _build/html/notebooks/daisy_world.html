@@ -136,6 +136,21 @@
      Insolation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="radeq.html">
+     Radiative Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rce.html">
+     Radiative-Convective Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="orbital.html">
+     Orbital variations, insolation, and the ice ages
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -317,6 +332,8 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="biogeophysical-feedbacks-daisy-world">
 <h1>Biogeophysical feedbacks: Daisy World<a class="headerlink" href="#biogeophysical-feedbacks-daisy-world" title="Permalink to this headline">¶</a></h1>
+<p>Acknowledgements:
+Code is adapted from a python script by Andrew Bennett</p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Daisy world is a toy model of the planet designed to show how negative feedbacks with the biosphere can lead to a stable planet temperature over a wide range of solar luminosities. It was introduced by Watson and Lovelock (1983, Tellus B: Chemical and Physical Meteorology 35.4 (1983): 284-289., hereafter WL83) as an example of the Gaia theory, which proposed a solution to the weak young sun paradox. You are also referred to the excellent review paper, Wood et al. (2008), Rev. Geophys.,46, RG1001, doi:10.1029/2006RG000217, referred to W08 hereafter.</p>
@@ -324,10 +341,8 @@
 <p>In response to criticism to the theory, WL83 introduced daisy world. Quite simply, a planet is occupied by two species of daisy with different albedos (see figure above), but the same temperature response function where growth is maximized at a certain temperature (22.5C in the paper).  Black daisies are warmer than white due to their lower albedo.</p>
 <p>The model is simple, consisting of two ODEs that describe the evolution of the black and white daisies as a function of the temperature and three diagnostic equations that describe mean albedo of the planet, the resulting mean temperature assuming energy balance, and the local temperatures of the daisy patches, which are a function of the flower albedo.</p>
 <p>Before we start we need to import the modules we will need for the code, numpy and matplotlib for the graphics, and we define a few constants.</p>
-<p><img alt="Daisy world" src="https://personal.ems.psu.edu/~dmb53/Earth_System_Models/Daisyworld_files/Daisyworld_pict.jpg" />
-Acknowledgements:
-Daisyworld image from PSU, David Bice.
-Code was originally based on a python script by Andrew Bennett</p>
+<p><img alt="Daisy world" src="https://personal.ems.psu.edu/~dmb53/Earth_System_Models/Daisyworld_files/Daisyworld_pict.jpg" /></p>
+<p>Daisyworld image from PSU, David Bice.</p>
 </div>
 <div class="section" id="the-model">
 <h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
@@ -483,7 +498,7 @@ and similarly for the black daisies.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10ee40fa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x140ba8f70&gt;
 </pre></div>
 </div>
 <img alt="../_images/daisy_world_14_1.png" src="../_images/daisy_world_14_1.png" />

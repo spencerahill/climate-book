@@ -10,8 +10,9 @@ sections:
 - file: content2
   sections:
   - file: notebooks/insolation.ipynb
-#  - file: notebooks/rce.ipynb
-#  - file: notebooks/orbital.ipynb  
+  - file: notebooks/radeq.ipynb
+  - file: notebooks/rce.ipynb
+  - file: notebooks/orbital.ipynb  
 - file: content3
   sections:
   - file: notebooks/EBM_0D_ice_feedback.ipynb

@@ -138,7 +138,7 @@ def unzip_cmip(ofile):
         return(files)
 
 
-# In[ ]:
+# In[5]:
 
 
 # let's try it out
@@ -150,7 +150,7 @@ print(files)
 # That worked, so now let's take a look at the header of one of the files (recall you can also do this using ncdump from the command line)
 # 
 
-# In[ ]:
+# In[6]:
 
 
 # CDO from python to do some stats, fldmeans and means at start, and at end 
@@ -166,7 +166,7 @@ ds.variables
 # 
 # 
 
-# In[5]:
+# In[7]:
 
 
 def make_ts_yearmean(files):
@@ -184,7 +184,7 @@ def make_ts_yearmean(files):
     return ofile
 
 
-# In[ ]:
+# In[8]:
 
 
 # let's try it out 

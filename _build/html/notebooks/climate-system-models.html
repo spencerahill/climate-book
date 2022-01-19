@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -134,6 +132,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="insolation.html">
      Insolation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="radeq.html">
+     Radiative Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rce.html">
+     Radiative-Convective Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="orbital.html">
+     Orbital variations, insolation, and the ice ages
     </a>
    </li>
   </ul>
@@ -333,54 +346,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulation-versus-parameterization">
-   2. Simulation versus Parameterization
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definitions">
-     Definitions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parameterization">
-     Parameterization
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pro">
-       Pro
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#con">
-       Con
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation">
-     Simulation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Pro
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Con
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-taxonomy-of-climate-models">
-   3. A taxonomy of climate models
+   2. A taxonomy of climate models
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -426,23 +393,23 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#energy-balance-models-ebms">
-     1. Energy Balance Models (EBMs)
+    <a class="reference internal nav-link" href="#a-energy-balance-models-ebms">
+     a. Energy Balance Models (EBMs)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#radiative-convective-rc-or-single-column-models-scms">
-     2. Radiative-Convective (RC) or Single-Column models (SCMs)
+    <a class="reference internal nav-link" href="#b-radiative-convective-rc-or-single-column-models-scms">
+     b. Radiative-Convective (RC) or Single-Column models (SCMs)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dimensionally-constrained-models">
-     3. Dimensionally constrained models
+    <a class="reference internal nav-link" href="#c-dimensionally-constrained-models">
+     c. Dimensionally constrained models
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#global-circulation-models-gcms">
-     4. Global Circulation Models (GCMs)
+    <a class="reference internal nav-link" href="#d-global-circulation-models-gcms">
+     d. Global Circulation Models (GCMs)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -453,8 +420,8 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#earth-system-models">
-     5. Earth System Models
+    <a class="reference internal nav-link" href="#e-earth-system-models">
+     e. Earth System Models
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -466,7 +433,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introducing-the-gcm">
-   4. Introducing the GCM
+   3. Introducing the GCM
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -477,23 +444,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#evolving-complexity-of-gcms">
      Evolving complexity of GCMs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-hierarchy-of-complexity-for-ocean-models">
-     A hierarchy of complexity for ocean models
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-can-we-resolve-with-a-2o-atmosphere">
-   5. What can we resolve with a 2º atmosphere?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discussion-point">
-     Discussion point:
     </a>
    </li>
   </ul>
@@ -582,64 +532,14 @@
 e.g. growth and decay of ice sheets, geological processes like chemical weathering, continental drift</p>
 <p>The choice of which processes to include in a model should therefore be <strong>guided by the timescales of interest</strong>. For example, the IPCC process is primarily concerned with the century timescale – because it is of special concern to human affairs.
 So we don’t tend to include ice sheet and geological feedbacks – though coupled ice sheet modeling is becoming more important.</p>
-<img src="https://brian-rose.github.io/ClimateLaboratoryBook/images/Primer_Table1.8.png" width="800"><hr class="docutils" />
-<p><a id='section2'></a></p>
-</div>
-</div>
-<div class="section" id="simulation-versus-parameterization">
-<h2>2. Simulation versus Parameterization<a class="headerlink" href="#simulation-versus-parameterization" title="Permalink to this headline">¶</a></h2>
-<hr class="docutils" />
-<div class="section" id="definitions">
-<h3>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h3>
-<p>The <em>Climate Modelling Primer</em> (4th ed., page 124) defines <strong>parameterization</strong> as</p>
-<blockquote>
-<div><p>The process of capturing a physical process through some mathematical relationship between important parameters in the process, but without explicitly modeling all the actual processes. For example, the albedo of leaves might be related to the soil moisture (via some specification of wilting point) but the physical and biological mechanisms in the plant that happen when the leaf wilts are not modelled.</p>
-</div></blockquote>
-<p>An example from our own work so far: the <strong>greenhouse effect</strong>, which causes the OLR to be much lower than the surface emission, and the equilibrium temperature of the surface to be much warmer than it would otherwise be.</p>
-<p>In reality the greenhouse effect arises from the contributions of several different gases, at various levels, to the absorption and emission of longwave radiation. Key greenhouse species include water vapor and cloud droplets, which both strongly tied to the day-to-day variations in weather.</p>
-<p>How can we represent this in a climate model?</p>
-</div>
-<div class="section" id="parameterization">
-<h3>Parameterization<a class="headerlink" href="#parameterization" title="Permalink to this headline">¶</a></h3>
-<p>Represent the time-averaged, net effect of the complex radiative transfer process, and its coupling to day-to-day water and cloud variations, with an <strong>empirical relationship</strong>, e.g.</p>
-<div class="math notranslate nohighlight">
-\[ OLR = \tau \sigma T_s^4 \]</div>
-<p>Use observed temperature and OLR to choose an appropriate value for <span class="math notranslate nohighlight">\(\tau\)</span></p>
-<p>(this is what we have done so far)</p>
-<div class="section" id="pro">
-<h4>Pro<a class="headerlink" href="#pro" title="Permalink to this headline">¶</a></h4>
-<p>Simple to implement, easy to understand the result</p>
-</div>
-<div class="section" id="con">
-<h4>Con<a class="headerlink" href="#con" title="Permalink to this headline">¶</a></h4>
-<p>How might the value of <span class="math notranslate nohighlight">\(\tau\)</span> change with climate change? We have no way of knowing, and have to make assumptions.</p>
-</div>
-</div>
-<div class="section" id="simulation">
-<h3>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
-<p>Solve a large set of coupled equations for the time-dependent behavior of the atmosphere:</p>
-<ul class="simple">
-<li><p>Equations of radiative transfer, with detailed information about the various greenhouse gases</p></li>
-<li><p>Equations of fluid motion to predict growth and decay of weather system and movement of water vapor</p></li>
-<li><p>Cloud microphysics to predict the formation of cloud droplets and their optical properties</p></li>
-</ul>
-<p>This is essentially what goes on in a so-called GCM (General Circulation Model or Global Climate Model).</p>
-<div class="section" id="id1">
-<h4>Pro<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p>Model is based on real physical principles (e.g. Newton’s laws of motion, conservation of mass and energy). It is therefore more likely to remain valid under changing climate conditions.</p>
-</div>
-<div class="section" id="id2">
-<h4>Con<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p>Requires lots of computer resources. Must simulate the weather even though we really just want the climate (statistics of weather!)</p>
-<p>Essentially a <strong>simulation</strong> involves representing (at least some aspects of) the underlying rules that govern the process. <em>There is a chain of causality linking input to output</em>.</p>
+<img src="http://clima-dods.ictp.it/Users/tompkins/diploma/images/Primer_Table1.8.png" width="800"><p>Essentially a <strong>simulation</strong> involves representing (at least some aspects of) the underlying rules that govern the process. <em>There is a chain of causality linking input to output</em>.</p>
 <p><strong>Parameterization</strong> involves making assumptions about the <strong>statistical properties</strong> of the process – so we can calculate some relevant statistical properties of the output given the input, without needing to explicitly model the actual events.</p>
 <hr class="docutils" />
 <p><a id='section3'></a></p>
 </div>
 </div>
-</div>
 <div class="section" id="a-taxonomy-of-climate-models">
-<h2>3. A taxonomy of climate models<a class="headerlink" href="#a-taxonomy-of-climate-models" title="Permalink to this headline">¶</a></h2>
+<h2>2. A taxonomy of climate models<a class="headerlink" href="#a-taxonomy-of-climate-models" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <div class="section" id="key-components-of-a-climate-model">
 <h3>Key components of a climate model<a class="headerlink" href="#key-components-of-a-climate-model" title="Permalink to this headline">¶</a></h3>
@@ -667,34 +567,33 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 <div class="section" id="the-climate-modeling-pyramid">
 <h3>The climate modeling pyramid<a class="headerlink" href="#the-climate-modeling-pyramid" title="Permalink to this headline">¶</a></h3>
 <p>The edges represent the basic elements of the models, with <strong>complexity increasing upwards</strong>. Around the base of the pyramid are the simpler climate models, which incorporate only one primary process.</p>
-<img src='https://brian-rose.github.io/ClimateLaboratoryBook/images/Primer_Figure2.2.png' width="800"></div>
+<img src='http://clima-dods.ictp.it/Users/tompkins/diploma/images/Primer_Figure2.2.png' width="800">
+</div>
 <div class="section" id="five-basic-types-of-climate-model">
 <h3>Five basic types of climate model<a class="headerlink" href="#five-basic-types-of-climate-model" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Energy Balance Models (EBMs)</p></li>
-<li><p>Radiative-Convective (RC) or Single-Column models (SCMs)</p></li>
-<li><p>“Dimensionally Constrained” models</p></li>
-<li><p>Global Circulation Models (GCMs)</p></li>
-<li><p>Earth System Models (ESMs)</p></li>
-</ol>
+<p>a. Energy Balance Models (EBMs)
+b. Radiative-Convective (RC) or Single-Column models (SCMs)
+c. “Dimensionally Constrained” models
+d. Global Circulation Models (GCMs)
+e. Earth System Models (ESMs)</p>
 <p>The vertical axis in the pyramid figures shows increasing complexity BOTH in terms of number of processes included and linked together, AND increasing resolution in space and time.</p>
 </div>
-<div class="section" id="energy-balance-models-ebms">
-<h3>1. Energy Balance Models (EBMs)<a class="headerlink" href="#energy-balance-models-ebms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-energy-balance-models-ebms">
+<h3>a. Energy Balance Models (EBMs)<a class="headerlink" href="#a-energy-balance-models-ebms" title="Permalink to this headline">¶</a></h3>
 <p>Zero- or one-dimensional models predicting the surface (strictly the sea-level) temperature as a function of the energy balance of the Earth.</p>
 <p>Simplified relationships are used to calculate the terms contributing to the energy balance in each latitude zone in the one-dimensional case.</p>
 <p><em>How might we extend our zero-dimensional model to include a latitude dimension? What new kinds of processes might we have to include?</em></p>
 </div>
-<div class="section" id="radiative-convective-rc-or-single-column-models-scms">
-<h3>2. Radiative-Convective (RC) or Single-Column models (SCMs)<a class="headerlink" href="#radiative-convective-rc-or-single-column-models-scms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="b-radiative-convective-rc-or-single-column-models-scms">
+<h3>b. Radiative-Convective (RC) or Single-Column models (SCMs)<a class="headerlink" href="#b-radiative-convective-rc-or-single-column-models-scms" title="Permalink to this headline">¶</a></h3>
 <p>Focus on processes in the <strong>vertical column</strong>.</p>
 <ul class="simple">
 <li><p>RC models compute the (usually global average) temperature profile by explicit modelling of <strong>radiation</strong> and <strong>convection</strong> processes, which together determine the *lapse rate.</p></li>
 <li><p>SCMs are single columns ‘extracted’ from a three-dimensional model and include all the processes that would be modelled in the three-dimensional version but without any of the horizontal energy transfers.</p></li>
 </ul>
 </div>
-<div class="section" id="dimensionally-constrained-models">
-<h3>3. Dimensionally constrained models<a class="headerlink" href="#dimensionally-constrained-models" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="c-dimensionally-constrained-models">
+<h3>c. Dimensionally constrained models<a class="headerlink" href="#c-dimensionally-constrained-models" title="Permalink to this headline">¶</a></h3>
 <p>Include the following:</p>
 <ul class="simple">
 <li><p>Statistical-Dynamical (SD) models, deal explicitly with surface processes and dynamics in a zonal average (average around latitude circles) framework and have a vertically resolved atmosphere.</p></li>
@@ -702,8 +601,8 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 <li><p>Integrated Assessment Models (IAMs) couple the climate system to models of economic activity to more fully assess the impact of particular policy choices affective emissions.</p></li>
 </ul>
 </div>
-<div class="section" id="global-circulation-models-gcms">
-<h3>4. Global Circulation Models (GCMs)<a class="headerlink" href="#global-circulation-models-gcms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="d-global-circulation-models-gcms">
+<h3>d. Global Circulation Models (GCMs)<a class="headerlink" href="#d-global-circulation-models-gcms" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>three-dimensional nature</strong> of the atmosphere and ocean is incorporated.</p>
 <p>These models can exists as <em>fully coupled ocean-atmosphere models</em> or, for testing and evaluation, as independent ocean or atmospheric circulation models.</p>
 <p>These models attempt to simulate as many processes as possible and produce a three-dimensional picture of the time evolution of the state of the whole climate system.</p>
@@ -721,8 +620,8 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 <p>As the pyramid is ascended, more processes are integrated to develop a coupled ocean-atmosphere global model, which might be denoted <strong>AOGCM</strong> or <strong>CGCM</strong>.</p>
 </div>
 </div>
-<div class="section" id="earth-system-models">
-<h3>5. Earth System Models<a class="headerlink" href="#earth-system-models" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="e-earth-system-models">
+<h3>e. Earth System Models<a class="headerlink" href="#e-earth-system-models" title="Permalink to this headline">¶</a></h3>
 <p>Ascending the pyramid even more and moving forward in climate modeling history, more processes that used to be fixed come to be incorporated into GCMs and the coupling becomes more complete: e.g. changes in biomes and vegetation, chemical changes in atmosphere, ocean and soil.</p>
 <p>Such models are now generally known as <strong>Earth System Models</strong>.</p>
 <p>For brevity we use the generic term GCM to mean any complex three-dimensional model of the atmosphere and ocean and possibly other components, used for climate simulation. We will be more precise where necessary.</p>
@@ -736,21 +635,21 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 </div>
 </div>
 <div class="section" id="introducing-the-gcm">
-<h2>4. Introducing the GCM<a class="headerlink" href="#introducing-the-gcm" title="Permalink to this headline">¶</a></h2>
+<h2>3. Introducing the GCM<a class="headerlink" href="#introducing-the-gcm" title="Permalink to this headline">¶</a></h2>
 <hr class="docutils" />
 <div class="section" id="ingredients-of-the-gcm">
 <h3>Ingredients of the GCM<a class="headerlink" href="#ingredients-of-the-gcm" title="Permalink to this headline">¶</a></h3>
 <p>The aim of the GCM is the calculation of the <strong>full three-dimensional character</strong> of the atmosphere and ocean.</p>
-<p>To <strong>simulate</strong> the fluid flow and its effects on other components of the climate system, instead of <strong>parameterizing</strong> the flow.</p>
+<p>To <strong>simulate</strong> the fluid flow and its effects on other components of the climate system.</p>
 <p>This requires the solution of a series of equations governing the motion of fluids</p>
 <ul class="simple">
-<li><p>Conservation of energy</p></li>
 <li><p>Conservation of momentum, Newton’s 2nd law of motion (F=ma) for a moving fluid</p></li>
+<li><p>Conservation of energy</p></li>
 <li><p>Conservation of mass, for the fluid itself (air or water) as well as any quantities carried by the fluid (e.g. water vapor in the atmosphere, salt in the ocean)</p></li>
 <li><p>Equation of state, linking thermodynamic properties of the fluid (e.g. ideal gas law for atmosphere)</p></li>
 <li><p>Also, equations for the formation of clouds, sea ice, etc.</p></li>
 </ul>
-<p>Atmospheric Science students will recognize this list - the so-called “governing equations” for the atmosphere.</p>
+<p>These are the so-called “governing equations” for the atmosphere, which will be introduced in more detail in the hand out.</p>
 <p>These equations are the basis of <em>numerical weather prediction</em> as well as climate modeling.</p>
 <p>The physical laws are expressed in terms of <strong>differential equations</strong>.</p>
 <p>Just as we saw with the zero-dimensional EBM, we need to approximate the derivatives in order to represent them on a computer.</p>
@@ -774,48 +673,6 @@ So we don’t tend to include ice sheet and geological feedbacks – though coup
 <div><p>Figure 1.14 | Horizontal resolutions considered in today’s higher resolution models and in the very high resolution models now being tested: (a) Illustration of the European topography at a resolution of 87.5 × 87.5 km; (b) same as (a) but for a resolution of 30.0 × 30.0 km.</p>
 </div></blockquote>
 </div>
-<div class="section" id="a-hierarchy-of-complexity-for-ocean-models">
-<h3>A hierarchy of complexity for ocean models<a class="headerlink" href="#a-hierarchy-of-complexity-for-ocean-models" title="Permalink to this headline">¶</a></h3>
-<img src="http://www.atmos.albany.edu/facstaff/brose/classes/ENV415_Spring2018/images/Primer_Figure2.9.png" width="800" alt="Figure 2.9: ocean model hierarchy"><p>One goal of all this complexity is to do <strong>more simulation</strong> and <strong>less parameterization</strong> in order to get a more accurate prediction of climate change.</p>
-<p>In terms of our simple view of planetary energy budget, <strong>we are trying to represent the net climate feedback parameter <span class="math notranslate nohighlight">\(\lambda\)</span> correctly</strong>, and so get the correct climate sensitivity.</p>
-<p>Ideally this means basing the model on <strong>laws of physics and chemistry</strong>.</p>
-<p>However it doesn’t always work this way. In many cases we know that a feedback operates in nature, but we can’t represent it in terms of first principles.</p>
-<p>Land surface processes are a good example.</p>
-<p>Exchanges of energy, water and carbon between the land and atmosphere are biologically mediated. We must (to a certain extent) rely on empirical relationships. A bit like economic modeling.</p>
-<p>We also must deal with interaction across spatial scales.</p>
-<p>E.g. cumulus convection and vertical transport of heat and water vapor</p>
-<hr class="docutils" />
-<p><a id='section5'></a></p>
-</div>
-</div>
-<div class="section" id="what-can-we-resolve-with-a-2o-atmosphere">
-<h2>5. What can we resolve with a 2º atmosphere?<a class="headerlink" href="#what-can-we-resolve-with-a-2o-atmosphere" title="Permalink to this headline">¶</a></h2>
-<hr class="docutils" />
-<p>The following animation shows contours of sea level pressure in the control simulation. It is based on 6-hourly output from the numerical model.</p>
-<p>The atmosphere is simulated with a 2º finite volume dynamical core.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;As85L34fKYQ&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/As85L34fKYQ"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
-<div class="section" id="discussion-point">
-<h3>Discussion point:<a class="headerlink" href="#discussion-point" title="Permalink to this headline">¶</a></h3>
-<p>How well does this represent the true general circulation of the atmosphere?</p>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="citation-information">
@@ -832,7 +689,7 @@ The report and images can be found online at <a class="reference external" href=
 <hr class="docutils" />
 <div class="section" id="credits">
 <h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
-<p>This notebook is part of <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a>, an open-source textbook developed and maintained by <a class="reference external" href="http://www.atmos.albany.edu/facstaff/brose/index.html">Brian E. J. Rose</a>, University at Albany.</p>
+<p>This notebook adapted from the excellent <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a>, an open-source textbook developed and maintained by <a class="reference external" href="http://www.atmos.albany.edu/facstaff/brose/index.html">Brian E. J. Rose</a>, University at Albany.</p>
 <p>It is licensed for free and open consumption under the
 <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license.</p>
 <p>Development of these notes and the <a class="reference external" href="https://github.com/brian-rose/climlab">climlab software</a> is partially supported by the National Science Foundation under award AGS-1455071 to Brian Rose. Any opinions, findings, conclusions or recommendations expressed here are mine and do not necessarily reflect the views of the National Science Foundation.</p>

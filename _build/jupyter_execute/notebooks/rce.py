@@ -19,7 +19,6 @@
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 import numpy as np
-import climlab
 import matplotlib.pyplot as plt
 import xarray as xr
 from metpy.plots import SkewT
@@ -125,7 +124,7 @@ skew.ax.set_title('Pure radiative equilibrium', fontsize=18);
 
 # Here is some code to put this model together in `climlab`:
 
-# In[ ]:
+# In[2]:
 
 
 #  Make a model on same vertical domain as the GCM
@@ -147,7 +146,7 @@ conv = climlab.convection.ConvectiveAdjustment(name='Convection',
 rcm = climlab.couple([rad, conv], name='Radiative-Convective Model')
 
 
-# In[6]:
+# In[3]:
 
 
 print(rcm)
@@ -167,7 +166,7 @@ print(rcm)
 # 
 # *The code below is complicated but it is mostly for generating the animation. Focus on the results, not the code here.*
 
-# In[2]:
+# In[4]:
 
 
 #  Some imports needed to make and display animations
@@ -242,7 +241,7 @@ def animate(day, model, lines):
 
 # We are going to start from an **isothermal** initial state, and let the model drift toward equilibrium.
 
-# In[3]:
+# In[5]:
 
 
 #  Start from isothermal state
@@ -263,7 +262,7 @@ fig, lines = initial_figure(rcm)
 
 # Now let's look at how the model actually adjusts:
 
-# In[1]:
+# In[6]:
 
 
 #  This is where we make a loop over many timesteps and create an animation in the notebook

@@ -136,6 +136,21 @@
      Insolation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="radeq.html">
+     Radiative Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rce.html">
+     Radiative-Convective Equilibrium
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="orbital.html">
+     Orbital variations, insolation, and the ice ages
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -279,6 +294,23 @@
    climate model equation set
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homework-exercise-part-1">
+   HOMEWORK EXERCISE, part 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#homework-exercise-part-2">
+   HOMEWORK EXERCISE PART 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-note">
+     FINAL NOTE:
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -304,10 +336,7 @@
 <li><p>water balance equation</p></li>
 </ul>
 <p>The key equations of motion are an expression of Newton’s second law <span class="math notranslate nohighlight">\(F=ma\)</span>, where the acceleration is due to the sum of the following forces:</p>
-<p>$\frac{D{\bf u}}{Dt} = \frac{d {\bf u}}{dt} + {\bf u}.\nabla {\bf u} = -\frac{1}{\rho}\Delta p - f{\bf k} \times {\bf u}</p>
-<ul class="simple">
-<li><p>g {\bf k} + F$</p></li>
-</ul>
+<p><span class="math notranslate nohighlight">\(\frac{D{\bf u}}{Dt} = \frac{d {\bf u}}{dt} + {\bf u}.\nabla {\bf u} = -\frac{1}{\rho}\Delta p - f{\bf k} \times {\bf u}-g{\bf k} + F\)</span></p>
 <p>where <span class="math notranslate nohighlight">\({\bf u}\)</span> is the motion vector, <span class="math notranslate nohighlight">\(\rho\)</span> density, <span class="math notranslate nohighlight">\(p\)</span> pressure, <span class="math notranslate nohighlight">\(f\)</span>
 Coriolis force due to the Earth’s rotation, <span class="math notranslate nohighlight">\(g\)</span>
 gravity and <span class="math notranslate nohighlight">\(F\)</span> frictional forces. Here the terms on the RHS represent, respectively, the force due to pressure gradients, the Coriolis force resulting from the rotation of the planet, the force due to gravity which acts in the vertical, and lastly the frictional forces represented by <span class="math notranslate nohighlight">\(F\)</span>.</p>
@@ -319,9 +348,12 @@ the rate of change moving with the flow
 <span class="math notranslate nohighlight">\(p=\rho R T\)</span></p>
 <p>Thermodynamic equation:
 <span class="math notranslate nohighlight">\(dQ = c_p dT - v dp\)</span></p>
-<p>Mass continuity:</p>
-<p><span class="math notranslate nohighlight">\(\frac{D\rho}{Dt}=-\rho \nabla.{\bf u}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\frac{Dq}{Dt}= \frac{dq}{dt}+u\frac{dq}{dx}=S=0\)</span></p>
+<p>Mass continuity:
+<span class="math notranslate nohighlight">\(\frac{D\rho}{Dt}=-\rho \nabla.{\bf u}\)</span></p>
+<p>Then there is the water conservation equation for each species <span class="math notranslate nohighlight">\(q_i\)</span>, which balances advection and diffusion <span class="math notranslate nohighlight">\(D\)</span> with sources and sinks (e.g. surface fluxes, conversion between categories (solid, liquid, vapour):</p>
+<p><span class="math notranslate nohighlight">\(\frac{Dq}{Dt}= \frac{dq}{dt}+u\frac{dq}{dx} + D + S = 0 \)</span></p>
+<p>In this lesson, let’s try to use the methods to discretize a simplified version of this where we will assume <span class="math notranslate nohighlight">\(D=S=0\)</span>.</p>
+<p>First of all, we need to import the packages needed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
@@ -330,6 +362,7 @@ the rate of change moving with the flow
 </div>
 </div>
 </div>
+<p>Now let’s see up a grid and define the parameters of the model. For simplicity we are going to assume a constant velocity.  We will define the profile to be a sinewave:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parameter</span>
@@ -377,6 +410,7 @@ the rate of change moving with the flow
 <p><span class="math notranslate nohighlight">\(\frac{q_{t+1,i}-q_{t,i}}{\Delta t} + u \frac{q_{t,i+1}-q_{t,i-1}}{2 \Delta x}=0\)</span></p>
 <p>giving us an expression for the future value</p>
 <p><span class="math notranslate nohighlight">\(q_{t+1,i} = q_{t,i} - u\Delta t \frac{q_{t,i+1}-q_{t,i-1}}{2 \Delta x}\)</span></p>
+<p>Instead the “true” solution is known, since we can simply “rotate” the original solution to the right.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nsteps</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
@@ -390,7 +424,7 @@ the rate of change moving with the flow
     <span class="n">qtrue</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">qinit</span><span class="p">,</span><span class="nb">int</span><span class="p">((</span><span class="n">it</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="o">*</span><span class="n">uvel</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;this is the title&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Simple Advection Test&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpt</span><span class="p">,</span><span class="n">qinit</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Initial&quot;</span><span class="p">)</span>       
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpt</span><span class="p">,</span><span class="n">q1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Final&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpt</span><span class="p">,</span><span class="n">qtrue</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
@@ -401,33 +435,26 @@ the rate of change moving with the flow
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/advection_6_0.png" src="../_images/advection_6_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xtest</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">xtest</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</pre></div>
+<img alt="../_images/advection_7_0.png" src="../_images/advection_7_0.png" />
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">xtest</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+<div class="section" id="homework-exercise-part-1">
+<h2>HOMEWORK EXERCISE, part 1<a class="headerlink" href="#homework-exercise-part-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Make a calculation of the root mean square error between the numerical solution and the true solution, and see how it changes as a function of time</p></li>
+<li><p>Repeat the exercise with the timestep doubled and then quadrupled.</p></li>
+<li><p>Repeat the exercise with the timestep doubled and then quadrupled.</p></li>
+<li><p>what happens to the solution if you set dt&gt;1second with dx=1m?</p></li>
+</ul>
+<p>A semi-Langrangian approach to the advection program works similarly to the “true solution”, in that the solution at any point is derived from the upstream value (i.e. the value at the departure point <span class="math notranslate nohighlight">\(x_i=x-u\Delta t \)</span>. If <span class="math notranslate nohighlight">\(u\Delta t \)</span> is non-integer, this departure point does not fall directly on a grid value, but lies somewhere between two gridcells. Thus some form of interpolation is required to get the value of <span class="math notranslate nohighlight">\(q\)</span> at the departure point.  This method is widely used in numerical models since it is absolutely stable.  Methods differ through their approaches of estimating the departure point value.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
-</pre></div>
-</div>
-</div>
+<div class="section" id="homework-exercise-part-2">
+<h2>HOMEWORK EXERCISE PART 2<a class="headerlink" href="#homework-exercise-part-2" title="Permalink to this headline">¶</a></h2>
+<p>write a simple semi-Langrangian advection scheme where the upstream departure value is calculated using simple bilinear interpolation between the neighboring cells.  Show the resulting solution for timesteps of 0.35, 0.85, 1.55 and 5.55 seconds.  What do you notice about the accuracy of the solution (as measured by the RMSE compared to the true solution) as the timestep increases?  *note that the true solution will be very slightly inaccurate as the roll function rotates the original array by an integer number of cells.</p>
+<div class="section" id="final-note">
+<h3>FINAL NOTE:<a class="headerlink" href="#final-note" title="Permalink to this headline">¶</a></h3>
+<p>This example is a key methodology that you should learn to use throughout your research life… Often we have an equation or a piece of code that performs an analysis, and we don’t know what the solution should be exactly, even though we might have an idea of what it should look like roughly perhaps… The solution looks okay, but is it correct?  Well even if it looks okay, you should ALWAYS try to think of a test where you know <em>exactly</em> what the solution is, and that way you can be fairly sure the code is working correctly (yes, there can be issues or glitches which are not caught by the test though).  You will not believe how many subtle (and not so subtle!) coding issues I’ve caught through the years by performing these kinds of tests…</p>
 </div>
 </div>
 </div>

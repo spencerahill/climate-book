@@ -3,6 +3,9 @@
 
 # # Biogeophysical feedbacks: Daisy World
 # 
+# Acknowledgements:
+# Code is adapted from a python script by Andrew Bennett
+# 
 # ## Introduction
 # 
 # Daisy world is a toy model of the planet designed to show how negative feedbacks with the biosphere can lead to a stable planet temperature over a wide range of solar luminosities. It was introduced by Watson and Lovelock (1983, Tellus B: Chemical and Physical Meteorology 35.4 (1983): 284-289., hereafter WL83) as an example of the Gaia theory, which proposed a solution to the weak young sun paradox. You are also referred to the excellent review paper, Wood et al. (2008), Rev. Geophys.,46, RG1001, doi:10.1029/2006RG000217, referred to W08 hereafter.
@@ -16,10 +19,8 @@
 # Before we start we need to import the modules we will need for the code, numpy and matplotlib for the graphics, and we define a few constants.
 
 # ![Daisy world](https://personal.ems.psu.edu/~dmb53/Earth_System_Models/Daisyworld_files/Daisyworld_pict.jpg)
-# Acknowledgements:
-# Daisyworld image from PSU, David Bice.
-# Code was originally based on a python script by Andrew Bennett
 # 
+# Daisyworld image from PSU, David Bice.
 
 # ## The model
 # The model is simple, consisting of two ODEs that describe the evolution of the black and white daisies as a function of the temperature and three diagnostic equations that describe mean albedo of the planet, the resulting mean temperature assuming energy balance, and the local temperatures of the daisy patches, which are a function of the flower albedo.

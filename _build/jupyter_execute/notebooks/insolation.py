@@ -3,16 +3,13 @@
 
 # # Insolation
 # 
-# This notebook is part of [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook) by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.
+# This notebook is adapted from the excellent [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook) by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.  The notebook closely follows section 2.7 of Dennis L. Hartmann, "Global Physical Climatology", Academic Press 1994.* 
 
 # ____________
 # <a id='section1'></a>
 # 
 # ## 1. Distribution of insolation
 # ____________
-# 
-
-# *These notes closely follow section 2.7 of Dennis L. Hartmann, "Global Physical Climatology", Academic Press 1994.*
 # 
 
 # The **amount of solar radiation** incident on the top of the atmosphere (what we call the "insolation") depends on
@@ -27,7 +24,7 @@
 # 
 # We define the **solar zenith angle** $\theta_s$ as the angle between the local normal to Earth's surface and a line between a point on Earth's surface and the sun.
 
-# <img src='../images/Hartmann_Fig2.5.png'>
+# ![title](http://clima-dods.ictp.it/Users/tompkins/diploma/images/Hartmann_Fig2.5.png)
 
 # From the above figure (reproduced from Hartmann's book), the ratio of the shadow area to the surface area is equal to the cosine of the solar zenith angle.
 
@@ -51,14 +48,20 @@
 # #### Declination angle
 # The seasonal dependence can be expressed in terms of the **declination angle** of the sun: the latitude of the point on the surface of Earth directly under the sun at noon (denoted by $\delta$).
 # 
-# $\delta$ currenly varies between +23.45º at northern summer solstice (June 21) to -23.45º at northern winter solstice (Dec. 21).
+# $\delta$ currently varies between +23.45º at northern summer solstice (June 21) to -23.45º at northern winter solstice (Dec. 21), as seen in the following schematic from jones 1995.
+# 
+# ![declination angle](http://energyprofessionalsymposium.com/img/1228/image037_2.gif)
 
 # #### Hour angle
 # 
-# The **hour angle** $h$ is defined as the longitude of the subsolar point relative to its position at noon.
+# The **hour angle** $h$ is defined as the longitude of the subsolar point relative to its position at noon, illustrated by the orange arrow in this diagram from Wikipedia 
+# 
+# ![hour angle](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/HourAngle_Observer_en.png/300px-HourAngle_Observer_en.png)
+# 
+# 
 
 # #### Formula for zenith angle
-# With these definitions and some spherical geometry (see Appendix A of Hartmann's book), we can express the solar zenith angle for any latitude $\phi$, season, and time of day as
+# With these definitions and some spherical geometry (see Appendix A of Hartmann's book), we can express the solar zenith angle for any latitude $\phi$, declination angle $\delta$ (i.e. season), and hour angle $h$ (i.e. time of day) as
 # 
 # $$ \cos \theta_s = \sin \phi \sin \delta + \cos\phi \cos\delta \cos h $$
 
@@ -108,7 +111,7 @@
 # 
 # $$ \overline{\cos\theta_s}^{day} = \frac{\int_{-h_0}^{h_0} Q \cos\theta_s~dh}{\int_{-h_0}^{h_0} Q ~dh} $$
 
-# <img src='../images/Hartmann_Fig2.8.png'>
+# ![figure](http://clima-dods.ictp.it/Users/tompkins/diploma/images/Hartmann_Fig2.8.png)
 
 # The average zenith angle is much higher at the poles than in the tropics. This contributes to the very high surface albedos observed at high latitudes.
 
@@ -192,12 +195,12 @@ ax.grid()
 ax.set_title('Daily average insolation on March 21')
 
 
-# ### In-class exercises
+# ### exercises
 # 
 # Try to answer the following questions **before reading the rest of these notes**.
 # 
-# - What is the daily insolation today here at Albany (latitude 42.65ºN)?
-# - What is the **annual mean** insolation at the latitude of Albany?
+# - What is the daily insolation today here at Trieste (latitude 45.65ºN)?
+# - What is the **annual mean** insolation at the latitude of Trieste?
 # - At what latitude and at what time of year does the **maximum daily insolation** occur?
 # - What latitude is experiencing either **polar sunrise** or **polar sunset** today?
 

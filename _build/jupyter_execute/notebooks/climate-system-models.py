@@ -58,60 +58,7 @@
 # So we don’t tend to include ice sheet and geological feedbacks – though coupled ice sheet modeling is becoming more important.
 # 
 
-# <img src="https://brian-rose.github.io/ClimateLaboratoryBook/images/Primer_Table1.8.png" width="800">
-
-# ____________
-# <a id='section2'></a>
-# ## 2. Simulation versus Parameterization
-# ____________
-
-# ### Definitions
-# 
-# The *Climate Modelling Primer* (4th ed., page 124) defines **parameterization** as
-# 
-# > The process of capturing a physical process through some mathematical relationship between important parameters in the process, but without explicitly modeling all the actual processes. For example, the albedo of leaves might be related to the soil moisture (via some specification of wilting point) but the physical and biological mechanisms in the plant that happen when the leaf wilts are not modelled.
-
-# An example from our own work so far: the **greenhouse effect**, which causes the OLR to be much lower than the surface emission, and the equilibrium temperature of the surface to be much warmer than it would otherwise be.
-# 
-# In reality the greenhouse effect arises from the contributions of several different gases, at various levels, to the absorption and emission of longwave radiation. Key greenhouse species include water vapor and cloud droplets, which both strongly tied to the day-to-day variations in weather.
-# 
-# How can we represent this in a climate model?  
-
-# ### Parameterization
-# 
-# Represent the time-averaged, net effect of the complex radiative transfer process, and its coupling to day-to-day water and cloud variations, with an **empirical relationship**, e.g. 
-# 
-# $$ OLR = \tau \sigma T_s^4 $$
-# 
-# Use observed temperature and OLR to choose an appropriate value for $\tau$ 
-# 
-# (this is what we have done so far)
-
-# #### Pro
-# 
-# Simple to implement, easy to understand the result
-# 
-# #### Con
-# 
-# How might the value of $\tau$ change with climate change? We have no way of knowing, and have to make assumptions.
-
-# ### Simulation
-# 
-# Solve a large set of coupled equations for the time-dependent behavior of the atmosphere:
-# 
-# - Equations of radiative transfer, with detailed information about the various greenhouse gases
-# - Equations of fluid motion to predict growth and decay of weather system and movement of water vapor
-# - Cloud microphysics to predict the formation of cloud droplets and their optical properties
-# 
-# This is essentially what goes on in a so-called GCM (General Circulation Model or Global Climate Model).
-
-# #### Pro
-# 
-# Model is based on real physical principles (e.g. Newton’s laws of motion, conservation of mass and energy). It is therefore more likely to remain valid under changing climate conditions.
-# 
-# #### Con
-# 
-# Requires lots of computer resources. Must simulate the weather even though we really just want the climate (statistics of weather!) 
+# <img src="http://clima-dods.ictp.it/Users/tompkins/diploma/images/Primer_Table1.8.png" width="800">
 
 # Essentially a **simulation** involves representing (at least some aspects of) the underlying rules that govern the process. *There is a chain of causality linking input to output*.
 # 
@@ -119,7 +66,7 @@
 
 # ____________
 # <a id='section3'></a>
-# ## 3. A taxonomy of climate models
+# ## 2. A taxonomy of climate models
 # ____________
 
 # ### Key components of a climate model
@@ -148,19 +95,20 @@
 # 
 # The edges represent the basic elements of the models, with **complexity increasing upwards**. Around the base of the pyramid are the simpler climate models, which incorporate only one primary process. 
 
-# <img src='https://brian-rose.github.io/ClimateLaboratoryBook/images/Primer_Figure2.2.png' width="800">
+# <img src='http://clima-dods.ictp.it/Users/tompkins/diploma/images/Primer_Figure2.2.png' width="800">
+# 
 
 # ### Five basic types of climate model
 # 
-# 1. Energy Balance Models (EBMs)
-# 2. Radiative-Convective (RC) or Single-Column models (SCMs)
-# 3. "Dimensionally Constrained" models
-# 4. Global Circulation Models (GCMs)
-# 5. Earth System Models (ESMs)
+# a. Energy Balance Models (EBMs)
+# b. Radiative-Convective (RC) or Single-Column models (SCMs)
+# c. "Dimensionally Constrained" models
+# d. Global Circulation Models (GCMs)
+# e. Earth System Models (ESMs)
 # 
 # The vertical axis in the pyramid figures shows increasing complexity BOTH in terms of number of processes included and linked together, AND increasing resolution in space and time.
 
-# ### 1. Energy Balance Models (EBMs)
+# ### a. Energy Balance Models (EBMs)
 # 
 # Zero- or one-dimensional models predicting the surface (strictly the sea-level) temperature as a function of the energy balance of the Earth. 
 # 
@@ -168,14 +116,14 @@
 # 
 # *How might we extend our zero-dimensional model to include a latitude dimension? What new kinds of processes might we have to include?*
 
-# ### 2. Radiative-Convective (RC) or Single-Column models (SCMs)
+# ### b. Radiative-Convective (RC) or Single-Column models (SCMs)
 # 
 # Focus on processes in the **vertical column**. 
 # 
 # - RC models compute the (usually global average) temperature profile by explicit modelling of **radiation** and **convection** processes, which together determine the *lapse rate. 
 # - SCMs are single columns 'extracted' from a three-dimensional model and include all the processes that would be modelled in the three-dimensional version but without any of the horizontal energy transfers.
 
-# ### 3. Dimensionally constrained models
+# ### c. Dimensionally constrained models
 # 
 # Include the following:
 # 
@@ -184,7 +132,7 @@
 # - Integrated Assessment Models (IAMs) couple the climate system to models of economic activity to more fully assess the impact of particular policy choices affective emissions.
 # 
 
-# ### 4. Global Circulation Models (GCMs)
+# ### d. Global Circulation Models (GCMs)
 # 
 # The **three-dimensional nature** of the atmosphere and ocean is incorporated. 
 # 
@@ -208,7 +156,7 @@
 # 
 # As the pyramid is ascended, more processes are integrated to develop a coupled ocean-atmosphere global model, which might be denoted **AOGCM** or **CGCM**.
 
-# ### 5. Earth System Models
+# ### e. Earth System Models
 # 
 # Ascending the pyramid even more and moving forward in climate modeling history, more processes that used to be fixed come to be incorporated into GCMs and the coupling becomes more complete: e.g. changes in biomes and vegetation, chemical changes in atmosphere, ocean and soil.  
 # 
@@ -226,25 +174,25 @@
 
 # ____________
 # <a id='section4'></a>
-# ## 4. Introducing the GCM
+# ## 3. Introducing the GCM
 # ____________
 
 # ### Ingredients of the GCM
 # 
 # The aim of the GCM is the calculation of the **full three-dimensional character** of the atmosphere and ocean.  
 # 
-# To **simulate** the fluid flow and its effects on other components of the climate system, instead of **parameterizing** the flow.
+# To **simulate** the fluid flow and its effects on other components of the climate system.
 # 
 
 # This requires the solution of a series of equations governing the motion of fluids
 # 
-# - Conservation of energy
 # - Conservation of momentum, Newton's 2nd law of motion (F=ma) for a moving fluid
+# - Conservation of energy
 # - Conservation of mass, for the fluid itself (air or water) as well as any quantities carried by the fluid (e.g. water vapor in the atmosphere, salt in the ocean)
 # - Equation of state, linking thermodynamic properties of the fluid (e.g. ideal gas law for atmosphere)
 # - Also, equations for the formation of clouds, sea ice, etc.
 
-# Atmospheric Science students will recognize this list - the so-called "governing equations" for the atmosphere. 
+# These are the so-called "governing equations" for the atmosphere, which will be introduced in more detail in the hand out.
 # 
 # These equations are the basis of *numerical weather prediction* as well as climate modeling.
 
@@ -278,45 +226,6 @@
 
 # > Figure 1.14 | Horizontal resolutions considered in today’s higher resolution models and in the very high resolution models now being tested: (a) Illustration of the European topography at a resolution of 87.5 × 87.5 km; (b) same as (a) but for a resolution of 30.0 × 30.0 km.
 
-# ### A hierarchy of complexity for ocean models
-
-# <img src="http://www.atmos.albany.edu/facstaff/brose/classes/ENV415_Spring2018/images/Primer_Figure2.9.png" width="800" alt="Figure 2.9: ocean model hierarchy">
-
-# One goal of all this complexity is to do **more simulation** and **less parameterization** in order to get a more accurate prediction of climate change.
-# 
-# In terms of our simple view of planetary energy budget, **we are trying to represent the net climate feedback parameter $\lambda$ correctly**, and so get the correct climate sensitivity.
-# 
-# Ideally this means basing the model on **laws of physics and chemistry**.
-
-# However it doesn’t always work this way. In many cases we know that a feedback operates in nature, but we can’t represent it in terms of first principles.
-# 
-# Land surface processes are a good example.
-# 
-# Exchanges of energy, water and carbon between the land and atmosphere are biologically mediated. We must (to a certain extent) rely on empirical relationships. A bit like economic modeling.
-# 
-# We also must deal with interaction across spatial scales.
-# 
-# E.g. cumulus convection and vertical transport of heat and water vapor
-
-# ____________
-# <a id='section5'></a>
-# ## 5. What can we resolve with a 2º atmosphere?
-# ____________
-# 
-# The following animation shows contours of sea level pressure in the control simulation. It is based on 6-hourly output from the numerical model.
-# 
-# The atmosphere is simulated with a 2º finite volume dynamical core.
-
-# In[1]:
-
-
-from IPython.display import YouTubeVideo
-YouTubeVideo('As85L34fKYQ')
-
-
-# ### Discussion point:
-# How well does this represent the true general circulation of the atmosphere?
-
 # ____________
 # 
 # ## Citation information
@@ -337,10 +246,16 @@ YouTubeVideo('As85L34fKYQ')
 # 
 # ## Credits
 # 
-# This notebook is part of [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook), an open-source textbook developed and maintained by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.
+# This notebook adapted from the excellent [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook), an open-source textbook developed and maintained by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.
 # 
 # It is licensed for free and open consumption under the
 # [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
 # 
 # Development of these notes and the [climlab software](https://github.com/brian-rose/climlab) is partially supported by the National Science Foundation under award AGS-1455071 to Brian Rose. Any opinions, findings, conclusions or recommendations expressed here are mine and do not necessarily reflect the views of the National Science Foundation.
 # ____________
+
+# In[ ]:
+
+
+
+
