@@ -27,14 +27,14 @@ print(annmean)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/sh/kt3hqg9x639_js73vspx7ch40000gn/T/ipykernel_95591/4141558076.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/sh/kt3hqg9x639_js73vspx7ch40000gn/T/ipykernel_33966/4141558076.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;31m# let's try it out[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mtsfile[0m[0;34m=[0m[0mmake_ts_yearmean[0m[0;34m([0m[0mfiles[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0;34m[0m[0m
 [1;32m      4[0m [0;31m# check if the file is there:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      5[0m [0mannmean[0m[0;34m=[0m[0mglob[0m[0;34m.[0m[0mglob[0m[0;34m([0m[0modir[0m[0;34m+[0m[0;34m"*fldmean_yearmean.nc"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/var/folders/sh/kt3hqg9x639_js73vspx7ch40000gn/T/ipykernel_95591/3988311038.py[0m in [0;36mmake_ts_yearmean[0;34m(files)[0m
+[0;32m/var/folders/sh/kt3hqg9x639_js73vspx7ch40000gn/T/ipykernel_33966/3988311038.py[0m in [0;36mmake_ts_yearmean[0;34m(files)[0m
 [1;32m      3[0m [0;34m[0m[0m
 [1;32m      4[0m     [0;31m# set cdo to an incidence of Cdo(), you don't need to do this, but cdo.func is neater than Cdo().func[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 5[0;31m     [0mcdo[0m [0;34m=[0m [0mCdo[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

@@ -65,19 +65,26 @@ import matplotlib.pyplot as plt
 
 # parameter
 xsize=100. #(m)
-dx=1  # (m)
+dx=1       #(m)
 
-dt=0.05 # timestep (sec)
+dt=0.1 # timestep (sec)
 uvel=1.0  # horizontal velocity (m/s)
 time=400. # total time of the simulation
 
 # set up x grid and initial profile of q 
 xpt=np.linspace(0,xsize,int(xsize/dx)+1)
+print(xpt)
+
+
+
 qinit=np.sin(2*np.pi*xpt/(xsize+1))
 
 #qinit=(xpt>xsize/2)*2-1
 #qinit=(qinit+np.roll(qinit,1)+np.roll(qinit,-1))/3
 print(qinit)
+
+plt.plot(xpt,qinit)
+plt.show()
 
 
 # Now we want to discretize the equation
@@ -119,8 +126,8 @@ plt.show()
 # 
 # - Make a calculation of the root mean square error between the numerical solution and the true solution, and see how it changes as a function of time 
 # - Repeat the exercise with the timestep doubled and then quadrupled.
-# - Repeat the exercise with the timestep doubled and then quadrupled.
-# - what happens to the solution if you set dt>1second with dx=1m?
+# - Repeat the exercise with the spatial resolution doubled and then quadrupled.
+# - Set up a square wave function and repeat the above exercise 
 # 
 # 
 
