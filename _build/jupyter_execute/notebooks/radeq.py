@@ -190,7 +190,7 @@ print(radmodel)
 radmodel.state
 
 
-# In[10]:
+# In[29]:
 
 
 #  Here are the pressure levels in hPa
@@ -199,7 +199,7 @@ radmodel.lev
 
 # There is a dictionary called `absorber_vmr` that holds the *volume mixing ratio* of all the radiatively active gases in the column:
 
-# In[11]:
+# In[30]:
 
 
 radmodel.absorber_vmr
@@ -209,7 +209,7 @@ radmodel.absorber_vmr
 # 
 # The exception is ozone, which has a vertical structure taken from observations. Let's plot it
 
-# In[12]:
+# In[31]:
 
 
 #  E.g. the CO2 content (a well-mixed gas) in parts per million
@@ -220,7 +220,7 @@ radmodel.absorber_vmr['CO2'] * 1E6
 # 
 # Make a simple plot showing the vertical structure of ozone, similar to the specific humidity plot we just made above.
 
-# In[13]:
+# In[32]:
 
 
 # here is the data you need for the plot, as a plain numpy arrays:
@@ -236,7 +236,7 @@ print(radmodel.absorber_vmr['O3'])
 
 # The other radiatively important gas is of course water vapor, which is stored separately in the `specific_humidity` attribute:
 
-# In[14]:
+# In[33]:
 
 
 #  specific humidity in kg/kg, on the same pressure axis
@@ -247,7 +247,7 @@ print(radmodel.specific_humidity)
 # 
 # For details you can look at the [documentation](http://climlab.readthedocs.io/en/latest/api/climlab.radiation.radiation.html)
 
-# In[15]:
+# In[34]:
 
 
 for item in radmodel.input:
@@ -258,7 +258,7 @@ for item in radmodel.input:
 # 
 # But here we should note that the model is **initialized with no clouds at all**:
 
-# In[16]:
+# In[35]:
 
 
 #  This is the fractional area covered by clouds in our column:
@@ -274,13 +274,13 @@ radmodel.cldfrac
 
 # Here are the current temperatures (initial condition):
 
-# In[17]:
+# In[36]:
 
 
 radmodel.Ts
 
 
-# In[18]:
+# In[37]:
 
 
 radmodel.Tatm
@@ -288,13 +288,13 @@ radmodel.Tatm
 
 # Now let's take a single timestep:
 
-# In[19]:
+# In[38]:
 
 
 radmodel.step_forward()
 
 
-# In[20]:
+# In[39]:
 
 
 radmodel.Ts
@@ -308,7 +308,7 @@ radmodel.Ts
 # 
 # Every climlab model has a `diagnostics` dictionary. Here we are going to check it out as an `xarray` dataset:
 
-# In[21]:
+# In[40]:
 
 
 climlab.to_xarray(radmodel.diagnostics)
@@ -318,7 +318,7 @@ climlab.to_xarray(radmodel.diagnostics)
 # 
 # For example:
 
-# In[22]:
+# In[41]:
 
 
 climlab.to_xarray(radmodel.LW_flux_up)
@@ -328,13 +328,13 @@ climlab.to_xarray(radmodel.LW_flux_up)
 # 
 # Why are there 27 data points, when the model has 26 pressure levels?
 
-# In[23]:
+# In[42]:
 
 
 radmodel.lev
 
 
-# In[24]:
+# In[43]:
 
 
 radmodel.lev_bounds
@@ -342,7 +342,7 @@ radmodel.lev_bounds
 
 # The last element of the flux array represents the **upward flux from the surface to the first level**:
 
-# In[25]:
+# In[44]:
 
 
 radmodel.LW_flux_up[-1]
@@ -352,7 +352,7 @@ radmodel.LW_flux_up[-1]
 # 
 # Why?
 
-# In[26]:
+# In[45]:
 
 
 sigma = 5.67E-8
@@ -365,13 +365,13 @@ sigma * 288**4
 # 
 # Two ways to access this information:
 
-# In[27]:
+# In[46]:
 
 
 radmodel.LW_flux_up[0]
 
 
-# In[28]:
+# In[47]:
 
 
 radmodel.OLR
@@ -381,7 +381,7 @@ radmodel.OLR
 # 
 # One diagnostic we will often want to look at is the **net energy budget at the top of the atmosphere**:
 
-# In[29]:
+# In[48]:
 
 
 radmodel.ASR - radmodel.OLR
@@ -395,7 +395,7 @@ radmodel.ASR - radmodel.OLR
 # 
 # We can use a `while` loop, conditional on the top-of-atmosphere imbalance:
 
-# In[30]:
+# In[49]:
 
 
 while np.abs(radmodel.ASR - radmodel.OLR) > 0.01:
@@ -404,7 +404,7 @@ while np.abs(radmodel.ASR - radmodel.OLR) > 0.01:
 
 # Check the energy budget again:
 
-# In[31]:
+# In[50]:
 
 
 #  Check the energy budget again
@@ -417,7 +417,7 @@ radmodel.ASR - radmodel.OLR
 
 # Here's a helper function we'll use to add model temperature profiles to our skew-T plot:
 
-# In[32]:
+# In[51]:
 
 
 def add_profile(skew, model, linestyle='-', color=None):
@@ -428,7 +428,7 @@ def add_profile(skew, model, linestyle='-', color=None):
     skew.ax.legend()
 
 
-# In[33]:
+# In[52]:
 
 
 skew = make_skewT()
@@ -449,7 +449,7 @@ skew.ax.set_title('Pure radiative equilibrium', fontsize=18);
 
 # ### Radiative equilibrium without water vapor
 
-# In[34]:
+# In[10]:
 
 
 # Make an exact clone of our existing model
@@ -458,7 +458,7 @@ radmodel_noH2O.name = 'Radiation (no H2O)'
 print(radmodel_noH2O)
 
 
-# In[35]:
+# In[11]:
 
 
 #  Here is the water vapor profile we started with
@@ -467,13 +467,13 @@ radmodel_noH2O.specific_humidity
 
 # Now get rid of the water entirely!
 
-# In[36]:
+# In[12]:
 
 
 radmodel_noH2O.specific_humidity *= 0.
 
 
-# In[37]:
+# In[13]:
 
 
 radmodel_noH2O.specific_humidity
@@ -481,7 +481,7 @@ radmodel_noH2O.specific_humidity
 
 # And run this new model forward to equilibrium:
 
-# In[38]:
+# In[14]:
 
 
 #  it's useful to take a single step first before starting the while loop
@@ -493,13 +493,13 @@ while np.abs(radmodel_noH2O.ASR - radmodel_noH2O.OLR) > 0.01:
     radmodel_noH2O.step_forward()
 
 
-# In[39]:
+# In[15]:
 
 
 radmodel_noH2O.ASR - radmodel_noH2O.OLR
 
 
-# In[40]:
+# In[59]:
 
 
 skew = make_skewT()
@@ -554,3 +554,33 @@ for model in [radmodel, radmodel_noH2O]:
 # 
 # Development of these notes and the [climlab software](https://github.com/brian-rose/climlab) is partially supported by the National Science Foundation under award AGS-1455071 to Brian Rose. Any opinions, findings, conclusions or recommendations expressed here are mine and do not necessarily reflect the views of the National Science Foundation.
 # ____________
+
+# In[16]:
+
+
+radmodel_co2 = climlab.process_like(radmodel)
+
+
+# In[18]:
+
+
+print(radmodel_co2)
+
+
+# In[20]:
+
+
+print(radmodel_co2.absorber_vmr)
+
+
+# In[23]:
+
+
+radmodel_co2.absorber_vmr['CO2']=0.000410
+
+
+# In[ ]:
+
+
+
+

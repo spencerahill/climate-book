@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Orbital variations, insolation, and the ice ages &#8212; Earth System Modelling</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Chapter 3: Climate feedbacks" href="../content3.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +107,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Earth System Modelling
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Earth System Modelling
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../content1.html">
    Chapter 1: Climate models
@@ -188,107 +205,209 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/orbital.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/orbital.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/orbital.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/orbital.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/orbital.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/orbital.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-ice-ages">
    1. The ice ages
@@ -341,11 +460,6 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#longitude-of-perihelion-and-precession-of-the-equinoxes">
      Longitude of perihelion and precession of the equinoxes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question">
-     Question
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -419,17 +533,158 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Orbital variations, insolation, and the ice ages</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-ice-ages">
+   1. The ice ages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extent-of-glaciation">
+     Extent of glaciation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pacing-of-ice-ages-evidence-from-ocean-sediments">
+     Pacing of ice ages: evidence from ocean sediments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-the-astronomical-theory-of-the-ice-ages">
+   2. Introducing the astronomical theory of the ice ages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-milankovitch-hypothesis">
+     The Milankovitch hypothesis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ellipses-and-orbits">
+   3. Ellipses and orbits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perihelion-and-aphelion">
+     Perihelion and Aphelion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eccentricity">
+     Eccentricity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obliquity">
+     Obliquity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longitude-of-perihelion-and-precession-of-the-equinoxes">
+     Longitude of perihelion and precession of the equinoxes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-three-orbital-parameters">
+     The three orbital parameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#past-orbital-variations">
+   4. Past orbital variations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#timescales-of-orbital-variation">
+     Timescales of orbital variation:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-climlab-to-calculate-insolation-for-arbitrary-orbital-parameters">
+   5. Using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     climlab
+    </span>
+   </code>
+   to calculate insolation for arbitrary orbital parameters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example-zero-obliquity">
+     An example: zero obliquity
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#past-changes-in-insolation-investigating-the-milankovitch-hypothesis">
+   6. Past changes in insolation: investigating the Milankovitch hypothesis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-insolation-at-10-kyr-and-23-kyr">
+     Comparing insolation at 10 kyr and 23 kyr
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   EXERCISE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#understanding-the-effects-of-orbital-variations-on-insolation">
+   7. Understanding the effects of orbital variations on insolation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   8. Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#credits">
+   Credits
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="orbital-variations-insolation-and-the-ice-ages">
-<h1>Orbital variations, insolation, and the ice ages<a class="headerlink" href="#orbital-variations-insolation-and-the-ice-ages" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="orbital-variations-insolation-and-the-ice-ages">
+<h1>Orbital variations, insolation, and the ice ages<a class="headerlink" href="#orbital-variations-insolation-and-the-ice-ages" title="Permalink to this headline">#</a></h1>
 <p>This notebook is part of <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a> by <a class="reference external" href="http://www.atmos.albany.edu/facstaff/brose/index.html">Brian E. J. Rose</a>, University at Albany.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,23 +695,35 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">climlab</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;climlab&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <hr class="docutils" />
 <p><a id='section1'></a></p>
-<div class="section" id="the-ice-ages">
-<h2>1. The ice ages<a class="headerlink" href="#the-ice-ages" title="Permalink to this headline">¶</a></h2>
+<section id="the-ice-ages">
+<h2>1. The ice ages<a class="headerlink" href="#the-ice-ages" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>Recent Earth history (past few million years) has been dominated by the repeated growth and retreat of large continental ice sheets, mostly over the land masses of the Northern Hemisphere.</p>
-<div class="section" id="extent-of-glaciation">
-<h3>Extent of glaciation<a class="headerlink" href="#extent-of-glaciation" title="Permalink to this headline">¶</a></h3>
+<section id="extent-of-glaciation">
+<h3>Extent of glaciation<a class="headerlink" href="#extent-of-glaciation" title="Permalink to this headline">#</a></h3>
 <p>The images below show typical maximum extents of the ice sheets during recent glaciations (grey) compared with present-day ice sheets (black)</p>
 <img src='http://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iceage_north-intergl_glac_hg.png/480px-Iceage_north-intergl_glac_hg.png'><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Iceage_south-intergl_glac_hg.png/480px-Iceage_south-intergl_glac_hg.png'><blockquote>
 <div><p>Hannes Grobe/AWI, <a class="reference external" href="http://commons.wikimedia.org/wiki/File:Iceage_north-intergl_glac_hg.png">http://commons.wikimedia.org/wiki/File:Iceage_north-intergl_glac_hg.png</a></p>
 </div></blockquote>
 <p><a id='icevolumeseries'></a></p>
-</div>
-<div class="section" id="pacing-of-ice-ages-evidence-from-ocean-sediments">
-<h3>Pacing of ice ages: evidence from ocean sediments<a class="headerlink" href="#pacing-of-ice-ages-evidence-from-ocean-sediments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pacing-of-ice-ages-evidence-from-ocean-sediments">
+<h3>Pacing of ice ages: evidence from ocean sediments<a class="headerlink" href="#pacing-of-ice-ages-evidence-from-ocean-sediments" title="Permalink to this headline">#</a></h3>
 <p>The figure below shows a global record of <strong>oxygen isotopes</strong> recorded in the shells of marine organisms. This record tells us primarily about variations in <strong>global ice volume</strong> – because the net evaporation of water from the oceans to build up the ice sheets leaves the oceans enriched in heavier isotopes.</p>
 <p>The x axis is plotted in <strong>Thousands of years before present</strong> (present-day is at zero on the left).</p>
 <p><img alt="Lisiecki_Raymo_Fig.4top.png" src="notebooks/attachment:Lisiecki_Raymo_Fig.4top.png" /></p>
@@ -475,10 +742,10 @@
 <p>The presence of peaks in the spectrum at orbital frequencies was seen as convincing evidence that the so-called <strong>astronomical theory of the ice ages</strong> was (at least partially) correct.</p>
 <hr class="docutils" />
 <p><a id='section2'></a></p>
-</div>
-</div>
-<div class="section" id="introducing-the-astronomical-theory-of-the-ice-ages">
-<h2>2. Introducing the astronomical theory of the ice ages<a class="headerlink" href="#introducing-the-astronomical-theory-of-the-ice-ages" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="introducing-the-astronomical-theory-of-the-ice-ages">
+<h2>2. Introducing the astronomical theory of the ice ages<a class="headerlink" href="#introducing-the-astronomical-theory-of-the-ice-ages" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>The <strong>Astronomical Theory</strong> of climate and the ice ages looks to the <strong>regular, predictable variations in the Earth’s orbit around the Sun</strong> as the driving force for the growth and melt of the great ice sheets. Such theories have been discussed since long before there was any evidence about the timing of past glaciations.</p>
 <p>Last time we saw that insolation is NOT perfectly symmetrically distributed between the two hemispheres and seasons.</p>
@@ -494,10 +761,20 @@
 
 <span class="n">Qnorth</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span><span class="n">days</span><span class="p">)</span>
 <span class="n">Qsouth</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="n">days</span><span class="p">)</span>
+<span class="n">Qtrieste</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span><span class="n">days</span><span class="p">)</span>
+<span class="n">Qeq</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">days</span><span class="p">)</span>
+
 
 <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;Daily average insolation at summer solstice:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;North Pole: </span><span class="si">%0.2f</span><span class="s1"> W/m2.&#39;</span> <span class="o">%</span><span class="k">np</span>.max(Qnorth))
 <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;South Pole: </span><span class="si">%0.2f</span><span class="s1"> W/m2.&#39;</span> <span class="o">%</span><span class="k">np</span>.max(Qsouth))
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">days</span><span class="p">,</span><span class="n">Qnorth</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;North Pole&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">days</span><span class="p">,</span><span class="n">Qtrieste</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Trieste&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">days</span><span class="p">,</span><span class="n">Qeq</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Equator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -507,12 +784,13 @@ North Pole: 525.31 W/m2.
 South Pole: 562.03 W/m2.
 </pre></div>
 </div>
+<img alt="../_images/orbital_18_1.png" src="../_images/orbital_18_1.png" />
 </div>
 </div>
 <p>These asymmetries arise because of the detailed shape of the orbit of the Earth around the Sun and the tilt of the Earth’s axis of rotation.</p>
 <p>As these orbitals details change over time, there are significant changes in the distribution of sunlight over the seasons and latitudes.</p>
-<div class="section" id="the-milankovitch-hypothesis">
-<h3>The Milankovitch hypothesis<a class="headerlink" href="#the-milankovitch-hypothesis" title="Permalink to this headline">¶</a></h3>
+<section id="the-milankovitch-hypothesis">
+<h3>The Milankovitch hypothesis<a class="headerlink" href="#the-milankovitch-hypothesis" title="Permalink to this headline">#</a></h3>
 <p>Version of the astronomical theory have been debated for at least 150 years.</p>
 <p>The most popular flavor has been the so-called <strong>Milankovitch hypothesis</strong>:</p>
 <blockquote>
@@ -521,10 +799,10 @@ South Pole: 562.03 W/m2.
 <p>The idea is that for an ice sheet to grow, seasonal snow must survive through the summer. Milankovitch therefore focussed on the factors determining the climatic conditions during <strong>summer</strong>.</p>
 <hr class="docutils" />
 <p><a id='section3'></a></p>
-</div>
-</div>
-<div class="section" id="ellipses-and-orbits">
-<h2>3. Ellipses and orbits<a class="headerlink" href="#ellipses-and-orbits" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="ellipses-and-orbits">
+<h2>3. Ellipses and orbits<a class="headerlink" href="#ellipses-and-orbits" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>First, watch this neat animation from <a class="reference external" href="http://www.people.fas.harvard.edu/~phuybers">Peter Huybers</a> (Harvard University):</p>
 <p><a class="reference external" href="http://www.people.fas.harvard.edu/~phuybers/Inso/Orbit.mv4">http://www.people.fas.harvard.edu/~phuybers/Inso/Orbit.mv4</a></p>
@@ -535,8 +813,8 @@ South Pole: 562.03 W/m2.
 </div></blockquote>
 <p>The Earth’s orbit around the Sun traces out an <strong>ellipse</strong>, with the Sun at one focal point.</p>
 <p><img alt="esm_part1_orbit_earth.png" src="notebooks/attachment:esm_part1_orbit_earth.png" /></p>
-<div class="section" id="perihelion-and-aphelion">
-<h3>Perihelion and Aphelion<a class="headerlink" href="#perihelion-and-aphelion" title="Permalink to this headline">¶</a></h3>
+<section id="perihelion-and-aphelion">
+<h3>Perihelion and Aphelion<a class="headerlink" href="#perihelion-and-aphelion" title="Permalink to this headline">#</a></h3>
 <p>The point in the orbit that is <strong>closest to the sun</strong> is called <strong>Perihelion</strong>.
 The farthest point is called <strong>Aphelion</strong>.</p>
 <p>Distances (present-day):</p>
@@ -544,9 +822,9 @@ The farthest point is called <strong>Aphelion</strong>.</p>
 <li><p>Perihelion,  <span class="math notranslate nohighlight">\( d_p = 1.47 \times 10^{11}\)</span> m</p></li>
 <li><p>Aphelion,  <span class="math notranslate nohighlight">\( d_a = 1.52 \times 10^{11}\)</span> m</p></li>
 </ul>
-</div>
-<div class="section" id="eccentricity">
-<h3>Eccentricity<a class="headerlink" href="#eccentricity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="eccentricity">
+<h3>Eccentricity<a class="headerlink" href="#eccentricity" title="Permalink to this headline">#</a></h3>
 <p>The eccentricity of the orbit is defined as
 $<span class="math notranslate nohighlight">\( e = \frac{d_a-d_p}{d_a+d_p} \)</span>$</p>
 <p>So for present-day values, <span class="math notranslate nohighlight">\(e = 0.017 = 1.7\%\)</span></p>
@@ -556,9 +834,9 @@ $<span class="math notranslate nohighlight">\( e = \frac{d_a-d_p}{d_a+d_p} \)</s
 <p>At present, perihelion occurs on January 3. This is very close to the Northern Hemisphere winter solstice (Dec. 21).</p>
 <p><strong>The Earth actually receives MORE total sunlight during Northern Winter than during Northern Summer.</strong></p>
 <p>It is thus critical to understand the relative timing of our seasons (which are determined by the axial tilt or obliquity) and the perehelion.</p>
-</div>
-<div class="section" id="obliquity">
-<h3>Obliquity<a class="headerlink" href="#obliquity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="obliquity">
+<h3>Obliquity<a class="headerlink" href="#obliquity" title="Permalink to this headline">#</a></h3>
 <p>The obliquity <span class="math notranslate nohighlight">\(\Phi\)</span> is the <strong>tilt of the Earth’s axis of rotation with respect to a line normal to the plane of the Earth’s orbit around the Sun.</strong></p>
 <p>Currently <span class="math notranslate nohighlight">\(\Phi = 23.5^\circ\)</span></p>
 <p>Obliquity is the fundamental reason we have seasons, and would have seasons even with a perfectly circular orbit (<span class="math notranslate nohighlight">\(e=0\)</span>)</p>
@@ -567,32 +845,28 @@ $<span class="math notranslate nohighlight">\( e = \frac{d_a-d_p}{d_a+d_p} \)</s
 <li><p>more summertime insolation at the poles</p></li>
 <li><p>less wintertime insolation in mid-latitudes</p></li>
 </ul>
-</div>
-<div class="section" id="longitude-of-perihelion-and-precession-of-the-equinoxes">
-<h3>Longitude of perihelion and precession of the equinoxes<a class="headerlink" href="#longitude-of-perihelion-and-precession-of-the-equinoxes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="longitude-of-perihelion-and-precession-of-the-equinoxes">
+<h3>Longitude of perihelion and precession of the equinoxes<a class="headerlink" href="#longitude-of-perihelion-and-precession-of-the-equinoxes" title="Permalink to this headline">#</a></h3>
 <p>The <strong>longitude of perihelion</strong> is defined as the angle <span class="math notranslate nohighlight">\(\Lambda\)</span> between the Earth-Sun line at vernal equinox and the line from the Sun to perihelion (see sketch).</p>
 <p>The current value is <span class="math notranslate nohighlight">\(\Lambda = 281^\circ\)</span> (perihelion on January 3, shortly after NH winter solstice).</p>
 <p>We call the gradual change over time of the longitude of perihelion the <strong>precession of the equinoxes</strong> (or just precession).  It is the <strong>gradual change in the time of year at which the Earth is closest to the Sun</strong>.</p>
-</div>
-<div class="section" id="question">
-<h3>Question<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h3>
-<p>Can there be any precession for a planet with a <em>perfectly circular</em> orbit (zero eccentricity)?</p>
 <p>It is important to understand that eccentricity modulates the precession. <em>Highly eccentric orbits lead to larger differences in the seasonal distribution of insolation.</em></p>
 <p>We quantify this with the <strong>precessional parameter</strong></p>
 <div class="math notranslate nohighlight">
 \[ e \sin \Lambda \]</div>
 <p>Large positive precessional parameter = Excess insolation during summer in the northern hemisphere.</p>
-</div>
-<div class="section" id="the-three-orbital-parameters">
-<h3>The three orbital parameters<a class="headerlink" href="#the-three-orbital-parameters" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-three-orbital-parameters">
+<h3>The three orbital parameters<a class="headerlink" href="#the-three-orbital-parameters" title="Permalink to this headline">#</a></h3>
 <p>We have just identified three parameters that control the seasonal and latitudinal distribution of insolation: <span class="math notranslate nohighlight">\(e, \Lambda, \Phi\)</span></p>
 <p>All three vary in predictable ways over time. They have been calculated very accurately from astronomical considerations (basically the gravity of the Earth, Sun, moon, and other solar system objects).</p>
 <hr class="docutils" />
 <p><a id='section4'></a></p>
-</div>
-</div>
-<div class="section" id="past-orbital-variations">
-<h2>4. Past orbital variations<a class="headerlink" href="#past-orbital-variations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="past-orbital-variations">
+<h2>4. Past orbital variations<a class="headerlink" href="#past-orbital-variations" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>There are tools in <code class="docutils literal notranslate"><span class="pre">climlab</span></code> to look up orbital parameters for Earth over the last 5 million years.</p>
 <p>We will use the package</p>
@@ -606,8 +880,8 @@ $<span class="math notranslate nohighlight">\( e = \frac{d_a-d_p}{d_a+d_p} \)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tokenization took: 4.14 ms
-Type conversion took: 3.56 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tokenization took: 2.76 ms
+Type conversion took: 2.28 ms
 Parser memory cleanup took: 0.00 ms
 </pre></div>
 </div>
@@ -988,8 +1262,8 @@ Attributes:
     Description:  The Berger and Loutre (1991) orbital data table
     Citation:     https://doi.org/10.1016/0277-3791(91)90033-Q
     Source:       http://www.atmos.albany.edu/facstaff/brose/resources/climla...
-    Note:         Longitude of perihelion is defined to be 0 degrees at North...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-3f0f3245-fd8b-4bd0-9c6a-33443f30a94f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3f0f3245-fd8b-4bd0-9c6a-33443f30a94f' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>kyear</span>: 5001</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-3f958ace-a72e-46c3-9679-456f967120a1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3f958ace-a72e-46c3-9679-456f967120a1' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>kyear</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 -1 -2 -3 ... -4998 -4999 -5000</div><input id='attrs-1282bdc8-00b9-45ae-857d-91e7ae499557' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1282bdc8-00b9-45ae-857d-91e7ae499557' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-13f585e8-4562-4740-9c97-2858bd984b4a' class='xr-var-data-in' type='checkbox'><label for='data-13f585e8-4562-4740-9c97-2858bd984b4a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([    0,    -1,    -2, ..., -4998, -4999, -5000])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-99ae0564-8859-4842-9e81-abacf8a98b4f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-99ae0564-8859-4842-9e81-abacf8a98b4f' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ecc</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.01724 0.01764 ... 0.02689 0.02685</div><input id='attrs-ac7bb2f4-b0f5-47bb-bb2e-ffdbb3791faa' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ac7bb2f4-b0f5-47bb-bb2e-ffdbb3791faa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-de46e505-d96b-447a-b9e5-8e353ccd523d' class='xr-var-data-in' type='checkbox'><label for='data-de46e505-d96b-447a-b9e5-8e353ccd523d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.017236, 0.017644, 0.018024, ..., 0.026988, 0.026892, 0.026851])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>long_peri</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>281.4 264.3 ... -8.362e+04</div><input id='attrs-f00cca2f-9de9-4771-8a3a-3d2c06d94724' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f00cca2f-9de9-4771-8a3a-3d2c06d94724' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9b7e5040-1119-481a-9bb2-d38b29a6d9a9' class='xr-var-data-in' type='checkbox'><label for='data-9b7e5040-1119-481a-9bb2-d38b29a6d9a9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([   281.37,    264.26,    247.23, ..., -83591.56, -83606.08,
-       -83620.57])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>obliquity</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>23.45 23.57 23.7 ... 22.52 22.52</div><input id='attrs-1d4b6b9c-ef0e-4f02-aae7-a4336e6e34f5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1d4b6b9c-ef0e-4f02-aae7-a4336e6e34f5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8024a8bd-3cb6-49f1-9f7c-ae1d84394e58' class='xr-var-data-in' type='checkbox'><label for='data-8024a8bd-3cb6-49f1-9f7c-ae1d84394e58' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([23.446, 23.573, 23.697, ..., 22.546, 22.525, 22.525])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>precession</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-0.0169 -0.01756 ... -0.02639</div><input id='attrs-07143e64-3186-4cda-bf04-32166ec1b9e1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-07143e64-3186-4cda-bf04-32166ec1b9e1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bafe4243-51ee-46f4-b28d-4bedc15c1b58' class='xr-var-data-in' type='checkbox'><label for='data-bafe4243-51ee-46f4-b28d-4bedc15c1b58' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-0.0169 , -0.01756, -0.01662, ..., -0.0256 , -0.02683, -0.02639])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>426.8 430.1 434.7 ... 409.1 412.3</div><input id='attrs-6d503711-9cd0-490b-af5e-1ae3d22dcf56' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6d503711-9cd0-490b-af5e-1ae3d22dcf56' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-083f1806-5944-4374-ad74-59f63cd38305' class='xr-var-data-in' type='checkbox'><label for='data-083f1806-5944-4374-ad74-59f63cd38305' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([426.76, 430.12, 434.69, ..., 407.47, 409.12, 412.29])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>455.6 455.5 454.1 ... 450.6 447.3</div><input id='attrs-956b75ae-8fb1-4016-8c52-013e0c2715c0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-956b75ae-8fb1-4016-8c52-013e0c2715c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-745cd012-aec3-478e-9764-02d9b10458eb' class='xr-var-data-in' type='checkbox'><label for='data-745cd012-aec3-478e-9764-02d9b10458eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([455.58, 455.48, 454.07, ..., 452.94, 450.63, 447.34])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>440.6 442.5 445.6 ... 433.5 436.9</div><input id='attrs-82ed6f4a-5943-48b0-9237-5e2bb071d0d2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-82ed6f4a-5943-48b0-9237-5e2bb071d0d2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-36a7a8e0-e3df-485a-8f66-ab11b6ed165e' class='xr-var-data-in' type='checkbox'><label for='data-36a7a8e0-e3df-485a-8f66-ab11b6ed165e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([440.6 , 442.48, 445.62, ..., 431.53, 433.54, 436.89])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>470.4 468.6 465.5 ... 477.5 474.0</div><input id='attrs-11d084df-2da6-4918-8813-1ca79894d1ef' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-11d084df-2da6-4918-8813-1ca79894d1ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-12db0885-e335-4c78-b95a-a376f5f138c3' class='xr-var-data-in' type='checkbox'><label for='data-12db0885-e335-4c78-b95a-a376f5f138c3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([470.35, 468.57, 465.49, ..., 479.68, 477.53, 474.03])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e3941113-9378-4559-b879-85be7b5bb85a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e3941113-9378-4559-b879-85be7b5bb85a' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Description :</span></dt><dd>The Berger and Loutre (1991) orbital data table</dd><dt><span>Citation :</span></dt><dd>https://doi.org/10.1016/0277-3791(91)90033-Q</dd><dt><span>Source :</span></dt><dd>http://www.atmos.albany.edu/facstaff/brose/resources/climlab_data/orbital/orbit91</dd><dt><span>Note :</span></dt><dd>Longitude of perihelion is defined to be 0 degrees at Northern Vernal Equinox. This differs by 180 degrees from orbit91 source file.</dd></dl></div></li></ul></div></div></div></div>
+    Note:         Longitude of perihelion is defined to be 0 degrees at North...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-b50859b4-b36d-4904-b467-b8023728c341' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b50859b4-b36d-4904-b467-b8023728c341' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>kyear</span>: 5001</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-b669e694-ff0e-4f29-ad67-34f8e6a86bcc' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b669e694-ff0e-4f29-ad67-34f8e6a86bcc' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>kyear</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 -1 -2 -3 ... -4998 -4999 -5000</div><input id='attrs-a2220d49-3a70-4a57-b785-038575bb4060' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a2220d49-3a70-4a57-b785-038575bb4060' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6e2e6206-e580-4623-893e-089d670b297c' class='xr-var-data-in' type='checkbox'><label for='data-6e2e6206-e580-4623-893e-089d670b297c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([    0,    -1,    -2, ..., -4998, -4999, -5000])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0ec3358b-e7f9-4e30-8892-6ac53d0f97b3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0ec3358b-e7f9-4e30-8892-6ac53d0f97b3' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ecc</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.01724 0.01764 ... 0.02689 0.02685</div><input id='attrs-f17159a5-ac71-45ea-84b5-d7b9da3c91a0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f17159a5-ac71-45ea-84b5-d7b9da3c91a0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bdc8c1d8-3ea3-4d63-bfa2-f0eaab7098ac' class='xr-var-data-in' type='checkbox'><label for='data-bdc8c1d8-3ea3-4d63-bfa2-f0eaab7098ac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.017236, 0.017644, 0.018024, ..., 0.026988, 0.026892, 0.026851])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>long_peri</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>281.4 264.3 ... -8.362e+04</div><input id='attrs-8c5557fc-ac53-464a-b1aa-7a3bccfb59f5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8c5557fc-ac53-464a-b1aa-7a3bccfb59f5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cd906171-7493-45d3-8801-ff7734bb3b47' class='xr-var-data-in' type='checkbox'><label for='data-cd906171-7493-45d3-8801-ff7734bb3b47' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([   281.37,    264.26,    247.23, ..., -83591.56, -83606.08,
+       -83620.57])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>obliquity</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>23.45 23.57 23.7 ... 22.52 22.52</div><input id='attrs-170b6f1d-fea3-4109-8155-92b19a637eb1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-170b6f1d-fea3-4109-8155-92b19a637eb1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f79f0639-ca0b-41f0-ac6f-ea8ff14d3887' class='xr-var-data-in' type='checkbox'><label for='data-f79f0639-ca0b-41f0-ac6f-ea8ff14d3887' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([23.446, 23.573, 23.697, ..., 22.546, 22.525, 22.525])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>precession</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-0.0169 -0.01756 ... -0.02639</div><input id='attrs-86d058f2-ad4d-49b8-853d-188aa8561611' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-86d058f2-ad4d-49b8-853d-188aa8561611' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b246a70-d895-4ae5-aebe-49ebd38abc09' class='xr-var-data-in' type='checkbox'><label for='data-6b246a70-d895-4ae5-aebe-49ebd38abc09' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-0.0169 , -0.01756, -0.01662, ..., -0.0256 , -0.02683, -0.02639])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>426.8 430.1 434.7 ... 409.1 412.3</div><input id='attrs-f745ba02-ffa5-4e8a-81fd-490c628adf41' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f745ba02-ffa5-4e8a-81fd-490c628adf41' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8dc1d03c-2679-4ffc-bb32-0476c1f97f25' class='xr-var-data-in' type='checkbox'><label for='data-8dc1d03c-2679-4ffc-bb32-0476c1f97f25' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([426.76, 430.12, 434.69, ..., 407.47, 409.12, 412.29])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>455.6 455.5 454.1 ... 450.6 447.3</div><input id='attrs-2b4fe2e4-ef7d-401c-b9ea-0067b3a5c002' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2b4fe2e4-ef7d-401c-b9ea-0067b3a5c002' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-923830af-159f-4428-94ee-954ee7f70570' class='xr-var-data-in' type='checkbox'><label for='data-923830af-159f-4428-94ee-954ee7f70570' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([455.58, 455.48, 454.07, ..., 452.94, 450.63, 447.34])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>440.6 442.5 445.6 ... 433.5 436.9</div><input id='attrs-742208b6-6a1d-47de-9bf4-9d31fe02e5a6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-742208b6-6a1d-47de-9bf4-9d31fe02e5a6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-955a0bf9-ce16-4df6-902c-7563b408df92' class='xr-var-data-in' type='checkbox'><label for='data-955a0bf9-ce16-4df6-902c-7563b408df92' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([440.6 , 442.48, 445.62, ..., 431.53, 433.54, 436.89])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>470.4 468.6 465.5 ... 477.5 474.0</div><input id='attrs-72bb2613-3ed3-499e-9338-e3f64e89f22c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-72bb2613-3ed3-499e-9338-e3f64e89f22c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-131e075d-ea8f-48c1-ae2b-8a35a69c1173' class='xr-var-data-in' type='checkbox'><label for='data-131e075d-ea8f-48c1-ae2b-8a35a69c1173' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([470.35, 468.57, 465.49, ..., 479.68, 477.53, 474.03])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-da49bbf4-6358-40ae-8b42-61fcf7e89056' class='xr-section-summary-in' type='checkbox'  checked><label for='section-da49bbf4-6358-40ae-8b42-61fcf7e89056' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Description :</span></dt><dd>The Berger and Loutre (1991) orbital data table</dd><dt><span>Citation :</span></dt><dd>https://doi.org/10.1016/0277-3791(91)90033-Q</dd><dt><span>Source :</span></dt><dd>http://www.atmos.albany.edu/facstaff/brose/resources/climlab_data/orbital/orbit91</dd><dt><span>Note :</span></dt><dd>Longitude of perihelion is defined to be 0 degrees at Northern Vernal Equinox. This differs by 180 degrees from orbit91 source file.</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Make reference plots of the variation in the three orbital parameter over the last 1 million years</p>
 <div class="cell docutils container">
@@ -1373,8 +1647,8 @@ Attributes:
     Description:  The Berger and Loutre (1991) orbital data table
     Citation:     https://doi.org/10.1016/0277-3791(91)90033-Q
     Source:       http://www.atmos.albany.edu/facstaff/brose/resources/climla...
-    Note:         Longitude of perihelion is defined to be 0 degrees at North...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-d9c39c04-d71a-474c-98b4-0670b20e65a4' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d9c39c04-d71a-474c-98b4-0670b20e65a4' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>kyear</span>: 1001</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-5a95b9b4-abae-44fd-9511-8e57ea3bfd47' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5a95b9b4-abae-44fd-9511-8e57ea3bfd47' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>kyear</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1e+03 -999.0 -998.0 ... -1.0 0.0</div><input id='attrs-db215951-e42d-4ba6-bc74-faaa76b2bd67' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-db215951-e42d-4ba6-bc74-faaa76b2bd67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-93b63166-054f-4793-b11d-8262046be537' class='xr-var-data-in' type='checkbox'><label for='data-93b63166-054f-4793-b11d-8262046be537' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-1000.,  -999.,  -998., ...,    -2.,    -1.,     0.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-32c8e7dc-73f1-4220-8de9-c9cbbd66c62a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-32c8e7dc-73f1-4220-8de9-c9cbbd66c62a' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ecc</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.03576 0.03695 ... 0.01764 0.01724</div><input id='attrs-5448c66f-994d-4fd4-adba-875ba23a76ee' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5448c66f-994d-4fd4-adba-875ba23a76ee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b6ad4c25-2fce-4399-ac30-642e4b76f678' class='xr-var-data-in' type='checkbox'><label for='data-b6ad4c25-2fce-4399-ac30-642e4b76f678' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.035765, 0.036953, 0.038114, ..., 0.018024, 0.017644, 0.017236])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>long_peri</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.644e+04 -1.642e+04 ... 281.4</div><input id='attrs-5125e051-5101-4690-ad7e-c85da2ee80c0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5125e051-5101-4690-ad7e-c85da2ee80c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-54dfb526-e46f-41b7-a62a-1078cbf7974a' class='xr-var-data-in' type='checkbox'><label for='data-54dfb526-e46f-41b7-a62a-1078cbf7974a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-16437.54, -16421.71, -16405.83, ...,    247.23,    264.26,
-          281.37])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>obliquity</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>23.78 23.84 23.88 ... 23.57 23.45</div><input id='attrs-577ca72a-8fd6-424f-8875-a7f95014c739' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-577ca72a-8fd6-424f-8875-a7f95014c739' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-102e7f88-f2f5-4da0-aa45-51e37dc0218b' class='xr-var-data-in' type='checkbox'><label for='data-102e7f88-f2f5-4da0-aa45-51e37dc0218b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([23.778, 23.835, 23.877, ..., 23.697, 23.573, 23.446])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>precession</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.03018 0.02458 ... -0.0169</div><input id='attrs-86409843-970b-483c-86c8-a595ce2e3450' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-86409843-970b-483c-86c8-a595ce2e3450' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2b495aa7-bb42-4f4b-9302-75f116d0bf3c' class='xr-var-data-in' type='checkbox'><label for='data-2b495aa7-bb42-4f4b-9302-75f116d0bf3c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0.03018,  0.02458,  0.0166 , ..., -0.01662, -0.01756, -0.0169 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>478.7 479.0 476.4 ... 430.1 426.8</div><input id='attrs-91e9ddf5-f10e-4d1d-b3db-82642fa39765' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-91e9ddf5-f10e-4d1d-b3db-82642fa39765' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-232f9e6d-21c4-4a46-b890-92c06e57f9ca' class='xr-var-data-in' type='checkbox'><label for='data-232f9e6d-21c4-4a46-b890-92c06e57f9ca' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([478.69, 478.97, 476.36, ..., 434.69, 430.12, 426.76])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>414.9 416.2 419.9 ... 455.5 455.6</div><input id='attrs-3badb292-82b5-4b01-b506-e6c38d258bd3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3badb292-82b5-4b01-b506-e6c38d258bd3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-53c1abdf-3ac5-448e-ba87-68e1c29e1768' class='xr-var-data-in' type='checkbox'><label for='data-53c1abdf-3ac5-448e-ba87-68e1c29e1768' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([414.92, 416.23, 419.89, ..., 454.07, 455.48, 455.58])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>489.6 489.1 485.9 ... 442.5 440.6</div><input id='attrs-329c88e7-f3c3-4335-8dce-7b0a4f384804' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-329c88e7-f3c3-4335-8dce-7b0a4f384804' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-115a7e1b-c42d-4969-8a13-6e296726afb8' class='xr-var-data-in' type='checkbox'><label for='data-115a7e1b-c42d-4969-8a13-6e296726afb8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([489.61, 489.11, 485.86, ..., 445.62, 442.48, 440.6 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>424.4 425.0 428.3 ... 468.6 470.4</div><input id='attrs-9ae231d2-8779-4879-a1c7-0094e2117472' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9ae231d2-8779-4879-a1c7-0094e2117472' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1de72ca8-7523-4287-a0ed-249c9976ba75' class='xr-var-data-in' type='checkbox'><label for='data-1de72ca8-7523-4287-a0ed-249c9976ba75' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([424.37, 425.04, 428.27, ..., 465.49, 468.57, 470.35])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-981cba1c-391d-4941-a79d-de25386ad830' class='xr-section-summary-in' type='checkbox'  checked><label for='section-981cba1c-391d-4941-a79d-de25386ad830' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Description :</span></dt><dd>The Berger and Loutre (1991) orbital data table</dd><dt><span>Citation :</span></dt><dd>https://doi.org/10.1016/0277-3791(91)90033-Q</dd><dt><span>Source :</span></dt><dd>http://www.atmos.albany.edu/facstaff/brose/resources/climlab_data/orbital/orbit91</dd><dt><span>Note :</span></dt><dd>Longitude of perihelion is defined to be 0 degrees at Northern Vernal Equinox. This differs by 180 degrees from orbit91 source file.</dd></dl></div></li></ul></div></div></div></div>
+    Note:         Longitude of perihelion is defined to be 0 degrees at North...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-d34c0327-cc6a-4c29-ac43-82a0dfbc29bc' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d34c0327-cc6a-4c29-ac43-82a0dfbc29bc' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>kyear</span>: 1001</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-54d0af3d-4698-4a8a-a1eb-0f3b6a7143fc' class='xr-section-summary-in' type='checkbox'  checked><label for='section-54d0af3d-4698-4a8a-a1eb-0f3b6a7143fc' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>kyear</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1e+03 -999.0 -998.0 ... -1.0 0.0</div><input id='attrs-05b2b809-ceda-4e10-b4a0-b172d8fc950f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-05b2b809-ceda-4e10-b4a0-b172d8fc950f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-39adebb5-177c-4d5e-9b33-ed5ca59d6c33' class='xr-var-data-in' type='checkbox'><label for='data-39adebb5-177c-4d5e-9b33-ed5ca59d6c33' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-1000.,  -999.,  -998., ...,    -2.,    -1.,     0.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1b1bb52f-e064-4afa-a5ab-f2504cde028f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1b1bb52f-e064-4afa-a5ab-f2504cde028f' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ecc</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.03576 0.03695 ... 0.01764 0.01724</div><input id='attrs-49d889ab-531d-4987-b970-05ab879d2f11' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-49d889ab-531d-4987-b970-05ab879d2f11' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-03bfc13c-1d17-4ecd-b3f4-4e1c577f0301' class='xr-var-data-in' type='checkbox'><label for='data-03bfc13c-1d17-4ecd-b3f4-4e1c577f0301' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.035765, 0.036953, 0.038114, ..., 0.018024, 0.017644, 0.017236])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>long_peri</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.644e+04 -1.642e+04 ... 281.4</div><input id='attrs-2f698757-99a9-43da-8a92-b55cdf5f4d12' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2f698757-99a9-43da-8a92-b55cdf5f4d12' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-be526055-b641-4d9f-85aa-26933b9b25ad' class='xr-var-data-in' type='checkbox'><label for='data-be526055-b641-4d9f-85aa-26933b9b25ad' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-16437.54, -16421.71, -16405.83, ...,    247.23,    264.26,
+          281.37])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>obliquity</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>23.78 23.84 23.88 ... 23.57 23.45</div><input id='attrs-ab67693d-9891-4e6f-86c7-b11d94c38e31' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ab67693d-9891-4e6f-86c7-b11d94c38e31' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-be9e6e15-bb1f-4681-8893-6dae2841cc0e' class='xr-var-data-in' type='checkbox'><label for='data-be9e6e15-bb1f-4681-8893-6dae2841cc0e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([23.778, 23.835, 23.877, ..., 23.697, 23.573, 23.446])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>precession</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.03018 0.02458 ... -0.0169</div><input id='attrs-ed7b8090-56b7-42fd-be05-32849e0859b1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ed7b8090-56b7-42fd-be05-32849e0859b1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f0684a25-aa93-4759-8c23-12b4092b08ff' class='xr-var-data-in' type='checkbox'><label for='data-f0684a25-aa93-4759-8c23-12b4092b08ff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0.03018,  0.02458,  0.0166 , ..., -0.01662, -0.01756, -0.0169 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>478.7 479.0 476.4 ... 430.1 426.8</div><input id='attrs-3c19ba43-de0e-417f-807d-24e1d5588296' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3c19ba43-de0e-417f-807d-24e1d5588296' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3e16ee32-038c-48d0-9055-15ac555401c5' class='xr-var-data-in' type='checkbox'><label for='data-3e16ee32-038c-48d0-9055-15ac555401c5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([478.69, 478.97, 476.36, ..., 434.69, 430.12, 426.76])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>65SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>414.9 416.2 419.9 ... 455.5 455.6</div><input id='attrs-64df122f-0794-481f-a648-eb8ccef11eca' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-64df122f-0794-481f-a648-eb8ccef11eca' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8ba2ba7e-7a51-48e6-b211-c7fb58f9855d' class='xr-var-data-in' type='checkbox'><label for='data-8ba2ba7e-7a51-48e6-b211-c7fb58f9855d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([414.92, 416.23, 419.89, ..., 454.07, 455.48, 455.58])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15NJul</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>489.6 489.1 485.9 ... 442.5 440.6</div><input id='attrs-dc4fe1c2-bbe8-4ef4-9d1b-6efb50d283b4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-dc4fe1c2-bbe8-4ef4-9d1b-6efb50d283b4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-17ef2486-c85f-469f-99ff-b32e4190a068' class='xr-var-data-in' type='checkbox'><label for='data-17ef2486-c85f-469f-99ff-b32e4190a068' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([489.61, 489.11, 485.86, ..., 445.62, 442.48, 440.6 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>15SJan</span></div><div class='xr-var-dims'>(kyear)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>424.4 425.0 428.3 ... 468.6 470.4</div><input id='attrs-b6356bab-2d86-4ad7-8332-acc449eb7456' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b6356bab-2d86-4ad7-8332-acc449eb7456' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-99f9c2aa-3df0-42c7-9ae9-4bf9e052b86e' class='xr-var-data-in' type='checkbox'><label for='data-99f9c2aa-3df0-42c7-9ae9-4bf9e052b86e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([424.37, 425.04, 428.27, ..., 465.49, 468.57, 470.35])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-df6a91bc-b09d-41ee-a4bc-fbe92ef747ab' class='xr-section-summary-in' type='checkbox'  checked><label for='section-df6a91bc-b09d-41ee-a4bc-fbe92ef747ab' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Description :</span></dt><dd>The Berger and Loutre (1991) orbital data table</dd><dt><span>Citation :</span></dt><dd>https://doi.org/10.1016/0277-3791(91)90033-Q</dd><dt><span>Source :</span></dt><dd>http://www.atmos.albany.edu/facstaff/brose/resources/climlab_data/orbital/orbit91</dd><dt><span>Note :</span></dt><dd>Longitude of perihelion is defined to be 0 degrees at Northern Vernal Equinox. This differs by 180 degrees from orbit91 source file.</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The object called</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orb</span>
@@ -1411,8 +1685,8 @@ Attributes:
 <img alt="../_images/orbital_42_0.png" src="../_images/orbital_42_0.png" />
 </div>
 </div>
-<div class="section" id="timescales-of-orbital-variation">
-<h3>Timescales of orbital variation:<a class="headerlink" href="#timescales-of-orbital-variation" title="Permalink to this headline">¶</a></h3>
+<section id="timescales-of-orbital-variation">
+<h3>Timescales of orbital variation:<a class="headerlink" href="#timescales-of-orbital-variation" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Eccentricity varies slowly between nearly circular and slightly eccentric, with dominant periodicities of about 100 and 400 kyear. Current eccentricity is relatively small compared to previous few million years</p></li>
 <li><p>Longitude of perihelion has a period around 20 kyears, but effect is modulated by slow eccentricity variations. Precessional cycles are predicted to be small for the coming 50 kyears because of weak eccentricity.</p></li>
@@ -1420,10 +1694,10 @@ Attributes:
 </ul>
 <hr class="docutils" />
 <p><a id='section5'></a></p>
-</div>
-</div>
-<div class="section" id="using-climlab-to-calculate-insolation-for-arbitrary-orbital-parameters">
-<h2>5. Using <code class="docutils literal notranslate"><span class="pre">climlab</span></code> to calculate insolation for arbitrary orbital parameters<a class="headerlink" href="#using-climlab-to-calculate-insolation-for-arbitrary-orbital-parameters" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="using-climlab-to-calculate-insolation-for-arbitrary-orbital-parameters">
+<h2>5. Using <code class="docutils literal notranslate"><span class="pre">climlab</span></code> to calculate insolation for arbitrary orbital parameters<a class="headerlink" href="#using-climlab-to-calculate-insolation-for-arbitrary-orbital-parameters" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>We can use the function</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">climlab</span><span class="o">.</span><span class="n">solar</span><span class="o">.</span><span class="n">insolation</span><span class="o">.</span><span class="n">daily_insolation</span><span class="p">()</span>
@@ -1431,9 +1705,9 @@ Attributes:
 </div>
 <p>to calculate insolation for any arbitrary orbital parameters.</p>
 <p>We just need to pass a dictionary of orbital parameters. This works automatically when we slice or interpolate from the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> object <code class="docutils literal notranslate"><span class="pre">OrbitalTable</span></code>.</p>
-<div class="section" id="an-example-zero-obliquity">
-<h3>An example: zero obliquity<a class="headerlink" href="#an-example-zero-obliquity" title="Permalink to this headline">¶</a></h3>
-<p>Calculate the insolation at the <strong>North Pole</strong> for a planet with <strong>zero obliquity</strong> and <strong>zero eccentricity</strong>.</p>
+<section id="an-example-zero-obliquity">
+<h3>An example: zero obliquity<a class="headerlink" href="#an-example-zero-obliquity" title="Permalink to this headline">#</a></h3>
+<p>Calculate the insolation at the <strong>North Pole</strong> for a planet with <strong>zero obliquity and eccentricity</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">climlab.solar.insolation</span> <span class="kn">import</span> <span class="n">daily_insolation</span>
@@ -1443,13 +1717,13 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisorb</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ecc&#39;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;obliquity&#39;</span><span class="p">:</span><span class="mf">20.</span><span class="p">,</span> <span class="s1">&#39;long_peri&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisorb</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ecc&#39;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;obliquity&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;long_peri&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">thisorb</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ecc&#39;: 0.0, &#39;obliquity&#39;: 20.0, &#39;long_peri&#39;: 0.0}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ecc&#39;: 0.0, &#39;obliquity&#39;: 0.0, &#39;long_peri&#39;: 0.0}
 </pre></div>
 </div>
 </div>
@@ -1815,33 +2089,13 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray (day: 50)&gt;
-array([  0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,  16.006674  ,  72.59358208, 128.10458028,
-       181.71693979, 232.63607156, 280.10730283, 323.42706225,
-       361.95330741, 395.11504064, 422.42077169, 443.46580218,
-       457.93822361, 465.62354012, 466.40784761, 460.27952185,
-       447.32939079, 427.74938839, 401.82970998, 369.95451124,
-       332.59621468, 290.30850781, 243.71813696, 193.51561827,
-       140.44500355,  85.29285267,  28.87657596,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ])
+array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
 Coordinates:
-  * day      (day) float64 18.26 25.34 32.42 39.51 ... 344.0 351.1 358.2 365.2</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>day</span>: 50</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-9ba0b4a7-c614-47d6-9709-4a68f7e598fb' class='xr-array-in' type='checkbox' checked><label for='section-9ba0b4a7-c614-47d6-9709-4a68f7e598fb' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</span></div><div class='xr-array-data'><pre>array([  0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,  16.006674  ,  72.59358208, 128.10458028,
-       181.71693979, 232.63607156, 280.10730283, 323.42706225,
-       361.95330741, 395.11504064, 422.42077169, 443.46580218,
-       457.93822361, 465.62354012, 466.40784761, 460.27952185,
-       447.32939079, 427.74938839, 401.82970998, 369.95451124,
-       332.59621468, 290.30850781, 243.71813696, 193.51561827,
-       140.44500355,  85.29285267,  28.87657596,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ])</pre></div></div></li><li class='xr-section-item'><input id='section-1e0a8303-443f-4a09-a4d2-98c1f5c753ec' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1e0a8303-443f-4a09-a4d2-98c1f5c753ec' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>day</span></div><div class='xr-var-dims'>(day)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>18.26 25.34 32.42 ... 358.2 365.2</div><input id='attrs-dd27d912-9877-4c3e-9f28-cddf3b38771f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-dd27d912-9877-4c3e-9f28-cddf3b38771f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-811f31e8-da7a-4c43-9556-bfc2f89848fe' class='xr-var-data-in' type='checkbox'><label for='data-811f31e8-da7a-4c43-9556-bfc2f89848fe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 18.26211 ,  25.343336,  32.424563,  39.505789,  46.587015,  53.668242,
+  * day      (day) float64 18.26 25.34 32.42 39.51 ... 344.0 351.1 358.2 365.2</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>day</span>: 50</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-9ebf8af9-0eca-4e00-a0dc-b3e739c1207b' class='xr-array-in' type='checkbox' checked><label for='section-9ebf8af9-0eca-4e00-a0dc-b3e739c1207b' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</span></div><div class='xr-array-data'><pre>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])</pre></div></div></li><li class='xr-section-item'><input id='section-967d503c-6b5f-451e-8a6e-7af09a166889' class='xr-section-summary-in' type='checkbox'  checked><label for='section-967d503c-6b5f-451e-8a6e-7af09a166889' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>day</span></div><div class='xr-var-dims'>(day)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>18.26 25.34 32.42 ... 358.2 365.2</div><input id='attrs-378b7109-5a8b-4039-bcca-37a838dd1c46' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-378b7109-5a8b-4039-bcca-37a838dd1c46' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-256d1b13-c41e-4aec-9392-471be5c32a2a' class='xr-var-data-in' type='checkbox'><label for='data-256d1b13-c41e-4aec-9392-471be5c32a2a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 18.26211 ,  25.343336,  32.424563,  39.505789,  46.587015,  53.668242,
         60.749468,  67.830694,  74.911921,  81.993147,  89.074373,  96.1556  ,
        103.236826, 110.318052, 117.399279, 124.480505, 131.561731, 138.642958,
        145.724184, 152.80541 , 159.886637, 166.967863, 174.049089, 181.130316,
@@ -1849,7 +2103,7 @@ Coordinates:
        230.6989  , 237.780126, 244.861352, 251.942579, 259.023805, 266.105031,
        273.186258, 280.267484, 287.34871 , 294.429937, 301.511163, 308.592389,
        315.673616, 322.754842, 329.836068, 336.917295, 343.998521, 351.079747,
-       358.160974, 365.2422  ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-52506486-46b8-42ed-b373-ee6e48e3b244' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-52506486-46b8-42ed-b373-ee6e48e3b244' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       358.160974, 365.2422  ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-003a69e0-75c1-4ce2-adb9-42698bdc9f97' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-003a69e0-75c1-4ce2-adb9-42698bdc9f97' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Compare this with the same calculation for default (present-day) orbital parameters:</p>
 <div class="cell docutils container">
@@ -2225,7 +2479,7 @@ array([  0.        ,   0.        ,   0.        ,   0.        ,
          0.        ,   0.        ,   0.        ,   0.        ,
          0.        ,   0.        ])
 Coordinates:
-  * day      (day) float64 18.26 25.34 32.42 39.51 ... 344.0 351.1 358.2 365.2</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>day</span>: 50</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-7bbec6cb-4cfd-4641-8d88-6d2955b40191' class='xr-array-in' type='checkbox' checked><label for='section-7bbec6cb-4cfd-4641-8d88-6d2955b40191' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</span></div><div class='xr-array-data'><pre>array([  0.        ,   0.        ,   0.        ,   0.        ,
+  * day      (day) float64 18.26 25.34 32.42 39.51 ... 344.0 351.1 358.2 365.2</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>day</span>: 50</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-fc2ad847-0664-4553-ad2c-8fc559533181' class='xr-array-in' type='checkbox' checked><label for='section-fc2ad847-0664-4553-ad2c-8fc559533181' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</span></div><div class='xr-array-data'><pre>array([  0.        ,   0.        ,   0.        ,   0.        ,
          0.        ,   0.        ,   0.        ,   0.        ,
          0.        ,  18.86214697,  85.00612352, 149.06416099,
        210.14318852, 267.43771123, 320.2345592 , 367.91459762,
@@ -2237,7 +2491,7 @@ Coordinates:
          0.        ,   0.        ,   0.        ,   0.        ,
          0.        ,   0.        ,   0.        ,   0.        ,
          0.        ,   0.        ,   0.        ,   0.        ,
-         0.        ,   0.        ])</pre></div></div></li><li class='xr-section-item'><input id='section-2e13d115-554b-4bfa-891b-7438c2f69374' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2e13d115-554b-4bfa-891b-7438c2f69374' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>day</span></div><div class='xr-var-dims'>(day)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>18.26 25.34 32.42 ... 358.2 365.2</div><input id='attrs-ed5af0b6-ef21-4fbe-9d36-d2c923b92609' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ed5af0b6-ef21-4fbe-9d36-d2c923b92609' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8760e060-8bcc-4bec-815e-33fe2e385ff6' class='xr-var-data-in' type='checkbox'><label for='data-8760e060-8bcc-4bec-815e-33fe2e385ff6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 18.26211 ,  25.343336,  32.424563,  39.505789,  46.587015,  53.668242,
+         0.        ,   0.        ])</pre></div></div></li><li class='xr-section-item'><input id='section-e96f204a-47a0-4564-8766-96b183893c53' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e96f204a-47a0-4564-8766-96b183893c53' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>day</span></div><div class='xr-var-dims'>(day)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>18.26 25.34 32.42 ... 358.2 365.2</div><input id='attrs-8fe34df4-04d0-4db3-b5a3-896970e8d0e2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8fe34df4-04d0-4db3-b5a3-896970e8d0e2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-977a26b2-cabd-46bf-ae79-4c9c853125ca' class='xr-var-data-in' type='checkbox'><label for='data-977a26b2-cabd-46bf-ae79-4c9c853125ca' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 18.26211 ,  25.343336,  32.424563,  39.505789,  46.587015,  53.668242,
         60.749468,  67.830694,  74.911921,  81.993147,  89.074373,  96.1556  ,
        103.236826, 110.318052, 117.399279, 124.480505, 131.561731, 138.642958,
        145.724184, 152.80541 , 159.886637, 166.967863, 174.049089, 181.130316,
@@ -2245,15 +2499,15 @@ Coordinates:
        230.6989  , 237.780126, 244.861352, 251.942579, 259.023805, 266.105031,
        273.186258, 280.267484, 287.34871 , 294.429937, 301.511163, 308.592389,
        315.673616, 322.754842, 329.836068, 336.917295, 343.998521, 351.079747,
-       358.160974, 365.2422  ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-96773bc4-1ea8-4a09-bbc7-dffcba1cc742' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-96773bc4-1ea8-4a09-bbc7-dffcba1cc742' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       358.160974, 365.2422  ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9515ac23-29f4-400a-b2b9-0d7483745dee' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9515ac23-29f4-400a-b2b9-0d7483745dee' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Do you understand what’s going on here?</p>
 <hr class="docutils" />
 <p><a id='section6'></a></p>
-</div>
-</div>
-<div class="section" id="past-changes-in-insolation-investigating-the-milankovitch-hypothesis">
-<h2>6. Past changes in insolation: investigating the Milankovitch hypothesis<a class="headerlink" href="#past-changes-in-insolation-investigating-the-milankovitch-hypothesis" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="past-changes-in-insolation-investigating-the-milankovitch-hypothesis">
+<h2>6. Past changes in insolation: investigating the Milankovitch hypothesis<a class="headerlink" href="#past-changes-in-insolation-investigating-the-milankovitch-hypothesis" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>The <strong>Last Glacial Maximum</strong> or “LGM” occurred around 23,000 years before present, when the ice sheets were at their greatest extent.</p>
 <p>By 10,000 years ago, the ice sheets were mostly gone and the last ice age was over.</p>
@@ -2264,8 +2518,12 @@ Coordinates:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Plot summer solstice insolation at 65ºN</span>
 
 <span class="n">kyears</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>  <span class="c1">#  last 100 kyr</span>
+
 <span class="n">thisorb</span> <span class="o">=</span> <span class="n">OrbitalTable</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">kyear</span><span class="o">=</span><span class="n">kyears</span><span class="p">)</span>
+<span class="c1"># first 65=latitude </span>
+<span class="c1"># second 172 day of year </span>
 <span class="n">S65</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="n">thisorb</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S65</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kyears</span><span class="p">,</span> <span class="n">S65</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Thousands of years before present&#39;</span><span class="p">)</span>
@@ -2276,22 +2534,53 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/orbital_55_0.png" src="../_images/orbital_55_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray (kyear: 101)&gt;
+array([498.80375813, 489.01652477, 480.9736246 , 475.3502372 ,
+       472.2993669 , 471.77014222, 473.41491328, 476.88238506,
+       481.71637865, 487.5535188 , 494.02933045, 500.8172215 ,
+       507.60502296, 514.03794513, 519.72839453, 524.18459749,
+       526.88818882, 527.31498761, 525.12731424, 520.26440099,
+       512.97325288, 503.90310504, 493.88961057, 483.85946184,
+       474.60972819, 466.80827497, 460.84556162, 456.91158754,
+       455.01008584, 455.05498997, 456.83533549, 460.10625584,
+       464.61664832, 470.0812763 , 476.24469622, 482.76915403,
+       489.37529882, 495.71509717, 501.47781924, 506.35086965,
+       510.11431306, 512.6118726 , 513.84752665, 513.88974921,
+       512.96185562, 511.29158609, 509.19938758, 506.92430447,
+       504.68831494, 502.63129842, 500.87843695, 499.44012914,
+       498.31547751, 497.5029162 , 496.96147228, 496.63872361,
+       496.49184725, 496.50663619, 496.64846569, 496.87392298,
+       497.17828287, 497.49832129, 497.76826152, 497.90450296,
+       497.79616493, 497.28260953, 496.21327019, 494.43784106,
+       491.84687581, 488.44731105, 484.33284194, 479.78139543,
+       475.13202835, 470.82223114, 467.30625982, 464.94659708,
+       464.04012809, 464.71360749, 467.01182992, 470.83601977,
+       476.0017198 , 482.28701237, 489.37366141, 496.92573779,
+       504.59665857, 511.92465686, 518.48117328, 523.7717273 ,
+       527.3444343 , 528.82231027, 527.97485582, 524.87702832,
+       519.81679294, 513.38066041, 506.22510927, 499.05977296,
+       492.51031214, 487.03935919, 482.90505474, 480.2196011 ,
+       478.94375843])
+Coordinates:
+  * kyear    (kyear) float64 -100.0 -99.0 -98.0 -97.0 ... -3.0 -2.0 -1.0 0.0
+</pre></div>
+</div>
+<img alt="../_images/orbital_55_1.png" src="../_images/orbital_55_1.png" />
 </div>
 </div>
 <p>Indeed, there was an increase of 60 W m<span class="math notranslate nohighlight">\(^{-2}\)</span> over a 10 kyr interval following the LGM.</p>
 <p>Why?</p>
 <p>What orbital factors favor high insolation at 65ºN at summer solstice?</p>
 <ul class="simple">
-<li><p>high obliquity</p></li>
-<li><p>large, positive precessional parameter</p></li>
+<li><p>high obliquity (greater tilt towards sun)</p></li>
+<li><p>large, positive precessional parameter (Earth closest to sun)</p></li>
 </ul>
 <p>Looking back at our plots of the orbital parameters, it turns out that both were optimal around 10,000 years ago.</p>
 <p>Actually 10,000 years ago the climate was slightly warmer than today and the ice sheets had mostly disappeared already.</p>
 <p>The LGM occurred near a minimum in summer insolation in the north – mostly due to obliquity reaching a minimum, since we have been in a period of weak precession due to the nearly circular orbit. So this is consistent with the orbital theory.</p>
 <p>The hypothesis is incomplete, but compelling.</p>
-<div class="section" id="comparing-insolation-at-10-kyr-and-23-kyr">
-<h3>Comparing insolation at 10 kyr and 23 kyr<a class="headerlink" href="#comparing-insolation-at-10-kyr-and-23-kyr" title="Permalink to this headline">¶</a></h3>
+<section id="comparing-insolation-at-10-kyr-and-23-kyr">
+<h3>Comparing insolation at 10 kyr and 23 kyr<a class="headerlink" href="#comparing-insolation-at-10-kyr-and-23-kyr" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">181</span><span class="p">)</span>
@@ -2306,10 +2595,26 @@ Coordinates:
 <span class="n">Q_10</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span> <span class="n">lat</span><span class="p">,</span> <span class="n">days</span><span class="p">,</span> <span class="n">orb_10</span> <span class="p">)</span>   <span class="c1"># insolation arrays for each of the three sets of orbital parameters</span>
 <span class="n">Q_23</span> <span class="o">=</span> <span class="n">daily_insolation</span><span class="p">(</span> <span class="n">lat</span><span class="p">,</span> <span class="n">days</span><span class="p">,</span> <span class="n">orb_23</span> <span class="p">)</span>
 
-
-<span class="n">Qlist</span><span class="o">=</span><span class="p">[]</span>
-<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">23</span><span class="p">]:</span>
-    <span class="n">Qlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">daily_insolation</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span><span class="n">days</span><span class="p">,</span><span class="n">OrbitalTable</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">kyear</span><span class="o">=</span><span class="n">y</span><span class="p">)))</span>
+<span class="c1"># Qlist=[]</span>
+<span class="c1"># for y in [0,-10,-23]:</span>
+<span class="c1">#    Qlist.append(daily_insolation(lat,days,OrbitalTable.interp(kyear=y)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[538.9122206  513.18602612 478.6054732  ... 558.73445341 561.89683718
+  555.25568429]
+ [538.83014166 513.1078654  478.53257926 ... 558.64935545 561.81125757
+  555.17111616]
+ [538.58392984 512.87340706 478.31391967 ... 558.39408748 561.55454481
+  554.91743753]
+ ...
+ [  0.           0.           0.         ...   0.           0.
+    0.        ]
+ [  0.           0.           0.         ...   0.           0.
+    0.        ]
+ [  0.           0.           0.         ...   0.           0.
+    0.        ]]
 </pre></div>
 </div>
 </div>
@@ -2339,14 +2644,14 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/orbital_60_0.png" src="../_images/orbital_60_0.png" />
+<img alt="../_images/orbital_61_0.png" src="../_images/orbital_61_0.png" />
 </div>
 </div>
 <p>This figure shows that the <strong>insolation at summer solstice</strong> does not tell the whole story!</p>
 <p>For example, the insolation in <strong>late summer / early fall</strong> apparently got weaker between 23 and 10 kyr (in the high northern latitudes).</p>
 <p>The annual mean plot is perfectly symmetric about the equator.</p>
 <p>This actually shows a classic obliquity signal: at 10 kyrs, the axis close to its maximum tilt, around 24.2º. At 23 kyrs, the tilt was much weaker, only about 22.7º. In the annual mean, a stronger tilt means more sunlight to the poles and less to the equator. This is very helpful if you are trying to melt an ice sheet.</p>
-<p>Finally, take the <strong>global average</strong> of the difference:</p>
+<p>Finally, take the <strong>global average</strong> of the difference.  Recall that the cells reduce in size as we move towards the poles, so if we take the simple arithmetic mean we will get the incorrect answer, as it will bias the result towards the poles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Qdiff</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">lat</span><span class="p">)))</span> <span class="p">)</span>
@@ -2361,10 +2666,10 @@ Coordinates:
 </div>
 <p>The difference is tiny (and due to very small changes in the eccentricity).</p>
 <p><strong>Ice ages are driven by seasonal and latitudinal redistributions of solar energy</strong>, NOT by changes in the total global amount of solar energy!</p>
-</div>
-</div>
-<div class="section" id="exercise">
-<h2>EXERCISE<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="exercise">
+<h2>EXERCISE<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>If you recall, 6 Kyr ago, the Sahara was covered by vegetation, and the monsoon penetrated far further north over Africa.  Repeat the previous exercise but comparing the isolation 6000 years ago to the present day.</p>
 <div class="highlight-[note] notranslate"><div class="highlight"><pre><span></span>
 this is a note?
@@ -2374,9 +2679,9 @@ this is a note?
 <p><em>How much more insolation was there at 40N at the summer solstice?</em></p>
 <hr class="docutils" />
 <p><a id='section7'></a></p>
-</div>
-<div class="section" id="understanding-the-effects-of-orbital-variations-on-insolation">
-<h2>7. Understanding the effects of orbital variations on insolation<a class="headerlink" href="#understanding-the-effects-of-orbital-variations-on-insolation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="understanding-the-effects-of-orbital-variations-on-insolation">
+<h2>7. Understanding the effects of orbital variations on insolation<a class="headerlink" href="#understanding-the-effects-of-orbital-variations-on-insolation" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <p>We are going to create a figure showing past time variations in three quantities:</p>
 <ol class="simple">
@@ -2386,6 +2691,26 @@ this is a note?
 </ol>
 <p>which we will compare to the orbital variations we plotted earlier.</p>
 <p>Create a large array of insolation over the whole globe, whole year, and for every set of orbital parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  7.304844  14.609688  21.914532  29.219376  36.52422   43.829064
+  51.133908  58.438752  65.743596  73.04844   80.353284  87.658128
+  94.962972 102.267816 109.57266  116.877504 124.182348 131.487192
+ 138.792036 146.09688  153.401724 160.706568 168.011412 175.316256
+ 182.6211   189.925944 197.230788 204.535632 211.840476 219.14532
+ 226.450164 233.755008 241.059852 248.364696 255.66954  262.974384
+ 270.279228 277.584072 284.888916 292.19376  299.498604 306.803448
+ 314.108292 321.413136 328.71798  336.022824 343.327668 350.632512
+ 357.937356 365.2422  ]
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">91</span><span class="p">)</span>
@@ -2432,6 +2757,35 @@ this is a note?
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">orb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:     (kyear: 1001)
+Coordinates:
+  * kyear       (kyear) float64 -1e+03 -999.0 -998.0 -997.0 ... -2.0 -1.0 0.0
+Data variables:
+    ecc         (kyear) float64 0.03576 0.03695 0.03811 ... 0.01764 0.01724
+    long_peri   (kyear) float64 -1.644e+04 -1.642e+04 -1.641e+04 ... 264.3 281.4
+    obliquity   (kyear) float64 23.78 23.84 23.88 23.9 ... 23.7 23.57 23.45
+    precession  (kyear) float64 0.03018 0.02458 0.0166 ... -0.01756 -0.0169
+    65NJul      (kyear) float64 478.7 479.0 476.4 470.9 ... 434.7 430.1 426.8
+    65SJan      (kyear) float64 414.9 416.2 419.9 425.8 ... 454.1 455.5 455.6
+    15NJul      (kyear) float64 489.6 489.1 485.9 480.0 ... 445.6 442.5 440.6
+    15SJan      (kyear) float64 424.4 425.0 428.3 434.0 ... 465.5 468.6 470.4
+Attributes:
+    Description:  The Berger and Loutre (1991) orbital data table
+    Citation:     https://doi.org/10.1016/0277-3791(91)90033-Q
+    Source:       http://www.atmos.albany.edu/facstaff/brose/resources/climla...
+    Note:         Longitude of perihelion is defined to be 0 degrees at North...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
@@ -2462,40 +2816,7 @@ this is a note?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">sh</span><span class="o">/</span><span class="n">kt3hqg9x639_js73vspx7ch40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_34031</span><span class="o">/</span><span class="mf">2180136294.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">ax</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">kyears</span><span class="p">,</span> <span class="n">orb</span><span class="p">[</span><span class="s1">&#39;ecc&#39;</span><span class="p">]</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Eccentricity $e$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">kyears</span><span class="p">,</span> <span class="n">orb</span><span class="p">[</span><span class="s1">&#39;obliquity&#39;</span><span class="p">]</span> <span class="p">)</span>
-
-<span class="nn">~/Library/Python/3.9/lib/python/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1603</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1604</span><span class="s2">         kwargs = cbook.normalize_kwargs(kwargs, mlines.Line2D)</span>
-<span class="ne">-&gt; </span><span class="mi">1605</span><span class="s2">         lines = [*self._get_lines(*args, data=data, **kwargs)]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1606</span><span class="s2">         for line in lines:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span><span class="s2">             self.add_line(line)</span>
-
-<span class="nn">~/Library/Python/3.9/lib/python/site-packages/matplotlib/axes/_base.py</span> in <span class="ni">__call__</span><span class="nt">(self, data, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span><span class="s2">                 this += args[0],</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span><span class="s2">                 args = args[1:]</span>
-<span class="ne">--&gt; </span><span class="mi">315</span><span class="s2">             yield from self._plot_args(this, kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span><span class="s2">     def get_next_color(self):</span>
-
-<span class="nn">~/Library/Python/3.9/lib/python/site-packages/matplotlib/axes/_base.py</span> in <span class="ni">_plot_args</span><span class="nt">(self, tup, kwargs, return_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">         if x.shape[0] != y.shape[0]:</span>
-<span class="ne">--&gt; </span><span class="mi">501</span><span class="s2">             raise ValueError(f&quot;x and y must have same first dimension, but &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="s2">                              f&quot;have shapes </span><span class="si">{x.shape}</span><span class="s2"> and </span><span class="si">{y.shape}</span><span class="s2">&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">         if x.ndim &gt; 2 or y.ndim &gt; 2:</span>
-
-<span class="ne">ValueError</span>: x and y must have same first dimension, but have shapes (101,) and (1001,)
-</pre></div>
-</div>
-<img alt="../_images/orbital_72_1.png" src="../_images/orbital_72_1.png" />
+<img alt="../_images/orbital_75_0.png" src="../_images/orbital_75_0.png" />
 </div>
 </div>
 <p>We see that</p>
@@ -2506,9 +2827,9 @@ this is a note?
 </ol>
 <hr class="docutils" />
 <p><a id='section8'></a></p>
-</div>
-<div class="section" id="summary">
-<h2>8. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summary">
+<h2>8. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>The annual, global mean insolation varies only as a result of eccentricity <span class="math notranslate nohighlight">\(e\)</span>. The changes are very small (about 0.1 % through a typical eccentricity cycle from more circular to more elliptical)</p></li>
@@ -2522,18 +2843,18 @@ this is a note?
 </ul>
 <p>These geometrical considerations tell us that <strong>seasonal variations in <span class="math notranslate nohighlight">\(Q\)</span> can be rather large</strong>, and will surely impact the climate. But to go from there to understanding how large ice sheets come and go is a difficult step, and requires climate models!</p>
 <p>One thing is clear: any serious astronomical theory of climate needs to take account of the climate response to seasonal variations in Q, because these are much larger than the variations in annual mean insolation.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="credits">
-<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">#</a></h2>
 <p>Adrian Tompkins forked this notebook April 23rd 2021.</p>
 <p>This notebook is part of <a class="reference external" href="https://brian-rose.github.io/ClimateLaboratoryBook">The Climate Laboratory</a>, an open-source textbook developed and maintained by <a class="reference external" href="http://www.atmos.albany.edu/facstaff/brose/index.html">Brian E. J. Rose</a>, University at Albany.</p>
 <p>It is licensed for free and open consumption under the
 <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license.</p>
 <p>Development of these notes and the <a class="reference external" href="https://github.com/brian-rose/climlab">climlab software</a> is partially supported by the National Science Foundation under award AGS-1455071 to Brian Rose. Any opinions, findings, conclusions or recommendations expressed here are mine and do not necessarily reflect the views of the National Science Foundation.</p>
 <hr class="docutils" />
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2547,7 +2868,7 @@ this is a note?
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -2557,9 +2878,11 @@ this is a note?
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="rce.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2575,26 +2898,28 @@ this is a note?
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Adrian Tompkins<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Adrian Tompkins<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

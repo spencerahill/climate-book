@@ -80,7 +80,7 @@ from climlab import constants as const
 # ```
 # to compare the maximum insolation received at the North Pole (at its summer solstice) and the South Pole (at its summer solstice).
 
-# In[2]:
+# In[9]:
 
 
 from climlab.solar.insolation import daily_insolation
@@ -88,10 +88,20 @@ days = np.linspace(0, const.days_per_year, 365)
 
 Qnorth = daily_insolation(90,days)
 Qsouth = daily_insolation(-90,days)
+Qtrieste = daily_insolation(45,days)
+Qeq = daily_insolation(0,days)
+
 
 print( 'Daily average insolation at summer solstice:')
 print( 'North Pole: %0.2f W/m2.' %np.max(Qnorth))
 print( 'South Pole: %0.2f W/m2.' %np.max(Qsouth))
+
+
+plt.plot(days,Qnorth,label="North Pole")
+plt.plot(days,Qtrieste,label="Trieste")
+plt.plot(days,Qeq,label="Equator")
+plt.legend()
+plt.show()
 
 
 # These asymmetries arise because of the detailed shape of the orbit of the Earth around the Sun and the tilt of the Earth's axis of rotation.
@@ -179,9 +189,7 @@ print( 'South Pole: %0.2f W/m2.' %np.max(Qsouth))
 # 
 # We call the gradual change over time of the longitude of perihelion the **precession of the equinoxes** (or just precession).  It is the **gradual change in the time of year at which the Earth is closest to the Sun**.
 
-# ### Question
 # 
-# Can there be any precession for a planet with a *perfectly circular* orbit (zero eccentricity)?
 
 # It is important to understand that eccentricity modulates the precession. *Highly eccentric orbits lead to larger differences in the seasonal distribution of insolation.* 
 # 
@@ -212,13 +220,13 @@ print( 'South Pole: %0.2f W/m2.' %np.max(Qsouth))
 # climlab.solar.orbital
 # ```
 
-# In[3]:
+# In[10]:
 
 
 from climlab.solar.orbital import OrbitalTable
 
 
-# In[4]:
+# In[11]:
 
 
 OrbitalTable
@@ -226,7 +234,7 @@ OrbitalTable
 
 # Make reference plots of the variation in the three orbital parameter over the last 1 million years
 
-# In[5]:
+# In[12]:
 
 
 kyears = np.arange( -1000., 1.)
@@ -245,7 +253,7 @@ orb
 # - obliquity angle `obliquity`
 # - solar longitude of perihelion `long_peri`
 
-# In[6]:
+# In[13]:
 
 
 fig = plt.figure( figsize = (10,12) )
@@ -291,22 +299,22 @@ plt.savefig('plot.png')
 
 # ### An example: zero obliquity
 # 
-# Calculate the insolation at the **North Pole** for a planet with **zero obliquity** and **zero eccentricity**.
+# Calculate the insolation at the **North Pole** for a planet with **zero obliquity and eccentricity**.
 
-# In[7]:
+# In[24]:
 
 
 from climlab.solar.insolation import daily_insolation
 
 
-# In[8]:
+# In[27]:
 
 
-thisorb = {'ecc':0.0, 'obliquity':20., 'long_peri':0.}
+thisorb = {'ecc':0.0, 'obliquity':0., 'long_peri':0.}
 print(thisorb)
 
 
-# In[9]:
+# In[28]:
 
 
 days = np.linspace(1.,20.)/20 * const.days_per_year
@@ -316,7 +324,7 @@ daily_insolation(90, days, thisorb)
 
 # Compare this with the same calculation for default (present-day) orbital parameters:
 
-# In[10]:
+# In[29]:
 
 
 daily_insolation(90, days)
@@ -340,14 +348,18 @@ daily_insolation(90, days)
 # 
 # The classical way to plot this is the look at **insolation at summer solstice at 65ºN**.  Let's plot this for the last 100,000 years.
 
-# In[11]:
+# In[31]:
 
 
 #  Plot summer solstice insolation at 65ºN
 
 kyears = np.linspace(-100, 0, 101)  #  last 100 kyr
+
 thisorb = OrbitalTable.interp(kyear=kyears)
+# first 65=latitude 
+# second 172 day of year 
 S65 = daily_insolation( 65, 172, thisorb )
+print(S65)
 fig, ax = plt.subplots()
 ax.plot(kyears, S65)
 ax.set_xlabel('Thousands of years before present')
@@ -362,8 +374,8 @@ ax.grid()
 # 
 # What orbital factors favor high insolation at 65ºN at summer solstice?
 # 
-# - high obliquity
-# - large, positive precessional parameter
+# - high obliquity (greater tilt towards sun)
+# - large, positive precessional parameter (Earth closest to sun)
 
 # Looking back at our plots of the orbital parameters, it turns out that both were optimal around 10,000 years ago.
 # 
@@ -375,7 +387,7 @@ ax.grid()
 
 # ### Comparing insolation at 10 kyr and 23 kyr
 
-# In[12]:
+# In[32]:
 
 
 lat = np.linspace(-90, 90, 181)
@@ -390,13 +402,18 @@ Q_0 = daily_insolation( lat, days, orb_0 )
 Q_10 = daily_insolation( lat, days, orb_10 )   # insolation arrays for each of the three sets of orbital parameters
 Q_23 = daily_insolation( lat, days, orb_23 )
 
+# Qlist=[]
+# for y in [0,-10,-23]:
+#    Qlist.append(daily_insolation(lat,days,OrbitalTable.interp(kyear=y)))
 
-Qlist=[]
-for y in [0,-10,-23]:
-    Qlist.append(daily_insolation(lat,days,OrbitalTable.interp(kyear=y)))
+
+# In[ ]:
 
 
-# In[13]:
+
+
+
+# In[33]:
 
 
 fig = plt.figure( figsize=(12,6) )
@@ -428,9 +445,9 @@ ax2.grid()
 # 
 # This actually shows a classic obliquity signal: at 10 kyrs, the axis close to its maximum tilt, around 24.2º. At 23 kyrs, the tilt was much weaker, only about 22.7º. In the annual mean, a stronger tilt means more sunlight to the poles and less to the equator. This is very helpful if you are trying to melt an ice sheet.
 
-# Finally, take the **global average** of the difference:
+# Finally, take the **global average** of the difference.  Recall that the cells reduce in size as we move towards the poles, so if we take the simple arithmetic mean we will get the incorrect answer, as it will bias the result towards the poles. 
 
-# In[14]:
+# In[35]:
 
 
 print( np.average(np.mean(Qdiff,axis=1), weights=np.cos(np.deg2rad(lat))) )
@@ -473,7 +490,13 @@ print( np.average(np.mean(Qdiff,axis=1), weights=np.cos(np.deg2rad(lat))) )
 
 # Create a large array of insolation over the whole globe, whole year, and for every set of orbital parameters.
 
-# In[15]:
+# In[36]:
+
+
+print(days)
+
+
+# In[37]:
 
 
 lat = np.linspace(-90, 90, 91)
@@ -483,7 +506,7 @@ Q = daily_insolation(lat, days, orb)
 print( Q.shape)
 
 
-# In[16]:
+# In[38]:
 
 
 Qann = np.mean(Q, axis=1)  # time average over the year
@@ -495,7 +518,13 @@ for n in range(kyears.shape[0] ):   # global area-weighted average
 print( Qglobal.shape)
 
 
-# In[17]:
+# In[39]:
+
+
+print(orb)
+
+
+# In[51]:
 
 
 fig = plt.figure(figsize = (16,12))

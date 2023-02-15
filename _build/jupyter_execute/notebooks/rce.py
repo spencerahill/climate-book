@@ -124,7 +124,7 @@ skew.ax.set_title('Pure radiative equilibrium', fontsize=18);
 
 # Here is some code to put this model together in `climlab`:
 
-# In[2]:
+# In[7]:
 
 
 #  Make a model on same vertical domain as the GCM

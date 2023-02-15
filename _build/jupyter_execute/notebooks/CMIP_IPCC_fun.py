@@ -74,6 +74,7 @@ from netCDF4 import Dataset, num2date
 from cdo import *
 import numpy as np
 import datetime
+import os
 from pathlib import Path
 
 
@@ -87,7 +88,7 @@ from pathlib import Path
 # python code for getting code
 
 odir="/Users/tompkins/junk/"
-#odir="/scratch/tompkins/cmip"
+#odir="/scratch/tompkins/cmip/"
 Path(odir).mkdir(parents=True,exist_ok=True)
 
 def get_var(model,var,exp):
@@ -115,7 +116,6 @@ def get_var(model,var,exp):
 # In[3]:
 
 
-
 # let's try it out 
 model='noresm2_mm'
 var="near_surface_air_temperature"
@@ -126,7 +126,7 @@ ofile=get_var(model,var,exp)
 
 # now we need to unzip the files and then pass results to a variable as a list.
 
-# In[4]:
+# In[21]:
 
 
 # unzip file call to shell to detar and examine header
@@ -138,7 +138,7 @@ def unzip_cmip(ofile):
         return(files)
 
 
-# In[5]:
+# In[22]:
 
 
 # let's try it out
@@ -150,7 +150,7 @@ print(files)
 # That worked, so now let's take a look at the header of one of the files (recall you can also do this using ncdump from the command line)
 # 
 
-# In[6]:
+# In[23]:
 
 
 # CDO from python to do some stats, fldmeans and means at start, and at end 
@@ -166,7 +166,7 @@ ds.variables
 # 
 # 
 
-# In[7]:
+# In[31]:
 
 
 def make_ts_yearmean(files):
@@ -180,24 +180,30 @@ def make_ts_yearmean(files):
     for file in files:
         mfile.append(cdo.fldmean(input=odir+file)) # look, no output :-) 
     ofile=odir+files[0][:-16]+"fldmean_yearmean.nc"
+    try:
+        os.remove(ofile)
+    except:
+        pass
     cdo.yearmean(input=cdo.mergetime(input=mfile),output=ofile,options="-O ")
     return ofile
 
 
-# In[8]:
+# In[28]:
 
 
 # let's try it out 
+
 tsfile=make_ts_yearmean(files)
 
 # check if the file is there:
 annmean=glob.glob(odir+"*fldmean_yearmean.nc")
-print(annmean)
+#print(annmean)
+print(tsfile)
 
 
 # you should see a list with the file as the only string if everything has worked okay.  You   can open that file from the command line using **ncview** if you like (go on, give it a try!)... but let's also plot it here:
 
-# In[6]:
+# In[18]:
 
 
 # let's try a plot
@@ -217,7 +223,7 @@ def plot_base(tsfile,var):
     return fig,ax
 
 
-# In[ ]:
+# In[19]:
 
 
 fig,ax=plot_base(tsfile,"tas")
@@ -232,7 +238,7 @@ ax.legend()
 
 # Let's make an intercomparison between different models now...  
 
-# In[ ]:
+# In[29]:
 
 
 # If you cut and paste the model title note that you need to change "-" to "_" 
@@ -246,7 +252,8 @@ for model in models:
     zipfiles.append(get_var(model,var,exp))
 
 
-# In[ ]:
+
+# In[32]:
 
 
 # commented out, zipfiles is defined in the previous cell - this was just a fudge
@@ -259,7 +266,7 @@ for zfile in zipfiles:
 
 # As we want to plot multiple models, we also need a function to add a line to an existing plot
 
-# In[7]:
+# In[33]:
 
 
 # now let's make the plot 
@@ -274,7 +281,7 @@ def plot_add(file,var,ax):
 
 # And now we will plot the randomly selected models
 
-# In[ ]:
+# In[34]:
 
 
 var="tas"

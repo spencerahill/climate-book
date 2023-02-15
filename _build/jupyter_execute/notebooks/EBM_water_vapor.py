@@ -11,7 +11,7 @@
 # T^4_s=(n+1)T^4_e
 # $$
 # 
-# Thus as $n\rightarrow \infty$ then $T_s \rightarrow \infty$.  For a grey body atmosphere, instead, there is a finite solution and it turns out (I will add the full derivation to the atmos physics notes) that we can approximate this term in the energy balance equation by writing OLR term for the multilevel grey body model as :
+# Thus as $n\rightarrow \infty$ then $T_s \rightarrow \infty$.  For a grey body atmosphere, instead, there is a finite solution and it turns out that we can approximate this term in the energy balance equation by writing OLR term for the multilevel grey body model as :
 #   
 # $$
 #   C \frac{dT_s}{dt} = \frac{S_0}{4} [ 1 - \alpha(T_s)]  -  \frac{1}{1+\tau/2}\sigma T_s^4
@@ -37,17 +37,20 @@ import numpy as np
 Lv=2.5e6
 Rv=461.5
 sigma=5.67e-8
+tauco2=1.12
 
+
+# We now define the functions for the optical depth:
 
 # In[2]:
 
 
 def tauwv(T,fac=0.14):
     """optical depth as function of surface temperature DUE to WATER VAPOR"""
-    return 0.41*np.exp(-Lv*(1/T-1/288)/Rv)
+    return fac*np.exp(-Lv*(1/T-1/288)/Rv)
 
 def tau(T,fac=0.14):
-    return 1.12+tauwv(T,fac=fac)
+    return tauco2+tauwv(T,fac=fac)
 
 # vector of surface temperatures
 Ts=np.arange(200,400,5)
@@ -58,7 +61,6 @@ print(tau(288))
 # Now let's make a plot of Tau as a function of the surface temperature
 
 # In[3]:
-
 
 
 # plot Tau
@@ -76,7 +78,7 @@ ax.set_ylabel("Optical Depth ($\\tau$)")
 # In[4]:
 
 
-# surface albedo with ice feedback
+# surface albedo with ice feedback included, turned off by default
 def alfa(T,lconst=True):
     if lconst: 
         albedo=0.33    
@@ -125,7 +127,7 @@ ax.vlines(S0today,200,400,linestyles="dotted")
 # 
 # 1. Without looking at the next section, attempt to derive the water vapor climate feedback factor $\lambda_{wv}$ in this model for present day $S_0$.  
 # 2. Is the feedback positive or negative, and do you understand why?
-# 3. The feedback seems to be weaker than the value derived from GCMs.  What what you need to change the factor 0.14 to in order to get a feedback of 2.0 W m$^{-2}$ K$^{-1}$?  How would that revised value change the equilibrium climate for today's solar forcing?
+# 3. The feedback seems to be weaker than the value derived from GCMs.  To what do you need to change the factor 0.14 to in order to get a feedback of 2.0 W m$^{-2}$ K$^{-1}$?  How would that revised value change the equilibrium climate for today's solar forcing?
 # 
 
 # ## Feedback factor 
@@ -140,7 +142,7 @@ ax.vlines(S0today,200,400,linestyles="dotted")
 # \frac{d\tau}{dT_s}=0.14 \exp \big [ - \frac{L_v}{R_v}  \big( \frac{1}{T_s} - \frac{1}{288} \big ) \big ] \frac{L_v} {R_v T_s^2}=\tau_{wv}(T)\frac{L_v} {R_v T_s^2}
 # $$
 # 
-# Note, you can also derive the total substantive derivative of $N$ and then subtract the Planck feedback, you should arrive at the same answer (try it and see!).
+# Note, you can also derive the total substantive derivative of $N$ and then subtract the Planck feedback, you should arrive at the approximately same answer (try it and see!):
 # 
 
 # In[5]:

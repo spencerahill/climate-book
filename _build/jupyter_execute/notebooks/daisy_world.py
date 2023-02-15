@@ -41,14 +41,21 @@ maxloop=100 # number of iterations to allow daisies to equilibrate.
 luminosity=np.arange(0.5,1.5,0.01) # range of luminosities over which we will loop, starting from low to high
 
 
+# In[2]:
+
+
+print (maxloop)
+
+
 # ## Plant response function
 # 
 # We now define the plant growth temperature response function.  This is a quadratic curve that peaks at T=22.5C (you may change this value).  
 # 
 # Equation 3 of WL83:
-# \begin{equation}
+# 
+# $$
 # \beta=1-0.003265(22.5-T)^2
-# \end{equation}
+# $$
 # 
 # The max function ensures positive-definite growth rates, setting the growth rate to zero below about 5C and above 40C.  NOTE: Be careful of the units for temperature, which switch between deg C and K in the code and paper. 
 # 
@@ -56,7 +63,7 @@ luminosity=np.arange(0.5,1.5,0.01) # range of luminosities over which we will lo
 # 
 # Let's code up the temperature response function now, note that we also define the plant death rate, which is introduced in the equations below ($\gamma$):
 
-# In[2]:
+# In[3]:
 
 
 Td_ideal=22.5+keloff  # peak growth rate for daisies
@@ -67,11 +74,22 @@ def birth_rate(T):
     return max(1.0-birth_rate_k*(Td_ideal-T)**2,0.0)
 
 
+# In[4]:
+
+
+tarr=np.linspace(0,40,41)+keloff
+fig,ax=plt.subplots()
+br=[birth_rate(t) for t in tarr]
+ax.plot(tarr,br)
+ax.set_xlabel("Temperature(K)")
+ax.set_ylabel("beta")
+
+
 # ## The plant function types
 # 
 # We now introduce some other parameters in the model, the white daisy (dw) and black daisy (db) and bare soil (bs) albedoes: 
 
-# In[3]:
+# In[5]:
 
 
 alb_dw=0.75 # white daisies albedo 
@@ -85,42 +103,44 @@ alb_bs=0.5  # bare soil
 # 
 # Equation 5 of WL83, this simply states that the mean planetary albedo is an area-weighted average of the daisies and bare soil values. 
 # 
-# \begin{equation}
+# $$
 # A_p=A_{dw}\alpha_{dw}+A_{db}\alpha_{db}+A_{bs}\alpha_{bs}
-# \end{equation}
+# $$
 # 
 # where $\alpha$ is the fractional coverage of the white daisies (dw), black daises (db) or bare soil (bs) and $A$ is the respective albedo of each land cover type.  (NOTE: We use this notation to follow WL83 and W08, but do not get confused as we usually use $\alpha$ for albedo in the course).
 # 
 
 # We then calculate the planet mean temperature, which is a simple energy balance equation between incoming solar and emitted infrared radiation (Equation 4 of WL83):
-# \begin{equation}
+# 
+# $$
 # T_e=\sqrt[4]{\frac{LS_0(1-A)}{\sigma}}
-# \end{equation}
+# $$
 # 
 # 
 
 # The next step is to calculate the local temperature resulting from the presence of the daisies.  In WL83 this is not explained in much detail, and we thus refer to the excellent description of W08: The local temperatures $T_{dw}$ and $T_{db}$ and the bare soil temperature $T_{bs}$ are defined by making a simplifying assumption about the heat transfer, essentially a linearization of adiffusion term (refer to the 1D zonal model for ice albedo feedback). This gives a degree of connectedness to the daisy patches without introducing space explicitly. A parameter $q$ is defined as the heat transfer coefficient in WL83, thereby defining the local temperatures as (equation 7 of WL83 or 5-7 in W08):
 # 
-# \begin{equation}
+# $$
 # T_{dw}=q(A-A_{dw})+T_e
-# \end{equation}
+# $$
+# 
 # and similarly for the black daisies. 
 # 
 # 
 
 # Now we only have to define the two key equations, which describe the birthrate of each daisy type which is a function of their optimum temperatures, using the birthrate function defined above.  Each daisies has a constant death rate $\gamma$, converting daisy coverage back to bare soil. These equations are standard for population dynamics, disease models etc.  These are eqn. 1 in WL83 or eqn 2 in W08:
 # 
-# \begin{equation}
+# $$
 # \frac {\partial \alpha_{dw}}{\partial t}=\alpha_{dw}(\alpha_{bs}\beta(T_{dw})-\gamma)
-# \end{equation}
+# $$
 # 
-# \begin{equation}
+# $$
 # \frac {\partial \alpha_{db}}{\partial t}=\alpha_{db}(\alpha_{bs}\beta(T_{db})-\gamma)
-# \end{equation}
+# $$
 # 
 # In the code below we note the solver is not accurate, as the system is coupled and the integration method is explicit, but it simple to understand and will do for present purposes.  If you have finished the ICTP diploma course in numerical methods I/II you may like to replace this, implementing a Runge-Kutta 4th order solver for example. 
 
-# In[4]:
+# In[6]:
 
 
 # store arrays 
@@ -131,6 +151,8 @@ T_p_v=[]
 T_ref=[]
 
 area_dw=area_db=0.01 # initial conditions
+
+#luminosity=[1]
 
 # loop over luminosity...
 for iflux,flux in enumerate(luminosity):
@@ -148,15 +170,16 @@ for iflux,flux in enumerate(luminosity):
         
         # EQN 4: calculate planet mean temperature
         T_p=np.power(flux*S0*(1-alb_p)/sigma,0.25)
-        
+         
         # EQN 7: calculate local temperatures
         T_db=transport*(alb_p-alb_db)+T_p
         T_dw=transport*(alb_p-alb_dw)+T_p
-       
+        
         # EQN 3: calculate birth rate beta
         birth_rate_db=birth_rate(T_db)
         birth_rate_dw=birth_rate(T_dw)
         
+       
         # EQN 1: change in daisy area
         area_db+=area_db*(birth_rate_db*area_bs-death_rate)
         area_dw+=area_dw*(birth_rate_dw*area_bs-death_rate)
@@ -164,6 +187,8 @@ for iflux,flux in enumerate(luminosity):
         # update areas
         area_bs=1.0-area_db-area_dw
 
+        #print (area_db,area_dw,area_bs)
+        
     # store the value...
     area_db_v.append(area_db)
     area_dw_v.append(area_dw)
@@ -176,7 +201,7 @@ for iflux,flux in enumerate(luminosity):
 # 
 # Now we just need to plot the results:
 
-# In[5]:
+# In[7]:
 
 
 fig,ax=plt.subplots(2,1)

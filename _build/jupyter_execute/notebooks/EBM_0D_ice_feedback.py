@@ -29,7 +29,7 @@
 # As the temperature cools, more of the planet is assumed to be below the threshold for ice cover, increasing the global mean albedo.  This is represented by the following function:  
 # 
 # $$
-#   \alpha = 0.45 - 0.25 \,\mathrm{tanh} \left( \frac{(T-272)}{23} \right)
+#   \alpha(T_s) = 0.45 - 0.25 \,\mathrm{tanh} \left( \frac{(T_s-272)}{23} \right)
 # $$
 #  
 #  Note that we don't actually know what the ice cover is in this model, we only know the final impact on albedo.  
@@ -54,7 +54,8 @@ def alpha(T):
 
 
 # vector of surface temperatures
-Ts=np.arange(200,350,0.5)
+tmin,tmax=200,350
+Ts=np.arange(tmin,tmax,0.5)
 print (Ts)
 
 
@@ -88,9 +89,6 @@ def cdTdt(S,T):
     """Temperature tendancy=F(S,T), S=Solar constant, T=temperature"""
     return S*(1-alpha(T))/4 - eps_e*sigma*np.power(T,4)
 
-# limits of temperature array we will need later:
-tmin,tmax=np.min(Ts),np.max(Ts)
-
 # plot
 fig,ax=plt.subplots()
 ax.plot(Ts,cdTdt(S0today,Ts))
@@ -123,7 +121,7 @@ fig,ax=plt.subplots()
 X=ax.contour(S0,Ts,cdTdt(S2d,T2d),levels=np.arange(-200,400,25))
 ax.clabel(X,fontsize=10)
 ax.set_xlabel("S0 (Wm$^{-2}$)")
-ax.set_ylabel("T (K)")
+ax.set_ylabel("$T_s$ (K)")
 ax.vlines(S0today,tmin,tmax,linestyles="dotted")
 
 
@@ -132,9 +130,43 @@ ax.vlines(S0today,tmin,tmax,linestyles="dotted")
 # 
 # ## Exercise
 # 
-# Write a small python code that iterates the temperature until $\frac{Dt}{dt}=0$.  Now do the following...  Starting from $S_0=1340 W m^{-2}$ calculate $T_s$ (use a first guess $T_s$=320K.  Then reduce $S_0$ by 20 W m$^{-2}$, find the new equilibrium (starting the iteration from the previous equilibrium value), repeat until $S_0$=1000 W m$^{-2}$, storing the equilibrium . Then reverse the process by increasing $S_0$ in 20 $W m^{-2}$ steps back to the present day and beyond to 1600 W m$^{-2}$.  Plot $T_s$ against $S_0$.  
+# Write a small python code that iterates the temperature until $\frac{Dt}{dt}=0$.  Now do the following...  Starting from $S_0=1600 W m^{-2}$ calculate $T_s$ (use a first guess $T_s$=320K.  Then reduce $S_0$ by 20 W m$^{-2}$, find the new equilibrium (starting the iteration from the previous equilibrium value), repeat until $S_0$=1000 W m$^{-2}$, storing the equilibrium . Then reverse the process by increasing $S_0$ in 20 $W m^{-2}$ steps back to the present day and beyond to 1600 W m$^{-2}$.  Plot $T_s$ against $S_0$.  
 # 
 # 
+
+# In[7]:
+
+
+Ts=320. # first guess initial value...
+
+S0vec=np.arange(1000,2000,10)
+
+
+Cwater=3850
+dt=86400*365
+Cddt=Cwater*1e6/dt
+
+
+Tdown=[]
+
+for S0 in np.flip(S0vec):
+    deltaT=99
+    # find the equilibrium temperature 
+    while deltaT > 0.01:
+        deltaT=cdTdt(S0,Ts)/Cddt
+        Ts+=deltaT
+    
+    # store Ts value
+    Tdown.append(Ts)
+    
+    # then repest with the reverse array
+
+fig,ax=plt.subplots()
+ax.plot(S0vec,np.flip(Tdown))
+ax.set_xlabel("S0 (W m$^{-2}$)")
+ax.set_ylabel("Ts(K) ")
+
+
 
 # 
 # 
@@ -151,12 +183,12 @@ ax.vlines(S0today,tmin,tmax,linestyles="dotted")
 # 
 # We can now code this up to calculate the feedback, we need the relationship for $sech^2(x)$:
 # 
-# $sech^2(x)=\left(\frac{2}{e^x+e^{-x}}\right)^2$
+# $$sech^2(x)=\left(\frac{2}{e^x+e^{-x}}\right)^2$$
 # 
 # This gives
 # 
 
-# In[7]:
+# In[8]:
 
 
 import math as mp
@@ -180,7 +212,7 @@ ax.set_xlabel("T (K)")
 # 
 # Try to add the Planck feedback to the plot... 
 
-# In[8]:
+# In[9]:
 
 
 # add hline for magnitude of Planck
@@ -200,9 +232,12 @@ ax[1].set_xlabel("T (K)")
 ax[1].set_ylabel("Total $\lambda$ (Wm$^{-2}$K$^{-1}$)")
 
 
-# We can see that the system is indeed unstable between approximately 255K and 282 K, by finding out the lowest and highest entries where the ice albedo exceeds the Planck feedback, (although to be precise we should really solve with a root finding algorithm).
 
-# In[9]:
+# We can see that the system is indeed unstable between approximately 255K and 282 K, by finding out the lowest and highest entries where the ice albedo exceeds the Planck feedback, (although to be precise we should really solve with a root finding algorithm).
+# 
+# This very simple model shows the essence of unstable feedback.  In the full zonal model of ice feedback we will see in fact that ice albedo feedback is actually runaway once the ice edge expands to a certain latitude, since the impact of the ice increases as you move towards the equator, which receives more solar insulation over the year.  
+
+# In[10]:
 
 
 #
@@ -222,6 +257,8 @@ print("Earth system unstable between ",unstable_min," and ",unstable_max," K")
 #   <li>Thus ice-covered states are "sticky", once the Earth is frozen, difficult to get out</li>
 #   <li> We note that when climate models are discussed, we often talk about them having a positive or negative feedback, this usually refers to all the feedbacks **except** the Planck feedback.  <u>Thus a climate model with positive feedback can still be stable as long as the magnitude does not exceed that of the Planck feedback.</u> </li>  
 # </ul> 
+
+# Finally... if you enjoyed this notebook and wish to investigate further, I suggest trying out the zonal EBM notebook in Brian Rose's coursebook. 
 
 # In[ ]:
 
