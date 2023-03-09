@@ -80,7 +80,7 @@ from climlab import constants as const
 # ```
 # to compare the maximum insolation received at the North Pole (at its summer solstice) and the South Pole (at its summer solstice).
 
-# In[9]:
+# In[2]:
 
 
 from climlab.solar.insolation import daily_insolation
@@ -220,13 +220,13 @@ plt.show()
 # climlab.solar.orbital
 # ```
 
-# In[10]:
+# In[3]:
 
 
 from climlab.solar.orbital import OrbitalTable
 
 
-# In[11]:
+# In[4]:
 
 
 OrbitalTable
@@ -234,7 +234,7 @@ OrbitalTable
 
 # Make reference plots of the variation in the three orbital parameter over the last 1 million years
 
-# In[12]:
+# In[5]:
 
 
 kyears = np.arange( -1000., 1.)
@@ -253,7 +253,7 @@ orb
 # - obliquity angle `obliquity`
 # - solar longitude of perihelion `long_peri`
 
-# In[13]:
+# In[6]:
 
 
 fig = plt.figure( figsize = (10,12) )
@@ -301,20 +301,20 @@ plt.savefig('plot.png')
 # 
 # Calculate the insolation at the **North Pole** for a planet with **zero obliquity and eccentricity**.
 
-# In[24]:
+# In[7]:
 
 
 from climlab.solar.insolation import daily_insolation
 
 
-# In[27]:
+# In[8]:
 
 
 thisorb = {'ecc':0.0, 'obliquity':0., 'long_peri':0.}
 print(thisorb)
 
 
-# In[28]:
+# In[9]:
 
 
 days = np.linspace(1.,20.)/20 * const.days_per_year
@@ -324,7 +324,7 @@ daily_insolation(90, days, thisorb)
 
 # Compare this with the same calculation for default (present-day) orbital parameters:
 
-# In[29]:
+# In[10]:
 
 
 daily_insolation(90, days)
@@ -348,7 +348,7 @@ daily_insolation(90, days)
 # 
 # The classical way to plot this is the look at **insolation at summer solstice at 65ºN**.  Let's plot this for the last 100,000 years.
 
-# In[31]:
+# In[11]:
 
 
 #  Plot summer solstice insolation at 65ºN
@@ -387,7 +387,7 @@ ax.grid()
 
 # ### Comparing insolation at 10 kyr and 23 kyr
 
-# In[32]:
+# In[12]:
 
 
 lat = np.linspace(-90, 90, 181)
@@ -413,7 +413,7 @@ Q_23 = daily_insolation( lat, days, orb_23 )
 
 
 
-# In[33]:
+# In[13]:
 
 
 fig = plt.figure( figsize=(12,6) )
@@ -447,7 +447,7 @@ ax2.grid()
 
 # Finally, take the **global average** of the difference.  Recall that the cells reduce in size as we move towards the poles, so if we take the simple arithmetic mean we will get the incorrect answer, as it will bias the result towards the poles. 
 
-# In[35]:
+# In[14]:
 
 
 print( np.average(np.mean(Qdiff,axis=1), weights=np.cos(np.deg2rad(lat))) )
@@ -490,13 +490,13 @@ print( np.average(np.mean(Qdiff,axis=1), weights=np.cos(np.deg2rad(lat))) )
 
 # Create a large array of insolation over the whole globe, whole year, and for every set of orbital parameters.
 
-# In[36]:
+# In[15]:
 
 
 print(days)
 
 
-# In[37]:
+# In[16]:
 
 
 lat = np.linspace(-90, 90, 91)
@@ -506,7 +506,7 @@ Q = daily_insolation(lat, days, orb)
 print( Q.shape)
 
 
-# In[38]:
+# In[17]:
 
 
 Qann = np.mean(Q, axis=1)  # time average over the year
@@ -518,13 +518,13 @@ for n in range(kyears.shape[0] ):   # global area-weighted average
 print( Qglobal.shape)
 
 
-# In[39]:
+# In[18]:
 
 
 print(orb)
 
 
-# In[51]:
+# In[19]:
 
 
 fig = plt.figure(figsize = (16,12))
