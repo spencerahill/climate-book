@@ -1,22 +1,24 @@
 format: jb-article
 root: intro
 sections:
-- file: content1
+# CHAPTER 1: THERMODYNAMICS, CONVECTION AND CLOUDS
+# CHAPTER 2: RADIATION AND ENERGY BALANCE
+- file: content_radiation
   sections:
-  - file: notebooks/climate-system-models.ipynb
-  - file: notebooks/advection.ipynb
-  # notes insert a parameterization notebook here - diffusion
-  # cloud parameterization
-- file: content2
+  - file: notebooks/radn_insolation.ipynb
+  - file: notebooks/radn_radeq.ipynb
+  - file: notebooks/radn_rce.ipynb
+  - file: notebooks/radn_orbital.ipynb
+# CHAPTER 3: CLIMATE FEEDBACKS
+- file: content_feedbacks
   sections:
-  - file: notebooks/insolation.ipynb
-  - file: notebooks/radeq.ipynb
-  - file: notebooks/rce.ipynb
-  - file: notebooks/orbital.ipynb  
-- file: content3
+  - file: notebooks/clim_EBM_0D_ice_feedback.ipynb
+  - file: notebooks/clim_EBM_water_vapor.ipynb
+  - file: notebooks/clim_daisy_world.ipynb
+# CHAPTER 4: MODELLING
+- file: content_modelling
   sections:
-  - file: notebooks/EBM_0D_ice_feedback.ipynb
-  - file: notebooks/EBM_water_vapor.ipynb
-  - file: notebooks/daisy_world.ipynb
-  - file: notebooks/CMIP_IPCC_fun.ipynb
+  - file: notebooks/mod_climate-system-models.ipynb
+  - file: notebooks/mod_advection.ipynb
+  - file: notebooks/mod_CMIP_IPCC_fun.ipynb
   

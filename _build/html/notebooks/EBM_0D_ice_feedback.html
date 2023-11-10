@@ -550,7 +550,7 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 <span class="c1"># function to calculate alfa</span>
 <span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; function for albedo&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="mf">0.45</span><span class="o">-</span><span class="mf">0.25</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">((</span><span class="n">T</span><span class="o">-</span><span class="mi">272</span><span class="p">)</span><span class="o">/</span><span class="mi">23</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.45</span><span class="o">-</span><span class="mf">0.25</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">((</span><span class="n">T</span><span class="o">-</span><span class="mf">272.</span><span class="p">)</span><span class="o">/</span><span class="mf">23.</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -638,7 +638,7 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x116201ab0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x10b178730&gt;
 </pre></div>
 </div>
 <img alt="../_images/EBM_0D_ice_feedback_8_1.png" src="../_images/EBM_0D_ice_feedback_8_1.png" />
@@ -664,7 +664,8 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># contour plot</span>
 <span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">X</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S2d</span><span class="p">,</span><span class="n">T2d</span><span class="p">),</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S2d</span><span class="p">,</span><span class="n">T2d</span><span class="p">),</span><span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span><span class="s2">&quot;pink&quot;</span><span class="p">])</span>
+<span class="n">X</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S2d</span><span class="p">,</span><span class="n">T2d</span><span class="p">),</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;S0 (Wm$^{-2}$)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$T_s$ (K)&quot;</span><span class="p">)</span>
@@ -673,7 +674,7 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x1163879d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x10b30a020&gt;
 </pre></div>
 </div>
 <img alt="../_images/EBM_0D_ice_feedback_11_1.png" src="../_images/EBM_0D_ice_feedback_11_1.png" />
@@ -687,46 +688,6 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>Write a small python code that iterates the temperature until <span class="math notranslate nohighlight">\(\frac{Dt}{dt}=0\)</span>.  Now do the following…  Starting from <span class="math notranslate nohighlight">\(S_0=1600 W m^{-2}\)</span> calculate <span class="math notranslate nohighlight">\(T_s\)</span> (use a first guess <span class="math notranslate nohighlight">\(T_s\)</span>=320K.  Then reduce <span class="math notranslate nohighlight">\(S_0\)</span> by 20 W m<span class="math notranslate nohighlight">\(^{-2}\)</span>, find the new equilibrium (starting the iteration from the previous equilibrium value), repeat until <span class="math notranslate nohighlight">\(S_0\)</span>=1000 W m<span class="math notranslate nohighlight">\(^{-2}\)</span>, storing the equilibrium . Then reverse the process by increasing <span class="math notranslate nohighlight">\(S_0\)</span> in 20 <span class="math notranslate nohighlight">\(W m^{-2}\)</span> steps back to the present day and beyond to 1600 W m<span class="math notranslate nohighlight">\(^{-2}\)</span>.  Plot <span class="math notranslate nohighlight">\(T_s\)</span> against <span class="math notranslate nohighlight">\(S_0\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ts</span><span class="o">=</span><span class="mf">320.</span> <span class="c1"># first guess initial value...</span>
-
-<span class="n">S0vec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-
-
-<span class="n">Cwater</span><span class="o">=</span><span class="mi">3850</span>
-<span class="n">dt</span><span class="o">=</span><span class="mi">86400</span><span class="o">*</span><span class="mi">365</span>
-<span class="n">Cddt</span><span class="o">=</span><span class="n">Cwater</span><span class="o">*</span><span class="mf">1e6</span><span class="o">/</span><span class="n">dt</span>
-
-
-<span class="n">Tdown</span><span class="o">=</span><span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">S0</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">S0vec</span><span class="p">):</span>
-    <span class="n">deltaT</span><span class="o">=</span><span class="mi">99</span>
-    <span class="c1"># find the equilibrium temperature </span>
-    <span class="k">while</span> <span class="n">deltaT</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">:</span>
-        <span class="n">deltaT</span><span class="o">=</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">Ts</span><span class="p">)</span><span class="o">/</span><span class="n">Cddt</span>
-        <span class="n">Ts</span><span class="o">+=</span><span class="n">deltaT</span>
-    
-    <span class="c1"># store Ts value</span>
-    <span class="n">Tdown</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ts</span><span class="p">)</span>
-    
-    <span class="c1"># then repest with the reverse array</span>
-
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S0vec</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">Tdown</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;S0 (W m$^{-2}$)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ts(K) &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Ts(K) &#39;)
-</pre></div>
-</div>
-<img alt="../_images/EBM_0D_ice_feedback_13_1.png" src="../_images/EBM_0D_ice_feedback_13_1.png" />
-</div>
-</div>
 </section>
 <section id="id1">
 <h2>Question:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
@@ -744,11 +705,13 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">mp</span>
-<span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="mi">272</span><span class="p">)</span><span class="o">/</span><span class="mi">23</span>
 
+<span class="n">Ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">340</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">Ts</span><span class="o">-</span><span class="mi">272</span><span class="p">)</span><span class="o">/</span><span class="mi">23</span>
 <span class="n">icefeedback</span><span class="o">=</span><span class="n">S0today</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">23</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="n">icefeedback</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Albedo Feedback $\lambda_</span><span class="si">{ice}</span><span class="s2">$ (Wm$^{-2}$K$^{-1}$)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;T (K)&quot;</span><span class="p">)</span>
@@ -812,22 +775,7 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># rough estimate (to nearest 2K) of unstable regime bounds</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">unstable_min</span><span class="o">=</span><span class="n">Ts</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">feedback</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">unstable_max</span><span class="o">=</span><span class="n">Ts</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">feedback</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Earth system unstable between &quot;</span><span class="p">,</span><span class="n">unstable_min</span><span class="p">,</span><span class="s2">&quot; and &quot;</span><span class="p">,</span><span class="n">unstable_max</span><span class="p">,</span><span class="s2">&quot; K&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/numpy/core/_methods.py:44,</span> in <span class="ni">_amin</span><span class="nt">(a, axis, out, keepdims, initial, where)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">def</span> <span class="nf">_amin</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>           <span class="n">initial</span><span class="o">=</span><span class="n">_NoValue</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">44</span>     <span class="k">return</span> <span class="n">umr_minimum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: zero-size array to reduction operation minimum which has no identity
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Earth system unstable between  256.5656565656566  and  280.6060606060606  K
 </pre></div>
 </div>
 </div>
@@ -842,6 +790,56 @@ Why is this?  Well, this is to mimic the feedback due to ice (although of course
   <li>Thus ice-covered states are "sticky", once the Earth is frozen, difficult to get out</li>
   <li> We note that when climate models are discussed, we often talk about them having a positive or negative feedback, this usually refers to all the feedbacks **except** the Planck feedback.  <u>Thus a climate model with positive feedback can still be stable as long as the magnitude does not exceed that of the Planck feedback.</u> </li>  
 </ul> <p>Finally… if you enjoyed this notebook and wish to investigate further, I suggest trying out the zonal EBM notebook in Brian Rose’s coursebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ts</span><span class="o">=</span><span class="mf">320.</span> <span class="c1"># first guess initial value..., warm temperature</span>
+<span class="n">S0vec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># vector of S0</span>
+<span class="n">Cwater</span><span class="o">=</span><span class="mi">3850</span>
+<span class="n">densityH</span><span class="o">=</span><span class="mf">1e6</span>
+<span class="n">dt</span><span class="o">=</span><span class="mi">86400</span><span class="o">*</span><span class="mi">365</span>
+<span class="n">Cddt</span><span class="o">=</span><span class="n">Cwater</span><span class="o">*</span><span class="n">densityH</span><span class="o">/</span><span class="n">dt</span>
+
+<span class="n">Tdown</span><span class="p">,</span><span class="n">Tup</span><span class="o">=</span><span class="p">[],[]</span>  <span class="c1"># simple lists to store cooling and warming branches </span>
+
+<span class="c1"># decreasing solar loop</span>
+<span class="k">for</span> <span class="n">S0</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">S0vec</span><span class="p">):</span>
+    <span class="n">deltaT</span><span class="o">=</span><span class="mf">99.</span>
+    <span class="c1"># find the equilibrium temperature </span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">deltaT</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0001</span><span class="p">:</span>
+        <span class="n">deltaT</span><span class="o">=</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">Ts</span><span class="p">)</span><span class="o">/</span><span class="n">Cddt</span>
+        <span class="n">Ts</span><span class="o">+=</span><span class="n">deltaT</span>
+    <span class="c1"># store Ts value</span>
+    <span class="n">Tdown</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ts</span><span class="p">)</span>
+
+<span class="c1"># increasing solar loop</span>
+<span class="k">for</span> <span class="n">S0</span> <span class="ow">in</span> <span class="n">S0vec</span><span class="p">:</span>
+    <span class="n">deltaT</span><span class="o">=</span><span class="mf">99.</span>
+    <span class="c1"># find the equilibrium temperature </span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">deltaT</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.0001</span><span class="p">:</span>
+        <span class="n">deltaT</span><span class="o">=</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S0</span><span class="p">,</span><span class="n">Ts</span><span class="p">)</span><span class="o">/</span><span class="n">Cddt</span>
+        <span class="n">Ts</span><span class="o">+=</span><span class="n">deltaT</span>
+    <span class="c1"># store Ts value</span>
+    <span class="n">Tup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ts</span><span class="p">)</span>
+    
+    <span class="c1"># then repest with the reverse array</span>
+    
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S0vec</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">Tdown</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;decreasing S0&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S0vec</span><span class="p">,</span><span class="n">Tup</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;increasing S0&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;hysteresis&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;S0 (W m$^{-2}$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ts(K) &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Ts(K) &#39;)
+</pre></div>
+</div>
+<img alt="../_images/EBM_0D_ice_feedback_22_1.png" src="../_images/EBM_0D_ice_feedback_22_1.png" />
+</div>
+</div>
 </section>
 </section>
 

@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Biogeophysical feedbacks: Daisy World" href="daisy_world.html" />
+    <link rel="prev" title="Focus on advection" href="advection.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,33 +116,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../content1.html">
-   Chapter 1: Climate models
+  <a class="reference internal" href="../content_radiation.html">
+   Chapter 2: Energy Balance and Forcing
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="climate-system-models.html">
-     The climate system and climate models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="advection.html">
-     Focus on advection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../content2.html">
-   Chapter 2: Energy Balance and Forcing
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -169,16 +147,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../content3.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../content_feedbacks.html">
    Chapter 3: Climate feedbacks
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="EBM_0D_ice_feedback.html">
      Ice albedo feedback in the 0D energy balance model
@@ -192,6 +170,28 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="daisy_world.html">
      Biogeophysical feedbacks: Daisy World
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../content_modelling.html">
+   Chapter 1: Climate models
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="climate-system-models.html">
+     The climate system and climate models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="advection.html">
+     Focus on advection
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -620,20 +620,6 @@ over 100 studies existing in the literature, ranging from a low-end emission sce
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">netCDF4</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">num2date</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">cdo</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;cdo&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Right, now let’s get going… You can click on the link above to browse the CMIP6 data.  You will see that you are restricted unfortunately to downloading one model at a time with the web interface.  We will look at the near surface air temperature for the Noresm model, using monthly data.</p>
 <p>Selecting the data and click on the API window, you should see something like this code snippet below, but here we have altered it to a function, to which we can pass the model name  - this will be useful later if we want to compare several models. I have also edited the code to place the data in a different directory, you can run this directly but make sure you are in a scratch directory with at least 120MB of space.</p>
@@ -681,11 +667,554 @@ over 100 studies existing in the literature, ranging from a low-end emission sce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-13 22:25:17,390 INFO Welcome to the CDS
-2022-06-13 22:25:17,391 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-13 22:25:17,527 INFO Request is completed
-2022-06-13 22:25:17,528 INFO Downloading https://download-0006-clone.copernicus-climate.eu/cache-compute-0006/cache/data2/adaptor.esgf_wps.retrieve-1655104754.6840694-20435-19-78ae3fb9-fdc2-431a-a755-b7bc3136a8a8.zip to /Users/tompkins/junk/noresm2_mm_near_surface_air_temperature_ssp5_8_5.zip (120.3M)
-2022-06-13 22:25:30,689 INFO Download rate 9.1M/s                                                    
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-10 10:39:01,318 INFO Welcome to the CDS
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-10 10:39:01,319 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-10 10:39:01,767 INFO Request is completed
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-10 10:39:01,768 INFO Downloading https://download-0016.copernicus-climate.eu/cache-compute-0016/cache/data5/adaptor.esgf_wps.retrieve-1699447697.0038812-4054-12-d97376a1-b960-47e2-8890-a339a3baa867.zip to /Users/tompkins/junk/noresm2_mm_near_surface_air_temperature_ssp5_8_5.zip (120.3M)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                     | 0.00/120M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                                            | 300k/120M [00:00&lt;01:41, 1.24MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▎                                                            | 633k/120M [00:00&lt;01:01, 2.03MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▌                                                           | 1.01M/120M [00:00&lt;00:46, 2.71MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▋                                                           | 1.41M/120M [00:00&lt;00:55, 2.25MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▊                                                           | 1.66M/120M [00:00&lt;01:06, 1.87MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█                                                           | 2.03M/120M [00:00&lt;00:54, 2.29MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█▏                                                          | 2.41M/120M [00:01&lt;00:45, 2.69MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█▎                                                          | 2.71M/120M [00:01&lt;01:01, 2.02MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▌                                                          | 3.11M/120M [00:01&lt;00:52, 2.34MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▋                                                          | 3.38M/120M [00:01&lt;01:08, 1.80MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▊                                                          | 3.59M/120M [00:01&lt;01:15, 1.61MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▉                                                          | 3.82M/120M [00:02&lt;01:09, 1.76MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|██                                                          | 4.23M/120M [00:02&lt;00:53, 2.27MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|██▏                                                         | 4.49M/120M [00:02&lt;01:10, 1.72MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|██▍                                                         | 4.86M/120M [00:02&lt;00:56, 2.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|██▌                                                         | 5.14M/120M [00:02&lt;00:56, 2.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|██▋                                                          | 5.38M/120M [00:03&lt;02:43, 738kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▊                                                          | 5.56M/120M [00:04&lt;03:08, 637kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▉                                                          | 5.86M/120M [00:04&lt;02:18, 864kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|███                                                          | 6.10M/120M [00:04&lt;02:14, 892kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|███▏                                                         | 6.25M/120M [00:04&lt;02:06, 943kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|███▎                                                        | 6.52M/120M [00:04&lt;01:39, 1.20MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▎                                                        | 6.73M/120M [00:04&lt;01:36, 1.23MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▍                                                        | 6.89M/120M [00:04&lt;01:34, 1.25MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▌                                                        | 7.22M/120M [00:05&lt;01:10, 1.69MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▊                                                        | 7.56M/120M [00:05&lt;00:57, 2.05MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███▉                                                        | 7.92M/120M [00:05&lt;00:47, 2.46MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|████                                                        | 8.19M/120M [00:05&lt;01:01, 1.92MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|████▎                                                       | 8.55M/120M [00:05&lt;00:52, 2.23MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|████▍                                                       | 8.84M/120M [00:05&lt;00:48, 2.41MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|████▌                                                       | 9.10M/120M [00:05&lt;00:54, 2.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|████▋                                                       | 9.33M/120M [00:06&lt;01:02, 1.87MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|████▊                                                       | 9.61M/120M [00:06&lt;00:57, 2.01MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|████▉                                                       | 9.90M/120M [00:06&lt;00:51, 2.25MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|█████                                                       | 10.2M/120M [00:06&lt;01:02, 1.84MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|█████▎                                                      | 10.6M/120M [00:06&lt;00:51, 2.25MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|█████▍                                                      | 10.9M/120M [00:06&lt;00:43, 2.61MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|█████▋                                                      | 11.4M/120M [00:06&lt;00:36, 3.12MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|█████▊                                                      | 11.7M/120M [00:07&lt;00:59, 1.93MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|█████▉                                                      | 12.0M/120M [00:07&lt;00:57, 1.97MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|██████▏                                                     | 12.4M/120M [00:07&lt;00:47, 2.41MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|██████▎                                                     | 12.7M/120M [00:07&lt;00:56, 2.00MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|██████▌                                                     | 13.1M/120M [00:07&lt;00:45, 2.49MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|██████▋                                                     | 13.4M/120M [00:07&lt;00:40, 2.76MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|██████▊                                                     | 13.8M/120M [00:08&lt;01:02, 1.79MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|███████                                                     | 14.1M/120M [00:08&lt;00:54, 2.04MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|███████▏                                                    | 14.4M/120M [00:08&lt;00:48, 2.31MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|███████▎                                                    | 14.7M/120M [00:08&lt;01:03, 1.73MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|███████▌                                                    | 15.2M/120M [00:08&lt;00:49, 2.24MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|███████▋                                                    | 15.4M/120M [00:08&lt;00:45, 2.39MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|███████▉                                                     | 15.7M/120M [00:12&lt;05:37, 325kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|████████                                                     | 16.0M/120M [00:12&lt;04:20, 419kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|████████▏                                                    | 16.2M/120M [00:12&lt;03:29, 520kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████▎                                                    | 16.4M/120M [00:12&lt;03:12, 566kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████▍                                                    | 16.8M/120M [00:12&lt;02:16, 796kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████▍                                                   | 17.0M/120M [00:12&lt;01:46, 1.01MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████▌                                                   | 17.3M/120M [00:13&lt;01:46, 1.01MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████▊                                                   | 17.7M/120M [00:13&lt;01:13, 1.47MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█████████                                                   | 18.1M/120M [00:13&lt;00:55, 1.92MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█████████▏                                                  | 18.4M/120M [00:13&lt;01:09, 1.53MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█████████▎                                                  | 18.7M/120M [00:13&lt;00:58, 1.81MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█████████▌                                                  | 19.1M/120M [00:13&lt;00:51, 2.07MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█████████▋                                                  | 19.4M/120M [00:13&lt;00:42, 2.46MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█████████▊                                                  | 19.8M/120M [00:14&lt;00:49, 2.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|██████████                                                  | 20.0M/120M [00:14&lt;00:45, 2.29MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|██████████▏                                                 | 20.4M/120M [00:14&lt;00:40, 2.60MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|██████████▎                                                 | 20.8M/120M [00:14&lt;01:02, 1.68MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|██████████▌                                                 | 21.2M/120M [00:14&lt;00:50, 2.07MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|██████████▋                                                 | 21.4M/120M [00:14&lt;00:46, 2.21MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|██████████▊                                                 | 21.7M/120M [00:15&lt;00:55, 1.85MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|██████████▉                                                 | 22.0M/120M [00:15&lt;00:53, 1.91MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████████▏                                                | 22.3M/120M [00:15&lt;00:45, 2.26MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████████▎                                                | 22.7M/120M [00:15&lt;00:58, 1.74MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████████▍                                                | 22.9M/120M [00:15&lt;01:04, 1.59MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████████▋                                                | 23.3M/120M [00:15&lt;00:46, 2.17MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|███████████▊                                                | 23.6M/120M [00:16&lt;00:59, 1.70MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|███████████▉                                                | 23.9M/120M [00:16&lt;00:53, 1.88MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████████                                                | 24.2M/120M [00:16&lt;00:47, 2.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████████▏                                               | 24.4M/120M [00:16&lt;00:49, 2.01MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████▎                                               | 24.7M/120M [00:16&lt;00:56, 1.77MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████▍                                               | 24.9M/120M [00:16&lt;00:54, 1.84MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████▌                                               | 25.1M/120M [00:16&lt;00:51, 1.95MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████▋                                               | 25.4M/120M [00:17&lt;01:00, 1.64MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████▊                                               | 25.7M/120M [00:17&lt;00:49, 1.99MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|████████████▉                                               | 26.0M/120M [00:17&lt;00:45, 2.18MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████████                                               | 26.2M/120M [00:17&lt;01:20, 1.23MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████████▎                                              | 26.6M/120M [00:17&lt;01:03, 1.55MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████████▎                                              | 26.8M/120M [00:18&lt;01:36, 1.01MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████████▌                                              | 27.1M/120M [00:18&lt;01:15, 1.30MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████████▌                                              | 27.3M/120M [00:18&lt;01:26, 1.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████████▋                                              | 27.5M/120M [00:18&lt;01:18, 1.24MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████████▊                                              | 27.8M/120M [00:19&lt;00:57, 1.68MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████████▉                                              | 28.0M/120M [00:19&lt;00:54, 1.77MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██████████████                                              | 28.2M/120M [00:19&lt;01:06, 1.45MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████████▏                                             | 28.5M/120M [00:19&lt;00:58, 1.65MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████████▎                                             | 28.8M/120M [00:19&lt;00:49, 1.93MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████████▍                                             | 29.1M/120M [00:19&lt;00:49, 1.93MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████████▌                                             | 29.3M/120M [00:19&lt;01:01, 1.55MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████████▋                                             | 29.4M/120M [00:20&lt;01:07, 1.42MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████████▊                                             | 29.7M/120M [00:20&lt;01:18, 1.21MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████████▉                                             | 29.8M/120M [00:20&lt;01:15, 1.26MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|███████████████                                             | 30.3M/120M [00:20&lt;00:51, 1.85MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|███████████████▏                                            | 30.5M/120M [00:20&lt;00:50, 1.86MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████████▎                                            | 30.8M/120M [00:20&lt;00:54, 1.72MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████████▍                                            | 31.0M/120M [00:21&lt;00:46, 2.01MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████████▌                                            | 31.3M/120M [00:21&lt;00:45, 2.07MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████████▋                                            | 31.5M/120M [00:21&lt;00:46, 2.02MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████████▊                                            | 31.7M/120M [00:21&lt;00:56, 1.63MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|███████████████▉                                            | 32.0M/120M [00:21&lt;00:46, 1.99MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|████████████████▏                                           | 32.4M/120M [00:21&lt;00:37, 2.43MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|████████████████▎                                           | 32.6M/120M [00:21&lt;00:41, 2.20MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|████████████████▍                                           | 32.9M/120M [00:22&lt;00:54, 1.68MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|████████████████▌                                           | 33.3M/120M [00:22&lt;00:42, 2.13MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|████████████████▋                                           | 33.6M/120M [00:22&lt;00:39, 2.32MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|████████████████▊                                           | 33.8M/120M [00:22&lt;00:52, 1.74MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|████████████████▉                                           | 34.0M/120M [00:22&lt;00:49, 1.82MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|█████████████████                                           | 34.3M/120M [00:22&lt;00:42, 2.12MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|█████████████████▏                                          | 34.6M/120M [00:22&lt;00:48, 1.84MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|█████████████████▎                                          | 34.8M/120M [00:23&lt;00:57, 1.57MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|█████████████████▍                                          | 35.1M/120M [00:23&lt;00:48, 1.83MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|█████████████████▋                                          | 35.4M/120M [00:23&lt;00:40, 2.18MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|█████████████████▊                                          | 35.6M/120M [00:23&lt;00:50, 1.74MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|█████████████████▉                                          | 36.0M/120M [00:23&lt;00:42, 2.10MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|██████████████████                                          | 36.3M/120M [00:23&lt;00:39, 2.25MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|██████████████████▏                                         | 36.5M/120M [00:23&lt;00:42, 2.07MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|██████████████████▎                                         | 36.7M/120M [00:24&lt;01:16, 1.14MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|██████████████████▋                                          | 36.9M/120M [00:24&lt;01:48, 806kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|██████████████████▊                                          | 37.0M/120M [00:26&lt;04:12, 346kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|██████████████████▉                                          | 37.3M/120M [00:26&lt;02:59, 485kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|██████████████████▉                                          | 37.4M/120M [00:26&lt;02:46, 522kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███████████████████                                          | 37.5M/120M [00:26&lt;02:33, 566kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███████████████████                                          | 37.7M/120M [00:26&lt;02:05, 690kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|██████████████████▉                                         | 38.0M/120M [00:26&lt;01:20, 1.07MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████                                         | 38.2M/120M [00:27&lt;01:18, 1.09MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████▏                                        | 38.4M/120M [00:27&lt;01:16, 1.12MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████▎                                        | 38.8M/120M [00:27&lt;00:51, 1.66MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████▍                                        | 39.1M/120M [00:27&lt;00:44, 1.93MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████▋                                        | 39.4M/120M [00:27&lt;00:38, 2.20MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████▊                                        | 39.6M/120M [00:27&lt;00:56, 1.49MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████▊                                        | 39.8M/120M [00:27&lt;00:57, 1.47MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████▉                                        | 40.0M/120M [00:28&lt;00:57, 1.46MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|████████████████████                                        | 40.2M/120M [00:28&lt;01:01, 1.36MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">var</span><span class="o">=</span><span class="s2">&quot;near_surface_air_temperature&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">exp</span><span class="o">=</span><span class="s1">&#39;ssp5_8_5&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">ofile</span><span class="o">=</span><span class="n">get_var</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">var</span><span class="p">,</span><span class="n">exp</span><span class="p">)</span>
+
+<span class="nn">Cell In[2], line 14,</span> in <span class="ni">get_var</span><span class="nt">(model, var, exp)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># This is where you want to put your output directory and file name</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">ofile</span><span class="o">=</span><span class="n">odir</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">exp</span><span class="o">+</span><span class="s2">&quot;.zip&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">c</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="s1">&#39;projections-cmip6&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;zip&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="s1">&#39;temporal_resolution&#39;</span><span class="p">:</span> <span class="s1">&#39;monthly&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="s1">&#39;experiment&#39;</span><span class="p">:</span> <span class="n">exp</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;single_levels&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="n">var</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="p">},</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">ofile</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">return</span> <span class="n">ofile</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/cdsapi/api.py:350,</span> in <span class="ni">Client.retrieve</span><span class="nt">(self, name, request, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/resources/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">request</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">350</span>     <span class="n">result</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/cdsapi/api.py:173,</span> in <span class="ni">Result.download</span><span class="nt">(self, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span> <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">173</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/cdsapi/api.py:133,</span> in <span class="ni">Result._download</span><span class="nt">(self, url, size, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">133</span>     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/requests/models.py:816,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">816</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>     <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>         <span class="k">raise</span> <span class="n">ChunkedEncodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/urllib3/response.py:628,</span> in <span class="ni">HTTPResponse.stream</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">628</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span>         <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>             <span class="k">yield</span> <span class="n">data</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/urllib3/response.py:567,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="n">fp_closed</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">,</span> <span class="s2">&quot;closed&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_catcher</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">567</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp_read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span>     <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">flush_decoder</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~/Library/Python/3.10/lib/python/site-packages/urllib3/response.py:533,</span> in <span class="ni">HTTPResponse._fp_read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="k">return</span> <span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="c1"># StringIO doesn&#39;t like amt=None</span>
+<span class="ne">--&gt; </span><span class="mi">533</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">File /usr/local/Cellar/python@3.10/3.10.13_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py:466,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="c1"># clip the read to the &quot;end of response&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="n">amt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span>
+<span class="ne">--&gt; </span><span class="mi">466</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File /usr/local/Cellar/python@3.10/3.10.13_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /usr/local/Cellar/python@3.10/3.10.13_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py:1307,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1304</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1305</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1306</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1307</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1308</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1309</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/Cellar/python@3.10/3.10.13_1/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py:1163,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1161</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1162</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1163</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1165</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -882,7 +1411,7 @@ over 100 studies existing in the literature, ranging from a low-end emission sce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x143cd5c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11e8735e0&gt;
 </pre></div>
 </div>
 <img alt="../_images/CMIP_IPCC_fun_22_1.png" src="../_images/CMIP_IPCC_fun_22_1.png" />
@@ -911,36 +1440,46 @@ over 100 studies existing in the literature, ranging from a low-end emission sce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-06-14 12:03:07,188 INFO Welcome to the CDS
-2022-06-14 12:03:07,189 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-14 12:03:07,323 INFO Request is completed
-2022-06-14 12:03:07,324 INFO Downloading https://download-0003-clone.copernicus-climate.eu/cache-compute-0003/cache/data4/adaptor.esgf_wps.retrieve-1655091606.8284802-27688-7-7f9545b4-932c-4004-8925-63fef465a8a6.zip to /Users/tompkins/junk/canesm5_near_surface_air_temperature_ssp5_8_5.zip (86.2M)
-2022-06-14 12:03:19,466 INFO Download rate 7.1M/s                                                   
-2022-06-14 12:03:19,558 INFO Welcome to the CDS
-2022-06-14 12:03:19,559 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-14 12:03:19,657 INFO Request is completed
-2022-06-14 12:03:19,658 INFO Downloading https://download-0003-clone.copernicus-climate.eu/cache-compute-0003/cache/data2/adaptor.esgf_wps.retrieve-1655091807.04447-9087-17-bde072f5-28ef-4b4d-90b3-c23166de90d1.zip to /Users/tompkins/junk/mpi_esm1_2_lr_near_surface_air_temperature_ssp5_8_5.zip (33.1M)
-2022-06-14 12:03:31,449 INFO Download rate 2.8M/s                                                   
-2022-06-14 12:03:31,625 INFO Welcome to the CDS
-2022-06-14 12:03:31,626 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-14 12:03:31,924 INFO Request is completed
-2022-06-14 12:03:31,925 INFO Downloading https://download-0004-clone.copernicus-climate.eu/cache-compute-0004/cache/data7/adaptor.esgf_wps.retrieve-1655091653.1655684-6738-10-ad7fe970-0363-4777-89a7-6efebc53be24.zip to /Users/tompkins/junk/cmcc_cm2_sr5_near_surface_air_temperature_ssp5_8_5.zip (121.2M)
-2022-06-14 12:04:51,237 INFO Download rate 1.5M/s                                                   
-2022-06-14 12:04:51,546 INFO Welcome to the CDS
-2022-06-14 12:04:51,547 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-14 12:04:51,714 INFO Request is completed
-2022-06-14 12:04:51,715 INFO Downloading https://download-0008-clone.copernicus-climate.eu/cache-compute-0008/cache/data7/adaptor.esgf_wps.retrieve-1655189796.386397-15665-7-397243fb-b805-46e5-a48c-aaf4ff3d4c5d.zip to /Users/tompkins/junk/miroc6_near_surface_air_temperature_ssp5_8_5.zip (71.2M)
-2022-06-14 12:05:40,488 INFO Download rate 1.5M/s                                                   
-2022-06-14 12:05:40,671 INFO Welcome to the CDS
-2022-06-14 12:05:40,672 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-14 12:05:40,797 INFO Request is completed
-2022-06-14 12:05:40,798 INFO Downloading https://download-0006-clone.copernicus-climate.eu/cache-compute-0006/cache/data2/adaptor.esgf_wps.retrieve-1655104754.6840694-20435-19-78ae3fb9-fdc2-431a-a755-b7bc3136a8a8.zip to /Users/tompkins/junk/noresm2_mm_near_surface_air_temperature_ssp5_8_5.zip (120.3M)
-2022-06-14 12:07:04,731 INFO Download rate 1.4M/s                                                   
-2022-06-14 12:07:05,143 INFO Welcome to the CDS
-2022-06-14 12:07:05,144 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
-2022-06-14 12:07:05,274 INFO Request is completed
-2022-06-14 12:07:05,275 INFO Downloading https://download-0006-clone.copernicus-climate.eu/cache-compute-0006/cache/data9/adaptor.esgf_wps.retrieve-1655189813.262491-5960-14-e10889dd-b5d8-421d-bbf9-662dfbb17206.zip to /Users/tompkins/junk/hadgem3_gc31_mm_near_surface_air_temperature_ssp5_8_5.zip (257.9M)
-2022-06-14 12:10:02,192 INFO Download rate 1.5M/s                                                   
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-03-09 10:22:37,326 INFO Welcome to the CDS
+2023-03-09 10:22:37,327 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2023-03-09 10:22:37,356 INFO Request is queued
+2023-03-09 10:22:39,902 INFO Request is running
+2023-03-09 10:22:50,670 INFO Request is completed
+2023-03-09 10:22:50,672 INFO Downloading https://download-0019.copernicus-climate.eu/cache-compute-0019/cache/data8/adaptor.esgf_wps.retrieve-1678353762.3623266-8974-19-43149711-de4f-4e54-9a1b-f68f442e52d7.zip to /Users/tompkins/junk/canesm5_near_surface_air_temperature_ssp5_8_5.zip (86.2M)
+2023-03-09 10:23:09,341 INFO Download rate 4.6M/s                               
+2023-03-09 10:23:09,377 INFO Welcome to the CDS
+2023-03-09 10:23:09,378 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2023-03-09 10:23:09,421 INFO Request is queued
+2023-03-09 10:23:10,443 INFO Request is running
+2023-03-09 10:23:22,731 INFO Request is completed
+2023-03-09 10:23:22,732 INFO Downloading https://download-0005-clone.copernicus-climate.eu/cache-compute-0005/cache/data5/adaptor.esgf_wps.retrieve-1678353797.354479-32501-17-209b7d40-e5c5-4f8d-a5d7-fa093b281dc4.zip to /Users/tompkins/junk/mpi_esm1_2_lr_near_surface_air_temperature_ssp5_8_5.zip (33.1M)
+2023-03-09 10:23:28,161 INFO Download rate 6.1M/s                               
+2023-03-09 10:23:28,205 INFO Welcome to the CDS
+2023-03-09 10:23:28,206 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2023-03-09 10:23:28,280 INFO Request is queued
+2023-03-09 10:23:30,838 INFO Request is running
+2023-03-09 10:23:41,669 INFO Request is completed
+2023-03-09 10:23:41,670 INFO Downloading https://download-0000-clone.copernicus-climate.eu/cache-compute-0000/cache/data2/adaptor.esgf_wps.retrieve-1678353816.3676257-15078-6-b66c82ca-e896-4668-9b61-5c4dd3a3aa5a.zip to /Users/tompkins/junk/cmcc_cm2_sr5_near_surface_air_temperature_ssp5_8_5.zip (121.2M)
+2023-03-09 10:24:00,956 INFO Download rate 6.3M/s                               
+2023-03-09 10:24:01,052 INFO Welcome to the CDS
+2023-03-09 10:24:01,053 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2023-03-09 10:24:01,133 INFO Request is queued
+2023-03-09 10:24:02,151 INFO Request is running
+2023-03-09 10:24:09,353 INFO Request is completed
+2023-03-09 10:24:09,354 INFO Downloading https://download-0006-clone.copernicus-climate.eu/cache-compute-0006/cache/data2/adaptor.esgf_wps.retrieve-1678353845.8313627-29539-17-9144de9a-c4c7-429a-949b-c7e796323aa4.zip to /Users/tompkins/junk/miroc6_near_surface_air_temperature_ssp5_8_5.zip (71.2M)
+2023-03-09 10:24:22,415 INFO Download rate 5.5M/s                               
+2023-03-09 10:24:22,456 INFO Welcome to the CDS
+2023-03-09 10:24:22,457 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2023-03-09 10:24:22,534 INFO Request is completed
+2023-03-09 10:24:22,535 INFO Downloading https://download-0009-clone.copernicus-climate.eu/cache-compute-0009/cache/data0/adaptor.esgf_wps.retrieve-1678353640.6340725-18603-11-ac28a9e2-a27c-4f01-8202-c15746a70291.zip to /Users/tompkins/junk/noresm2_mm_near_surface_air_temperature_ssp5_8_5.zip (120.3M)
+2023-03-09 10:24:43,710 INFO Download rate 5.7M/s                               
+2023-03-09 10:24:43,747 INFO Welcome to the CDS
+2023-03-09 10:24:43,748 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/projections-cmip6
+2023-03-09 10:24:43,821 INFO Request is queued
+2023-03-09 10:24:46,394 INFO Request is running
+2023-03-09 10:25:16,186 INFO Request is completed
+2023-03-09 10:25:16,188 INFO Downloading https://download-0013-clone.copernicus-climate.eu/cache-compute-0013/cache/data0/adaptor.esgf_wps.retrieve-1678353891.911434-31971-16-3321f45b-708b-4a6f-8c90-8a5a0351155d.zip to /Users/tompkins/junk/hadgem3_gc31_mm_near_surface_air_temperature_ssp5_8_5.zip (257.9M)
+2023-03-09 10:26:04,644 INFO Download rate 5.3M/s                               
 </pre></div>
 </div>
 </div>
@@ -1232,11 +1771,11 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="daisy_world.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="advection.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Biogeophysical feedbacks: Daisy World</p>
+            <p class="prev-next-title">Focus on advection</p>
         </div>
     </a>
 </div>

@@ -3,7 +3,9 @@
 
 # # Radiative Equilibrium
 # 
-# This notebook is part of [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook) by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.
+# This notebook is a slightly modified chapter of the excellent [The Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook) by [Brian E. J. Rose](http://www.atmos.albany.edu/facstaff/brose/index.html), University at Albany.
+# 
+# NOTE: from v0.8 of climlab the fortran extensions need to be compiled separately.  I found the best way to do this was to switch to using a conda environment, which I did by using mamba, which is much faster. 
 
 # ____________
 # <a id='section1'></a>
@@ -11,7 +13,7 @@
 # ## 1. The observed annual, global mean temperature profile
 # ____________
 # 
-# Let's look again the observations of air temperature from the NCEP Reanalysis data we first encountered in the [Radiation notes](https://brian-rose.github.io/ClimateLaboratoryBook/courseware/radiation.html).
+# Let's look at the observations of air temperature from the NCEP Reanalysis data.
 # 
 # In this notebook  we'll define a function to create the Skew-T diagram, because later we are going to reuse it several times.
 # 
@@ -26,6 +28,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import xarray as xr
 from metpy.plots import SkewT
+
+# tompkins additional packages
+from cdo import Cdo
+import cdsapi
+from netCDF4 import Dataset
+
+
+# In[2]:
+
+
 ncep_url = "http://www.esrl.noaa.gov/psd/thredds/dodsC/Datasets/ncep.reanalysis.derived/"
 ncep_air = xr.open_dataset( ncep_url + "pressure/air.mon.1981-2010.ltm.nc", use_cftime=True)
 #  Take global, annual average 
@@ -34,11 +46,11 @@ weight = coslat / coslat.mean(dim='lat')
 Tglobal = (ncep_air.air * weight).mean(dim=('lat','lon','time'))
 
 
-# In[2]:
+# In[3]:
 
 
 def make_skewT():
-    fig = plt.figure(figsize=(9, 9))
+    fig = plt.figure(figsize=(6, 6))
     skew = SkewT(fig, rotation=30)
     skew.plot(Tglobal.level, Tglobal, color='black', linestyle='-', linewidth=2, label='Observations')
     skew.ax.set_ylim(1050, 10)
@@ -53,7 +65,7 @@ def make_skewT():
     return skew
 
 
-# In[3]:
+# In[4]:
 
 
 skew = make_skewT()
@@ -76,7 +88,9 @@ skew = make_skewT()
 # 
 # It's really just a generalization of the model we already looked at:
 
-# ![Sketch of layer model](http://www.atmos.albany.edu/facstaff/brose/classes/ENV415_Spring2018/images/2layerAtm_sketch.png)
+# <div>
+# <img src="http://www.atmos.albany.edu/facstaff/brose/classes/ENV415_Spring2018/images/2layerAtm_sketch.png" width="700"/>
+# </div>
 
 # The concept of **radiative equilibrium** means that we **ignore all methods of heat exchange except for radiation**, and ask what temperature profile would exist under that assumption?
 # 
@@ -112,41 +126,75 @@ skew = make_skewT()
 
 # Before setting up the model, we need some water vapor data. Why? Because our model needs to know how much water vapor exists at each vertical level, since water vapor is a radiatively important gas.
 # 
-# We're actually going to use the specific humidity field from our CESM control simulation. We'll just take the global, time average of this data, and plot its vertical profile.
+# We're going to use the specific humidity from the ERA5 reanalysis, we will just take a single monthly average as a starting point. First We'll just take the global, time average of this data, and plot its vertical profile.
 
-# In[4]:
-
-
-#  Load the model output as we have done before
-cesm_data_path = "http://thredds.atmos.albany.edu:8080/thredds/dodsC/CESMA/"
-atm_control = xr.open_dataset(cesm_data_path + "cpl_1850_f19/concatenated/cpl_1850_f19.cam.h0.nc")
-#  The specific humidity is stored in the variable called Q in this dataset:
-print(atm_control.Q)
-
-
-# Now take the global, annual average of the specific humidity:
+# first the retrieval:
 
 # In[5]:
 
 
-# Take global, annual average of the specific humidity
-weight_factor = atm_control.gw / atm_control.gw.mean(dim='lat')
-Qglobal = (atm_control.Q * weight_factor).mean(dim=('lat','lon','time'))
 # Take a look at what we just calculated ... it should be one-dimensional (vertical levels)
-print(Qglobal)
+
+c = cdsapi.Client()
+qvfile="./qv.nc"
+
+# set to true to get data
+if True:
+    res=c.retrieve(
+    'reanalysis-era5-pressure-levels-monthly-means',
+    {
+        'format': 'netcdf',
+        'product_type': 'monthly_averaged_reanalysis',
+        'variable': 'specific_humidity',
+        'pressure_level': [
+            '1', '2', '3',
+            '5', '7', '10',
+            '20', '30', '50',
+            '70', '100', '125',
+            '150', '175', '200',
+            '225', '250', '300',
+            '350', '400', '450',
+            '500', '550', '600',
+            '650', '700', '750',
+            '775', '800', '825',
+            '850', '875', '900',
+            '925', '950', '975',
+            '1000',
+        ],
+        'year': '2020',
+        'month': '09',
+        'time': '00:00',
+    },
+    qvfile)
+
+
+
+
+# Now take the global, annual average of the specific humidity:
+
+# In[44]:
+
+
+# if you prefer to average within python you need to use cos(lat) weighting don't forget 
+cdo = Cdo()
+Qglobal2=cdo.fldmean(input="qv.nc")
+qvfile=Dataset(Qglobal2)
+Qglobal=qvfile.variables["q"][:].flatten()
+Qglobal.lev=qvfile.variables["level"][:]
+print (Qglobal.lev)
 
 
 # And make a figure:
 
-# In[6]:
+# In[45]:
 
 
 fig, ax = plt.subplots()
 #  Multiply Qglobal by 1000 to put in units of grams water vapor per kg of air
-ax.plot(Qglobal*1000., Qglobal.lev)
+ax.plot(Qglobal, Qglobal.lev)
 ax.invert_yaxis()
 ax.set_ylabel('Pressure (hPa)')
-ax.set_xlabel('Specific humidity (g/kg)')
+ax.set_xlabel('Specific humidity (kg/kg)')
 ax.grid()
 
 
@@ -158,7 +206,7 @@ ax.grid()
 
 # Here we will create the grid and state variables (air and surface temperature) for our single-column model.
 
-# In[7]:
+# In[46]:
 
 
 import climlab
@@ -167,12 +215,12 @@ mystate = climlab.column_state(lev=Qglobal.lev, water_depth=2.5)
 print(mystate)
 
 
-# In[8]:
+# In[47]:
 
 
 radmodel = climlab.radiation.RRTMG(name='Radiation (all gases)',  # give our model a name!
                               state=mystate,   # give our model an initial condition!
-                              specific_humidity=Qglobal.values,  # tell the model how much water vapor there is
+                              specific_humidity=Qglobal,  # tell the model how much water vapor there is
                               albedo = 0.25,  # this the SURFACE shortwave albedo
                               timestep = climlab.constants.seconds_per_day,  # set the timestep to one day (measured in seconds)
                              )
@@ -183,14 +231,14 @@ print(radmodel)
 
 # Look at a few interesting properties of the model we just created:
 
-# In[9]:
+# In[48]:
 
 
 #  Here's the state dictionary we already created:
 radmodel.state
 
 
-# In[29]:
+# In[49]:
 
 
 #  Here are the pressure levels in hPa
@@ -199,7 +247,7 @@ radmodel.lev
 
 # There is a dictionary called `absorber_vmr` that holds the *volume mixing ratio* of all the radiatively active gases in the column:
 
-# In[30]:
+# In[10]:
 
 
 radmodel.absorber_vmr
@@ -209,7 +257,7 @@ radmodel.absorber_vmr
 # 
 # The exception is ozone, which has a vertical structure taken from observations. Let's plot it
 
-# In[31]:
+# In[11]:
 
 
 #  E.g. the CO2 content (a well-mixed gas) in parts per million
@@ -220,12 +268,19 @@ radmodel.absorber_vmr['CO2'] * 1E6
 # 
 # Make a simple plot showing the vertical structure of ozone, similar to the specific humidity plot we just made above.
 
-# In[32]:
+# In[52]:
 
 
 # here is the data you need for the plot, as a plain numpy arrays:
 print(radmodel.lev)
 print(radmodel.absorber_vmr['O3'])
+fig, ax = plt.subplots()
+#  Multiply Qglobal by 1000 to put in units of grams water vapor per kg of air
+ax.plot(radmodel.absorber_vmr['O3'], Qglobal.lev)
+ax.invert_yaxis()
+ax.set_ylim([100,0])
+ax.set_ylabel('Pressure (hPa)')
+ax.set_xlabel('Ozone')
 
 
 # In[ ]:
@@ -236,7 +291,7 @@ print(radmodel.absorber_vmr['O3'])
 
 # The other radiatively important gas is of course water vapor, which is stored separately in the `specific_humidity` attribute:
 
-# In[33]:
+# In[13]:
 
 
 #  specific humidity in kg/kg, on the same pressure axis
@@ -247,7 +302,7 @@ print(radmodel.specific_humidity)
 # 
 # For details you can look at the [documentation](http://climlab.readthedocs.io/en/latest/api/climlab.radiation.radiation.html)
 
-# In[34]:
+# In[14]:
 
 
 for item in radmodel.input:
@@ -258,7 +313,7 @@ for item in radmodel.input:
 # 
 # But here we should note that the model is **initialized with no clouds at all**:
 
-# In[35]:
+# In[53]:
 
 
 #  This is the fractional area covered by clouds in our column:
@@ -274,13 +329,13 @@ radmodel.cldfrac
 
 # Here are the current temperatures (initial condition):
 
-# In[36]:
+# In[54]:
 
 
 radmodel.Ts
 
 
-# In[37]:
+# In[18]:
 
 
 radmodel.Tatm
@@ -288,13 +343,13 @@ radmodel.Tatm
 
 # Now let's take a single timestep:
 
-# In[38]:
+# In[55]:
 
 
 radmodel.step_forward()
 
 
-# In[39]:
+# In[56]:
 
 
 radmodel.Ts
@@ -308,7 +363,7 @@ radmodel.Ts
 # 
 # Every climlab model has a `diagnostics` dictionary. Here we are going to check it out as an `xarray` dataset:
 
-# In[40]:
+# In[57]:
 
 
 climlab.to_xarray(radmodel.diagnostics)
@@ -318,7 +373,7 @@ climlab.to_xarray(radmodel.diagnostics)
 # 
 # For example:
 
-# In[41]:
+# In[58]:
 
 
 climlab.to_xarray(radmodel.LW_flux_up)
@@ -326,15 +381,15 @@ climlab.to_xarray(radmodel.LW_flux_up)
 
 # These are upward longwave fluxes in W/m2.
 # 
-# Why are there 27 data points, when the model has 26 pressure levels?
+# Why are there 38 data points, when the model has 37 pressure levels?
 
-# In[42]:
+# In[23]:
 
 
 radmodel.lev
 
 
-# In[43]:
+# In[24]:
 
 
 radmodel.lev_bounds
@@ -342,7 +397,7 @@ radmodel.lev_bounds
 
 # The last element of the flux array represents the **upward flux from the surface to the first level**:
 
-# In[44]:
+# In[25]:
 
 
 radmodel.LW_flux_up[-1]
@@ -352,7 +407,7 @@ radmodel.LW_flux_up[-1]
 # 
 # Why?
 
-# In[45]:
+# In[26]:
 
 
 sigma = 5.67E-8
@@ -365,13 +420,13 @@ sigma * 288**4
 # 
 # Two ways to access this information:
 
-# In[46]:
+# In[27]:
 
 
 radmodel.LW_flux_up[0]
 
 
-# In[47]:
+# In[28]:
 
 
 radmodel.OLR
@@ -381,7 +436,7 @@ radmodel.OLR
 # 
 # One diagnostic we will often want to look at is the **net energy budget at the top of the atmosphere**:
 
-# In[48]:
+# In[59]:
 
 
 radmodel.ASR - radmodel.OLR
@@ -395,7 +450,7 @@ radmodel.ASR - radmodel.OLR
 # 
 # We can use a `while` loop, conditional on the top-of-atmosphere imbalance:
 
-# In[49]:
+# In[60]:
 
 
 while np.abs(radmodel.ASR - radmodel.OLR) > 0.01:
@@ -404,7 +459,7 @@ while np.abs(radmodel.ASR - radmodel.OLR) > 0.01:
 
 # Check the energy budget again:
 
-# In[50]:
+# In[61]:
 
 
 #  Check the energy budget again
@@ -417,7 +472,7 @@ radmodel.ASR - radmodel.OLR
 
 # Here's a helper function we'll use to add model temperature profiles to our skew-T plot:
 
-# In[51]:
+# In[67]:
 
 
 def add_profile(skew, model, linestyle='-', color=None):
@@ -428,12 +483,18 @@ def add_profile(skew, model, linestyle='-', color=None):
     skew.ax.legend()
 
 
-# In[52]:
+# In[68]:
 
 
 skew = make_skewT()
 add_profile(skew, radmodel)
 skew.ax.set_title('Pure radiative equilibrium', fontsize=18);
+
+
+# In[69]:
+
+
+Tglobal
 
 
 # What do you think about this model -- data comparison?
@@ -449,7 +510,7 @@ skew.ax.set_title('Pure radiative equilibrium', fontsize=18);
 
 # ### Radiative equilibrium without water vapor
 
-# In[10]:
+# In[70]:
 
 
 # Make an exact clone of our existing model
@@ -458,7 +519,7 @@ radmodel_noH2O.name = 'Radiation (no H2O)'
 print(radmodel_noH2O)
 
 
-# In[11]:
+# In[71]:
 
 
 #  Here is the water vapor profile we started with
@@ -467,13 +528,13 @@ radmodel_noH2O.specific_humidity
 
 # Now get rid of the water entirely!
 
-# In[12]:
+# In[72]:
 
 
 radmodel_noH2O.specific_humidity *= 0.
 
 
-# In[13]:
+# In[73]:
 
 
 radmodel_noH2O.specific_humidity
@@ -481,7 +542,7 @@ radmodel_noH2O.specific_humidity
 
 # And run this new model forward to equilibrium:
 
-# In[14]:
+# In[74]:
 
 
 #  it's useful to take a single step first before starting the while loop
@@ -493,13 +554,13 @@ while np.abs(radmodel_noH2O.ASR - radmodel_noH2O.OLR) > 0.01:
     radmodel_noH2O.step_forward()
 
 
-# In[15]:
+# In[75]:
 
 
 radmodel_noH2O.ASR - radmodel_noH2O.OLR
 
 
-# In[59]:
+# In[76]:
 
 
 skew = make_skewT()
@@ -555,25 +616,25 @@ for model in [radmodel, radmodel_noH2O]:
 # Development of these notes and the [climlab software](https://github.com/brian-rose/climlab) is partially supported by the National Science Foundation under award AGS-1455071 to Brian Rose. Any opinions, findings, conclusions or recommendations expressed here are mine and do not necessarily reflect the views of the National Science Foundation.
 # ____________
 
-# In[16]:
+# In[ ]:
 
 
 radmodel_co2 = climlab.process_like(radmodel)
 
 
-# In[18]:
+# In[ ]:
 
 
 print(radmodel_co2)
 
 
-# In[20]:
+# In[ ]:
 
 
 print(radmodel_co2.absorber_vmr)
 
 
-# In[23]:
+# In[ ]:
 
 
 radmodel_co2.absorber_vmr['CO2']=0.000410
