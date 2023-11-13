@@ -2,6 +2,10 @@ format: jb-article
 root: intro
 sections:
 # CHAPTER 1: THERMODYNAMICS, CONVECTION AND CLOUDS
+- file: content_thermo
+  sections:
+  - file: intro_ERA5_maps.ipynb
+  # file for microphysics here
 # CHAPTER 2: RADIATION AND ENERGY BALANCE
 - file: content_radiation
   sections:
