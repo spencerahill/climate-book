@@ -1,12 +1,18 @@
 # Earth System Modelling
 
-Jupyter book for Earth System Modelling course
+Jupyter book for Earth System Modelling course:
 
-## Getting started
+Static version of this book is viewable here.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Run this book on binder
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+GITHUB (use this):
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/adriantompkins/climate-book/HEAD)
+
+GITLAB (not maintained):
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/tompkins%2Fearth-system-modelling/HEAD)
+
 
 ## Add your files
 
