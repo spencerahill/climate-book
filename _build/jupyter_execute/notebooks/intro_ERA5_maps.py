@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Introduction
+# 
+# For the following you may like to look at the first at the introductory videos in [ClimateUnboxed](https://www.youtube.com/channel/UC94xkaJn1NkxR4trAfVArbg)  on 
+# 
+# - ERA5 access
+# - API access 
+# - ncview
+# 
+# 
+# 
+
 # In[1]:
 
 
@@ -137,14 +148,18 @@ cdo.timmean(input="-selmon,6,7,8 -aexpr,pr=1000*tp "+ifile,output=scr+"JJAmean.n
 os.system("ncdump -h "+ofile)
 
 
-# In[86]:
+# In[98]:
 
 
 plot_map(scr+"yearmean.nc",title="precipitation",varname="pr",units='mm day$^{-1}$',cmap="Blues")
+
+# you can save any figures in this way:
+#plt.savefig("precip_2020.pdf")
+
 plt.show()
 
 
-# In[87]:
+# In[97]:
 
 
 plot_map(ofilejja,title="precipitation JJA",varname="pr",units='mm day$^{-1}$')
@@ -176,7 +191,15 @@ plt.show()
 #plt.show()
 
 
-# Now try to duplicate this and make plots of solar radiation, net radiation and surface fluxes. 
+# Now try to duplicate this and make plots for
+# 
+# - solar radiation
+# - net radiation
+# - surface fluxes
+# 
+# for the annual mean, and the seasons. 
+# 
+# You can also open the netcdf files directly from the command line in ncview if you prefer.
 
 # In[ ]:
 
