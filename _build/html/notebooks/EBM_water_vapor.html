@@ -486,7 +486,7 @@ title="Print to PDF"
 \[
 T^4_s=(n+1)T^4_e
 \]</div>
-<p>Thus as <span class="math notranslate nohighlight">\(n\rightarrow \infty\)</span> then <span class="math notranslate nohighlight">\(T_s \rightarrow \infty\)</span>.  For a grey body atmosphere, instead, there is a finite solution and it turns out that we can approximate this term in the energy balance equation by writing OLR term for the multilevel grey body model as :</p>
+<p>Thus as <span class="math notranslate nohighlight">\(n\rightarrow \infty\)</span> then <span class="math notranslate nohighlight">\(T_s \rightarrow \infty\)</span>.  For a grey body atmosphere, instead, there is a finite solution. We can approximate this term in the energy balance equation by writing OLR term for the multilevel grey body model as :</p>
 <div class="math notranslate nohighlight">
 \[
   C \frac{dT_s}{dt} = \frac{S_0}{4} [ 1 - \alpha(T_s)]  -  \frac{1}{1+\tau/2}\sigma T_s^4
@@ -523,14 +523,16 @@ T^4_s=(n+1)T^4_e
     <span class="k">return</span> <span class="n">tauco2</span><span class="o">+</span><span class="n">tauwv</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">fac</span><span class="o">=</span><span class="n">fac</span><span class="p">)</span>
 
 <span class="c1"># vector of surface temperatures</span>
-<span class="n">Ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">tau</span><span class="p">(</span><span class="mi">288</span><span class="p">))</span>
+<span class="n">Ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span><span class="mi">320</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Ts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tau</span><span class="p">(</span><span class="n">Ts</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2600000000000002
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[260 265 270 275 280 285 290 295 300 305 310 315]
+[1.13846747 1.14736118 1.15995205 1.17753935 1.20179613 1.23485246
+ 1.27939138 1.33875843 1.41708549 1.51942952 1.65192673 1.82196248]
 </pre></div>
 </div>
 </div>
@@ -539,8 +541,7 @@ T^4_s=(n+1)T^4_e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot Tau</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="n">tau</span><span class="p">(</span><span class="n">Ts</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$T_s$ (K)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Optical Depth ($</span><span class="se">\\</span><span class="s2">tau$)&quot;</span><span class="p">)</span>
@@ -581,7 +582,7 @@ T^4_s=(n+1)T^4_e
 
 
 <span class="c1"># contour plot</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">X</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">S2d</span><span class="p">,</span><span class="n">T2d</span><span class="p">,</span><span class="n">cdTdt</span><span class="p">(</span><span class="n">S2d</span><span class="p">,</span><span class="n">T2d</span><span class="p">),</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;S0 (Wm$^{-2}$)&quot;</span><span class="p">)</span>
@@ -593,7 +594,7 @@ T^4_s=(n+1)T^4_e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x1078cddb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x112d11060&gt;
 </pre></div>
 </div>
 <img alt="../_images/EBM_water_vapor_7_1.png" src="../_images/EBM_water_vapor_7_1.png" />
@@ -632,24 +633,33 @@ T^4_s=(n+1)T^4_e
 <p>Note, you can also derive the total substantive derivative of <span class="math notranslate nohighlight">\(N\)</span> and then subtract the Planck feedback, you should arrive at the approximately same answer (try it and see!):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dtaudT</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dtaudT</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">fac</span><span class="o">=</span><span class="n">fac</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;optical depth as function of surface temperature&quot;&quot;&quot;</span>
     <span class="n">LoR</span><span class="o">=</span><span class="n">Lv</span><span class="o">/</span><span class="n">Rv</span>
-    <span class="k">return</span> <span class="n">tauwv</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">LoR</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tauwv</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">fac</span><span class="o">=</span><span class="n">fac</span><span class="p">)</span><span class="o">*</span><span class="n">LoR</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
 
 <span class="n">Ts</span><span class="o">=</span><span class="mi">288</span>
-<span class="n">fac</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="n">tau</span><span class="p">(</span><span class="n">Ts</span><span class="p">)</span>
-<span class="n">lam</span><span class="o">=-</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">fac</span><span class="o">-</span><span class="n">Ts</span><span class="o">*</span><span class="n">dtaudT</span><span class="p">(</span><span class="n">Ts</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">fac</span><span class="o">*</span><span class="n">fac</span><span class="p">)</span>
-<span class="n">lamwv</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">dtaudT</span><span class="p">(</span><span class="n">Ts</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">tau</span><span class="p">(</span><span class="n">Ts</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lamwv</span><span class="o">=</span><span class="n">dtaudT</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="n">fac</span><span class="o">=</span><span class="mf">0.14</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">tau</span><span class="p">(</span><span class="n">Ts</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;water vapour feedback for&quot;</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="s2">&quot; = &quot;</span><span class="p">,</span><span class="n">lamwv</span><span class="p">,</span><span class="s2">&quot; W m$^{-2}$ K^-1&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;total feedback &quot;</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="s2">&quot; W m^-2 K^-1&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;water vapour feedback = &quot;</span><span class="p">,</span> <span class="n">lam</span><span class="o">+</span><span class="mf">3.3</span><span class="p">,</span><span class="s2">&quot; W m^-2 K^-1&quot;</span><span class="p">,</span><span class="n">lamwv</span><span class="p">)</span>
+<span class="n">Ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span><span class="mi">380</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lamwv</span><span class="o">=</span><span class="n">dtaudT</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="n">fac</span><span class="o">=</span><span class="mf">0.14</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">tau</span><span class="p">(</span><span class="n">Ts</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span><span class="n">lamwv</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$T_s$ (K)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;WV Feedback $</span><span class="se">\\</span><span class="s2">lambda_</span><span class="si">{wv}</span><span class="s2">$ (W m$^{-2}$ K$^{-1}$)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total feedback  -2.652573729046516  W m^-2 K^-1
-water vapour feedback =  0.6474262709534839  W m^-2 K^-1 0.6712111602786375
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">dtaudT</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">fac</span><span class="o">=</span><span class="n">fac</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;optical depth as function of surface temperature&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">LoR</span><span class="o">=</span><span class="n">Lv</span><span class="o">/</span><span class="n">Rv</span>
+
+<span class="ne">NameError</span>: name &#39;fac&#39; is not defined
 </pre></div>
 </div>
 </div>

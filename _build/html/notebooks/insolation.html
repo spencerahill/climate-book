@@ -773,15 +773,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">climlab</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">climlab.solar.insolation</span> <span class="kn">import</span> <span class="n">daily_insolation</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;climlab&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tompkins/Library/Python/3.10/lib/python/site-packages/climlab/radiation/cam3.py:46: UserWarning: Cannot import and initialize compiled Fortran extension, CAM3 module will not be functional.
+  warnings.warn(&#39;Cannot import and initialize compiled Fortran extension, CAM3 module will not be functional.&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/tompkins/Library/Python/3.10/lib/python/site-packages/climlab/radiation/rrtm/rrtmg_lw.py:19: UserWarning: Cannot import and initialize compiled Fortran extension, RRTMG_LW module will not be functional.
+  warnings.warn(&#39;Cannot import and initialize compiled Fortran extension, RRTMG_LW module will not be functional.&#39;)
+/Users/tompkins/Library/Python/3.10/lib/python/site-packages/climlab/radiation/rrtm/rrtmg_sw.py:19: UserWarning: Cannot import and initialize compiled Fortran extension, RRTMG_SW module will not be functional.
+  warnings.warn(&#39;Cannot import and initialize compiled Fortran extension, RRTMG_SW module will not be functional.&#39;)
+/Users/tompkins/Library/Python/3.10/lib/python/site-packages/climlab/convection/emanuel_convection.py:14: UserWarning: Cannot import EmanuelConvection fortran extension, this module will not be functional.
+  warnings.warn(&#39;Cannot import EmanuelConvection fortran extension, this module will not be functional.&#39;)
 </pre></div>
 </div>
 </div>
@@ -962,7 +963,7 @@ daily_insolation(lat, day, orb={&#39;ecc&#39;: 0.017236, &#39;long_peri&#39;: 28
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1269a34e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1203efb50&gt;
 </pre></div>
 </div>
 <img alt="../_images/insolation_37_1.png" src="../_images/insolation_37_1.png" />
