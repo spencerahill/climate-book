@@ -1,5 +1,11 @@
-Earth System Modelling
-=======================
+# Welcome to your Jupyter Book
 
-The Jupyter book supports the handout and lecture notes for Earth System modelling.  Some notebooks are taken (with permission) straight from from Brian Rose's excellent online climate modelling course, and some I have created myself, either from scratch, or using material from various sources/people whom I have always tried to attribute correctly at the start/end of each book.
+This is a small sample book to give you a feel for how book content is
+structured.
+It shows off a few of the major file types, as well as some sample content.
+It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
 
+Check out the content pages bundled with this sample book to see more.
+
+```{tableofcontents}
+```
