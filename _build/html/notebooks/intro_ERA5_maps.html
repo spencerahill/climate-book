@@ -179,9 +179,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="clim_daisy_world.html">Biogeophysical feedbacks: Daisy World</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../content_modelling.html">Chapter 1: Climate models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../content_modelling.html">Chapter 3: Climate models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mod_climate-system-models.html">The climate system and climate models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mod_advection.html">Focus on advection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mod_CMIP_IPCC_temperature_trends.html">Coupled Model Intercomparison Project (CMIP)</a></li>
+
 </ul>
 </li>
 </ul>
@@ -419,8 +421,34 @@ document.write(`
 <span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
 <span class="kn">from</span> <span class="nn">cdo</span> <span class="kn">import</span> <span class="n">Cdo</span>
 <span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+
+
 <span class="n">cdo</span><span class="o">=</span><span class="n">Cdo</span><span class="p">()</span>
 <span class="n">scr</span><span class="o">=</span><span class="s2">&quot;/Users/tompkins/Downloads/&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">cdsapi</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">netCDF4</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span><span class="n">num2date</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">netCDF4</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># init for netCDF4. package</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Docstring comes from extension module _netCDF4.</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">._netCDF4</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Need explicit imports for names beginning with underscores</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">._netCDF4</span> <span class="kn">import</span> <span class="vm">__doc__</span>
+
+<span class="nn">File src/netCDF4/_netCDF4.pyx:1,</span> in <span class="ni">init netCDF4._netCDF4</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
 </pre></div>
 </div>
 </div>
@@ -467,8 +495,10 @@ document.write(`
 
     <span class="c1"># specify levels and colormap</span>
     <span class="c1">#levels=[0,0.1,0.2,0.5,1,2,5,10,20,30,50]</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">BrBG</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow_r</span>
+    <span class="c1">#cmap=plt.cm.BrBG</span>
+    <span class="c1">#cmap=plt.cm.rainbow_r</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,[</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">])</span>
+    
     <span class="n">norm</span><span class="o">=</span><span class="n">mplt</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span><span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
 
     <span class="c1"># make plot</span>
@@ -521,181 +551,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 15:01:37,020 INFO Welcome to the CDS
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 15:01:37,020 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-single-levels-monthly-means
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 15:01:37,173 INFO Request is completed
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 15:01:37,174 INFO Downloading https://download-0005-clone.copernicus-climate.eu/cache-compute-0005/cache/data7/adaptor.mars.internal-1699877374.0481625-4398-2-a24cf865-2f12-49aa-ad0f-e2ac9947633f.nc to /Users/tompkins/Downloads/precip.nc (13.4M)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                | 0.00/13.4M [00:00&lt;?, ?B/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▍                                                       | 96.0k/13.4M [00:00&lt;00:15, 897kB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▊                                                        | 190k/13.4M [00:00&lt;00:15, 905kB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█▏                                                       | 284k/13.4M [00:00&lt;00:15, 896kB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▋                                                       | 397k/13.4M [00:00&lt;00:14, 963kB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|██                                                       | 501k/13.4M [00:00&lt;00:13, 991kB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▋                                                     | 645k/13.4M [00:00&lt;00:11, 1.13MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▏                                                    | 789k/13.4M [00:00&lt;00:11, 1.17MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███▊                                                    | 933k/13.4M [00:00&lt;00:10, 1.24MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|████▌                                                  | 1.11M/13.4M [00:00&lt;00:09, 1.41MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|█████▏                                                 | 1.27M/13.4M [00:01&lt;00:08, 1.48MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|█████▉                                                 | 1.46M/13.4M [00:01&lt;00:07, 1.63MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████▋                                                | 1.65M/13.4M [00:01&lt;00:07, 1.71MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|███████▋                                               | 1.88M/13.4M [00:01&lt;00:06, 1.91MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████▌                                              | 2.08M/13.4M [00:01&lt;00:06, 1.94MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█████████▍                                             | 2.29M/13.4M [00:01&lt;00:05, 2.03MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|██████████▎                                            | 2.52M/13.4M [00:01&lt;00:05, 2.14MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|███████████▎                                           | 2.76M/13.4M [00:01&lt;00:05, 2.22MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|████████████▏                                          | 2.98M/13.4M [00:01&lt;00:04, 2.26MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|█████████████                                          | 3.20M/13.4M [00:01&lt;00:04, 2.27MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████████▏                                        | 3.47M/13.4M [00:02&lt;00:04, 2.37MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|███████████████▏                                       | 3.71M/13.4M [00:02&lt;00:04, 2.41MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|████████████████▏                                      | 3.97M/13.4M [00:02&lt;00:03, 2.48MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|█████████████████▏                                     | 4.20M/13.4M [00:02&lt;00:04, 2.33MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|██████████████████▏                                    | 4.43M/13.4M [00:02&lt;00:04, 2.22MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███████████████████                                    | 4.66M/13.4M [00:02&lt;00:04, 2.27MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|███████████████████▉                                   | 4.88M/13.4M [00:02&lt;00:04, 2.12MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|█████████████████████                                  | 5.13M/13.4M [00:02&lt;00:03, 2.26MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|█████████████████████▉                                 | 5.35M/13.4M [00:02&lt;00:03, 2.25MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|██████████████████████▉                                | 5.60M/13.4M [00:03&lt;00:03, 2.35MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|███████████████████████▊                               | 5.83M/13.4M [00:03&lt;00:03, 2.32MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|████████████████████████▉                              | 6.08M/13.4M [00:03&lt;00:03, 2.31MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|█████████████████████████▊                             | 6.30M/13.4M [00:03&lt;00:03, 2.30MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|██████████████████████████▋                            | 6.52M/13.4M [00:03&lt;00:03, 2.30MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|███████████████████████████▌                           | 6.74M/13.4M [00:03&lt;00:03, 2.30MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|████████████████████████████▌                          | 6.98M/13.4M [00:03&lt;00:02, 2.35MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████████████████████████████▋                         | 7.25M/13.4M [00:03&lt;00:02, 2.47MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|██████████████████████████████▋                        | 7.48M/13.4M [00:03&lt;00:02, 2.39MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|███████████████████████████████▉                       | 7.79M/13.4M [00:04&lt;00:02, 2.55MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|████████████████████████████████▉                      | 8.05M/13.4M [00:04&lt;00:02, 2.60MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████████████████████████████████▏                    | 8.35M/13.4M [00:04&lt;00:01, 2.77MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|███████████████████████████████████▍                   | 8.65M/13.4M [00:04&lt;00:01, 2.82MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|████████████████████████████████████▌                  | 8.92M/13.4M [00:04&lt;00:01, 2.79MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 69%|█████████████████████████████████████▊                 | 9.22M/13.4M [00:04&lt;00:01, 2.89MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████████████████████████████████████▍               | 9.62M/13.4M [00:04&lt;00:01, 3.24MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|█████████████████████████████████████████              | 10.0M/13.4M [00:04&lt;00:01, 3.51MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|██████████████████████████████████████████▉            | 10.5M/13.4M [00:04&lt;00:00, 3.88MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████████████████████████████████████████▍          | 10.8M/13.4M [00:04&lt;00:00, 3.85MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|█████████████████████████████████████████████▉         | 11.2M/13.4M [00:05&lt;00:00, 3.76MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|███████████████████████████████████████████████▌       | 11.6M/13.4M [00:05&lt;00:00, 3.82MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|█████████████████████████████████████████████████▎     | 12.0M/13.4M [00:05&lt;00:00, 4.04MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|███████████████████████████████████████████████████    | 12.5M/13.4M [00:05&lt;00:00, 4.17MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████████████████████████████████████████████████▍ | 13.1M/13.4M [00:05&lt;00:00, 4.72MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 15:01:42,883 INFO Download rate 2.4M/s
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-21 12:45:32,715 INFO Welcome to the CDS
+2023-11-21 12:45:32,715 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-single-levels-monthly-means
+2023-11-21 12:45:32,901 INFO Request is completed
+2023-11-21 12:45:32,903 INFO Downloading https://download-0005-clone.copernicus-climate.eu/cache-compute-0005/cache/data7/adaptor.mars.internal-1699877374.0481625-4398-2-a24cf865-2f12-49aa-ad0f-e2ac9947633f.nc to /Users/tompkins/Downloads/precip.nc (13.4M)
+2023-11-21 12:45:36,111 INFO Download rate 4.2M/s                                                
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result(content_length=14080360,content_type=application/x-netcdf,location=https://download-0005-clone.copernicus-climate.eu/cache-compute-0005/cache/data7/adaptor.mars.internal-1699877374.0481625-4398-2-a24cf865-2f12-49aa-ad0f-e2ac9947633f.nc)
@@ -823,7 +683,7 @@ variables:
 // global attributes:
 		:CDI = &quot;Climate Data Interface version 2.3.0 (https://mpimet.mpg.de/cdi)&quot; ;
 		:Conventions = &quot;CF-1.6&quot; ;
-		:history = &quot;Tue Nov 21 15:01:43 2023: cdo -O -s -b f32 -timmean -aexpr,pr=1000*tp /Users/tompkins/Downloads/precip.nc /Users/tompkins/Downloads/yearmean.nc\n&quot;,
+		:history = &quot;Tue Nov 21 12:45:36 2023: cdo -O -s -b f32 -timmean -aexpr,pr=1000*tp /Users/tompkins/Downloads/precip.nc /Users/tompkins/Downloads/yearmean.nc\n&quot;,
 			&quot;2023-11-13 12:09:34 GMT by grib_to_netcdf-2.25.1: /opt/ecmwf/mars-client/bin/grib_to_netcdf.bin -S param -o /cache/data7/adaptor.mars.internal-1699877374.0481625-4398-2-a24cf865-2f12-49aa-ad0f-e2ac9947633f.nc /cache/tmp/a24cf865-2f12-49aa-ad0f-e2ac9947633f-adaptor.mars.internal-1699877364.040831-4398-2-tmp.grib&quot; ;
 		:CDO = &quot;Climate Data Operators version 2.3.0 (https://mpimet.mpg.de/cdo)&quot; ;
 }
@@ -846,7 +706,7 @@ variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/97c4abccd6a3fea413674ec0e17dc57ff7f3f1798f112b5f6dec7b9998ec1799.png" src="../_images/97c4abccd6a3fea413674ec0e17dc57ff7f3f1798f112b5f6dec7b9998ec1799.png" />
+<img alt="../_images/a5bc04bf2c1d85092e2d8c1c39c177bf5c4a9c4c988c627f72b7649470d04063.png" src="../_images/a5bc04bf2c1d85092e2d8c1c39c177bf5c4a9c4c988c627f72b7649470d04063.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -857,7 +717,7 @@ variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7615c75a47c2a411e727f62839d6ea02caf39ea64bc76a54ddf8c73d3156e270.png" src="../_images/7615c75a47c2a411e727f62839d6ea02caf39ea64bc76a54ddf8c73d3156e270.png" />
+<img alt="../_images/9e7a1458104a3275249a0b961f723b34d4f3968cd7b2cf24ac1526325769a9bb.png" src="../_images/9e7a1458104a3275249a0b961f723b34d4f3968cd7b2cf24ac1526325769a9bb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -868,7 +728,7 @@ variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3e2f5dc914c65c9ea06a6cc7f0e3cae1d4b710b760574ea9be7a48ee89f08b07.png" src="../_images/3e2f5dc914c65c9ea06a6cc7f0e3cae1d4b710b760574ea9be7a48ee89f08b07.png" />
+<img alt="../_images/0e36bc5c5afebd6bd95ce90eb9b8cedbb206ad2c646d4d3a580f38ecf33cfbe2.png" src="../_images/0e36bc5c5afebd6bd95ce90eb9b8cedbb206ad2c646d4d3a580f38ecf33cfbe2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -880,7 +740,7 @@ variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/90a9373b60e696223f2258117a00ae20b7d2e5b387de870653305dda357031b1.png" src="../_images/90a9373b60e696223f2258117a00ae20b7d2e5b387de870653305dda357031b1.png" />
+<img alt="../_images/84fe28f3bc78e759afa9c7658af05ab95dad1712cf6b99c9932114808f415c80.png" src="../_images/84fe28f3bc78e759afa9c7658af05ab95dad1712cf6b99c9932114808f415c80.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -894,7 +754,7 @@ variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f1be8f5447d7384b097aa277c8fd188870e37b401df67ee4df10a53e14d379e.png" src="../_images/0f1be8f5447d7384b097aa277c8fd188870e37b401df67ee4df10a53e14d379e.png" />
+<img alt="../_images/ce8e482ae8d2d4caa601d012b075d89ae5ef72dbd029d47f5ec1b29c90ddf41e.png" src="../_images/ce8e482ae8d2d4caa601d012b075d89ae5ef72dbd029d47f5ec1b29c90ddf41e.png" />
 </div>
 </div>
 <p>Now try to duplicate this and make plots for</p>

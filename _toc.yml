@@ -24,5 +24,5 @@ sections:
   sections:
   - file: notebooks/mod_climate-system-models.ipynb
   - file: notebooks/mod_advection.ipynb
-  - file: notebooks/mod_CMIP_IPCC_fun.ipynb
+  - file: notebooks/mod_CMIP_IPCC_temperature_trends.ipynb
   
