@@ -23,6 +23,9 @@ bibtex_bibfiles:
 repository:
   url: https://gitlab.com/tompkins/earth-system-modelling  # Online location of your book
 
+# Jekyll theme required even if not used to build:
+theme: jekyll-theme-minimal
+
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
