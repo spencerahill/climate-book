@@ -2,15 +2,5 @@ name: binder-env
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
+  - python
   - climlab
-  - metpy
-  - cartopy
-  - netCDF4
-  - cdo
-  - cdsapi
-  - nbgitpuller
-  - sphinx-gallery
-  - pandas
-  - matplotlib
-  - jupyterlab
