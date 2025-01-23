@@ -1,4 +1,4 @@
-name: earth-system-modelling
+name: climate-book
 channels:
   - conda-forge
 dependencies:
