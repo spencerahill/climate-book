@@ -1,0 +1,10 @@
+name: earth-system-modelling
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - jupyter-book
+  - matplotlib
+  - numpy
+  - climlab
+  - cdo 
