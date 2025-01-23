@@ -2,7 +2,7 @@ name: binder-env
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.11
   - climlab
   - metpy
   - cartopy
